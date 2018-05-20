@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<button id="remove-btn">-</button>
+<input id="shelf-0" idx="0" type="number" min="0"/>
+<button id="add-btn">+</button>
+</body>
+</html>
+
+
+<script type="application/javascript">
+    let webSocketConfig = {
+        port: '<!-- @echo webSocketPort -->',
+        protocol: '<!-- @echo webSocketProtocol -->'
+    };
+
+    $(document).ready(() => {
+        let webSocket = new WebSocket('ws://localhost:' + webSocketConfig.port, webSocketConfig.protocol);
+
+        $('#shelf-0').on('change', (ev) => {
+            let newVal = ev.target.value;
+            debug = ev.target;
+            let msg = {
+                idx: 0,
+                quantity: newVal
+            };
+            webSocket.send(JSON.stringify(msg));
+        });
+    });
+</script>

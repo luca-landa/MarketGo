@@ -1,0 +1,27 @@
+avvio: mongod --dbpath ~/mongodb/data/db --logpath ~/mongodb/log/mongo.log --logappend
+
+show dbs -> mostra i db
+use nomeDatabase -> seleziona il db
+show collections -> mostra le collezioni
+
+db.createUser({
+    user: 'john',
+    pwd: 'supersecretpassword',
+    roles: 'readWrite'
+})
+-> per creare un utente
+
+db.createCollection('nomecollection')
+db.collection.remove({})
+db.collection.insert({})
+
+https://docs.mongodb.com/manual/reference/method/db.createCollection/
+https://docs.mongodb.com/manual/core/schema-validation/
+
+
+
+
+##### mosquitto
+mosquitto -> avvia il broker
+mosquitto_sub -t 'stuff/topic' -> subscribe a topic
+mosquitto_pub -t 'stuff/topic' -m 'message' -> send to topic
