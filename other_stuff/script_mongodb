@@ -1,0 +1,15 @@
+use MarketGo
+
+db.createUser({
+    user: 'node-red',
+    pwd: 'MarketGo',
+    roles: ['readWrite']
+})
+
+db.createCollection("shelfs")
+
+db.shelfs.insert([
+      {idx: 0, minimumQuantity: 2},
+      {idx: 1, minimumQuantity: 2},
+      {idx: 2, minimumQuantity: 2}
+])
