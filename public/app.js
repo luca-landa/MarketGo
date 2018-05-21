@@ -4,7 +4,7 @@ let devices, webSocketConfig;
 let app;
 
 function setupPage() {
-    document.querySelector('.waiting-spinner').style.display = 'none';
+    setTimeout(()=> document.querySelector('.waiting-spinner').style.display = 'none', 800);
 
     webSocketConfig = JSON.parse('<!-- @echo webSocketConfig -->');
     devices = JSON.parse('<!-- @echo devices -->');
@@ -17,14 +17,14 @@ function setupPage() {
             devices: devices
         },
         methods: {
-            updateShelf(shelf, idx, newQuantity) {
+            updateShelf(shelf, newQuantity) {
                 if(newQuantity < 0) newQuantity = 0;
 
                 shelf.quantity = newQuantity;
                 let msg = JSON.stringify({
                     event: 'deviceStatusUpdate',
                     deviceType: 'shelves',
-                    idx: idx,
+                    idx: shelf.idx,
                     quantity: newQuantity
                 });
                 webSocket.send(msg);

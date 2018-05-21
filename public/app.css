@@ -1,5 +1,47 @@
+html, body {
+    height: 100%;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: super;
+}
+
+.main-logo {
+    width: 900px;
+    height: 350px;
+    display: block;
+}
+
+.shelves {
+    margin-top: 30px;
+    text-align: center;
+}
+
 .shelf {
+    border: 2px blue;
+    padding: 3px 3px 3px 3px;
     display: inline-block;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.shelf input {
+    width: 150px;
+}
+
+.shelf.buttons {
+    margin-top: 50px;
+    width: 100%;
+}
+
+.shelf.buttons button {
+    width: 100px;
 }
 
 .waiting-spinner {
@@ -11,8 +53,8 @@
     position: fixed;
     right: 10px;
     bottom: 10px;
-    animation: spinner 1.4s linear infinite;
-    -webkit-animation: spinner 1.4s linear infinite;
+    animation: spinner 0.8s linear infinite;
+    -webkit-animation: spinner 0.8s linear infinite;
 }
 
 @keyframes spinner {

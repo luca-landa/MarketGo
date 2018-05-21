@@ -5,20 +5,32 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
     <meta http-equiv="Pragma" content="no-cache"/>
     <meta http-equiv="Expires" content="0"/>
+
     <title>MarketGo</title>
+
     <link type="text/css" rel="stylesheet" href="/app.css"/>
+
     <script type="text/javascript" src="/app.js"></script>
     <script type="text/javascript" src="/vue.min.js"></script>
     <script type="text/javascript" src="/jquery.min.js"></script>
 </head>
 <body>
+
 <div id="app">
-    <div class="shelf" v-for="shelf in devices.shelves">
-        <button @click="updateShelf(shelf, shelf.idx, shelf.quantity - 1)">-</button>
-            <input type="number" :value="shelf.quantity"/>
-        <button @click="updateShelf(shelf, shelf.idx, shelf.quantity + 1)">+</button>
+    <img src="/market-go-logo.png" class="main-logo"/>
+
+    <div class="shelves">
+        <div class="shelf" v-for="shelf in devices.shelves">
+            <input :value="shelf.quantity" readonly/>
+            <div class="buttons">
+                <button @click="updateShelf(shelf, shelf.quantity - 1)">-</button>
+                <button @click="updateShelf(shelf, shelf.quantity + 1)">+</button>
+            </div>
+        </div>
     </div>
+
     <div class="waiting-spinner"></div>
 </div>
+
 </body>
 </html>

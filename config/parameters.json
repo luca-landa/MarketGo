@@ -2,6 +2,6 @@
   "server_port": 8000,
   "mqtt_broker_url": "mqtt://localhost:1883",
   "web_socket_protocol": "echo-protocol",
-  "permitted_file_requests": ["/favicon.ico", "/app.js", "/vue.min.js", "/jquery.min.js", "/app.css"],
+  "permitted_file_requests": ["/favicon.ico", "/app.js", "/vue.min.js", "/jquery.min.js", "/app.css", "/market-go-logo.png"],
   "files_to_preprocess": ["/app.js"]
 }
