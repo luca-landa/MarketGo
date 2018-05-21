@@ -13,9 +13,9 @@
 <body>
 <div id="app">
     <div class="shelf" v-for="shelf in devices.shelves">
-        <button id="remove-btn">-</button>
-        <input type="number" min="0" :value="{shelf.}"/>
-        <button id="add-btn">+</button>
+        <button @click="updateShelf(shelf.idx, shelf.quantity + 1)">-</button>
+            <input type="number" min="0" :value="shelf.quantity"/>
+        <button @click="updateShelf(shelf.idx, shelf.quantity + 1)">+</button>
     </div>
 </div>
 </body>

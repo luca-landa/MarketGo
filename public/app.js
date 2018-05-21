@@ -1,28 +1,30 @@
 "use strict";
 
 let devices, webSocketConfig;
+let app;
 
 function setupPage() {
     webSocketConfig = JSON.parse('<!-- @echo webSocketConfig -->');
     devices = JSON.parse('<!-- @echo devices -->');
 
-    let app = new Vue({
+    let webSocket = new WebSocket('ws://localhost:' + webSocketConfig.port, webSocketConfig.protocol);
+
+    app = new Vue({
         el: '#app',
         data: {
             devices: devices
+        },
+        methods: {
+            updateShelf(idx, newQuantity) {
+                let msg = JSON.stringify({
+                    idx: idx,
+                    quantity: newQuantity
+                });
+                alert(msg);
+                webSocket.send(msg);
+            }
         }
     });
-
-    let webSocket = new WebSocket('ws://localhost:' + webSocketConfig.port, webSocketConfig.protocol);
-
-    // $('#shelf-0').on('change', (ev) => {
-    //     let newVal = ev.target.value;
-    //     let msg = {
-    //         idx: 0,
-    //         quantity: newVal
-    //     };
-    //     webSocket.send(JSON.stringify(msg));
-    // });
 }
 
 window.onload = setupPage;
