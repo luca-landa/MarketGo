@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Index</title>
+    <title>MarketGo</title>
     <script
             src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -17,10 +17,7 @@
 
 
 <script type="application/javascript">
-    let webSocketConfig = {
-        port: '<!-- @echo webSocketPort -->',
-        protocol: '<!-- @echo webSocketProtocol -->'
-    };
+    let webSocketConfig = JSON.parse('<!-- @echo webSocketConfig -->');
 
     $(document).ready(() => {
         let webSocket = new WebSocket('ws://localhost:' + webSocketConfig.port, webSocketConfig.protocol);
