@@ -2,12 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <title>MarketGo</title>
     <script
             src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js"></script>
+    <script type="text/javascript" src="/test.js"></script>
 </head>
 <body>
     <button id="remove-btn">-</button>
@@ -15,23 +19,3 @@
     <button id="add-btn">+</button>
 </body>
 </html>
-
-
-<script type="application/javascript">
-    let webSocketConfig = JSON.parse('<!-- @echo webSocketConfig -->');
-    let devices = JSON.parse('<!-- @echo devices -->');
-
-    $(document).ready(() => {
-        let webSocket = new WebSocket('ws://localhost:' + webSocketConfig.port, webSocketConfig.protocol);
-
-        $('#shelf-0').on('change', (ev) => {
-            let newVal = ev.target.value;
-            debug = ev.target;
-            let msg = {
-                idx: 0,
-                quantity: newVal
-            };
-            webSocket.send(JSON.stringify(msg));
-        });
-    });
-</script>
