@@ -16,6 +16,8 @@ function setupPage() {
         },
         methods: {
             updateShelf(shelf, idx, newQuantity) {
+                if(newQuantity < 0) newQuantity = 0;
+
                 shelf.quantity = newQuantity;
                 let msg = JSON.stringify({
                     event: 'deviceStatusUpdate',
