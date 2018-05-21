@@ -6,9 +6,9 @@ db.createUser({
     roles: ['readWrite']
 })
 
-db.createCollection("shelfs")
+db.createCollection("shelves")
 
-db.shelfs.insert([
+db.shelves.insert([
       {idx: 0, minimumQuantity: 2},
       {idx: 1, minimumQuantity: 2},
       {idx: 2, minimumQuantity: 2}
