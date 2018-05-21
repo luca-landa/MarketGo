@@ -1,0 +1,22 @@
+.shelf {
+    display: inline-block;
+}
+
+.waiting-spinner {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 20px solid lightgray;
+    border-top: 20px solid black;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    animation: spinner 1.4s linear infinite;
+    -webkit-animation: spinner 1.4s linear infinite;
+}
+
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}

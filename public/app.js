@@ -4,6 +4,8 @@ let devices, webSocketConfig;
 let app;
 
 function setupPage() {
+    document.querySelector('.waiting-spinner').style.display = 'none';
+
     webSocketConfig = JSON.parse('<!-- @echo webSocketConfig -->');
     devices = JSON.parse('<!-- @echo devices -->');
 
