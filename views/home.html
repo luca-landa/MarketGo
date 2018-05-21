@@ -21,6 +21,7 @@
 
     <div class="shelves">
         <div class="shelf" v-for="shelf in devices.shelves">
+            <label class="device-label">Shelf {{shelf.idx}}</label>
             <input :value="shelf.quantity" readonly/>
             <div class="buttons">
                 <button @click="updateShelf(shelf, shelf.quantity - 1)">-</button>
