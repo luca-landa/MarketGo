@@ -15,12 +15,14 @@ function setupPage() {
             devices: devices
         },
         methods: {
-            updateShelf(idx, newQuantity) {
+            updateShelf(shelf, idx, newQuantity) {
+                shelf.quantity = newQuantity;
                 let msg = JSON.stringify({
+                    event: 'deviceStatusUpdate',
+                    deviceType: 'shelves',
                     idx: idx,
                     quantity: newQuantity
                 });
-                alert(msg);
                 webSocket.send(msg);
             }
         }

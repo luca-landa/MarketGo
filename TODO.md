@@ -1,2 +1,4 @@
 # Next TODOs
-* create a device with Vue for each device received in the configuration json
+* fix shelves inputs: 'min="0"' is not working anymore
+* set labels with ids for shelves on GUI
+* start working on staff's devices!
