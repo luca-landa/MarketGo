@@ -1,6 +1,6 @@
 html, body {
     height: 100%;
-    font-family: "Arial", sans-serif;
+    font-family: Arial, sans-serif;
     font-size: 18px;
 }
 
@@ -14,10 +14,41 @@ body {
     vertical-align: super;
 }
 
+button {
+    cursor: pointer;
+}
+
 .main-logo {
     width: 900px;
     height: 350px;
     display: block;
+}
+
+.tab-selectors {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+.tab-selectors .tab-link {
+    background-color: inherit;
+    float: left;
+    border: none;
+    padding: 14px 16px;
+    font-size: 17px;
+    transition: 0.4s;
+}
+
+.tab-selectors .tab-link:hover {
+    background-color: #ddd;
+}
+
+.tab-selectors .tab-link.active {
+    background-color: #ccc;
+}
+
+.tab-content {
+    display: none;
 }
 
 .shelves {
@@ -35,11 +66,27 @@ body {
 }
 
 .shelf input {
+    font-size: 20px;
     width: 150px;
+    margin: 6% 0 6% 0;
+}
+
+.shelf .buttons button {
+    border: 2px solid lightgray;
+    color: white;
+    font-size: 20px;
+    border-radius: 25%;
+    width: 30%;
+    background-color: lightseagreen;
+}
+
+.shelf .buttons button:hover {
+    background-color: coral;
 }
 
 .device-label {
     display: block;
+    text-align: left;
 }
 
 .waiting-spinner {

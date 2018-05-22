@@ -19,15 +19,26 @@
 <div id="app">
     <img src="/market-go-logo.png" class="main-logo"/>
 
-    <div class="shelves">
-        <div class="shelf" v-for="shelf in devices.shelves">
-            <label class="device-label">Shelf {{shelf.idx}}</label>
-            <input :value="shelf.quantity" readonly/>
-            <div class="buttons">
-                <button @click="updateShelf(shelf, shelf.quantity - 1)">-</button>
-                <button @click="updateShelf(shelf, shelf.quantity + 1)">+</button>
+    <div class="tab-selectors">
+        <button id="client-view-button" class="tab-link" onclick="switchTab('client-view')">Client view</button>
+        <button id="staff-view-button" class="tab-link" onclick="switchTab('staff-view')">Staff view</button>
+    </div>
+
+    <div id="client-view" class="tab-content">
+        <div class="shelves">
+            <div class="shelf" v-for="shelf in devices.shelves">
+                <label class="device-label">Shelf {{shelf.idx}}</label>
+                <input :value="shelf.quantity" readonly/>
+                <div class="buttons">
+                    <button @click="updateShelf(shelf, shelf.quantity - 1)">-</button>
+                    <button @click="updateShelf(shelf, shelf.quantity + 1)">+</button>
+                </div>
             </div>
         </div>
+    </div>
+
+    <div id="staff-view" class="tab-content">
+        <h1>Not implemented yet!</h1>
     </div>
 
     <div class="waiting-spinner"></div>

@@ -4,7 +4,7 @@ let devices, webSocketConfig;
 let app;
 
 function setupPage() {
-    setTimeout(()=> document.querySelector('.waiting-spinner').style.display = 'none', 800);
+    setTimeout(()=> document.querySelector('.waiting-spinner').style.display = 'none', 1000);
 
     webSocketConfig = JSON.parse('<!-- @echo webSocketConfig -->');
     devices = JSON.parse('<!-- @echo devices -->');
@@ -31,6 +31,18 @@ function setupPage() {
             }
         }
     });
+
+    document.querySelector('#client-view-button').click();
+}
+
+function switchTab(tabId) {
+    console.log('switching to ' + tabId);
+
+    document.querySelectorAll('.tab-content').forEach((tab) => tab.style.display = 'none');
+    document.querySelector(`#${tabId}`).style.display = 'block';
+
+    document.querySelectorAll('.tab-link').forEach((button) => button.classList.remove('active'));
+    document.querySelector(`#${tabId}-button`).classList.add('active');
 }
 
 window.onload = setupPage;
