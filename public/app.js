@@ -3,11 +3,9 @@
 let devices, webSocketConfig;
 let app;
 
-const defaultTab = 'client-view';
+const defaultTab = 'staff-view';
 
 function setupPage() {
-    setTimeout(()=> document.querySelector('.waiting-spinner').style.display = 'none', 1000);
-
     webSocketConfig = JSON.parse('<!-- @echo webSocketConfig -->');
     devices = JSON.parse('<!-- @echo devices -->');
 
@@ -34,6 +32,7 @@ function setupPage() {
     });
 
     document.querySelector(`#${defaultTab}-button`).click();
+    document.querySelector('.waiting-spinner').remove();
 }
 
 function createWebSocket(port, protocol) {
@@ -46,7 +45,7 @@ function createWebSocket(port, protocol) {
                 device.quantity = message.quantity;
             } else if (message.deviceType === 'staffPalmars') {
                 if(message.dataType === 'newAction') {
-                    console.log('updating actions');
+                    console.log(typeof message.action);
                     devices[message.deviceType].forEach((device) =>
                         device.notifications.push(message.newAction));
                 }

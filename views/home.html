@@ -42,9 +42,8 @@
             <div class="device staff-palmar" v-for="palmar in devices.staffPalmars">
                 <label>Palmar {{palmar.idx}}</label>
                 <div class="display">
-                    <!-- TODO cambiare notifications in notifies -->
                     <div v-for="notification in palmar.notifications">
-                        <h3>notify not implemented yet!</h3>
+                        <h4>{{notification.action}}:{{notification.idx}}</h4>
                     </div>
                 </div>
                 <div class="home-button"></div>
