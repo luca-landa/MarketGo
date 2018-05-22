@@ -22,7 +22,6 @@ function setupPage() {
             updateShelf(shelf, newQuantity) {
                 if(newQuantity < 0) newQuantity = 0;
 
-                shelf.quantity = newQuantity;
                 let msg = JSON.stringify({
                     event: 'deviceStatusUpdate',
                     deviceType: 'shelves',
