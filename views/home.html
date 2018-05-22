@@ -25,8 +25,8 @@
     </div>
 
     <div id="client-view" class="tab-content">
-        <div class="shelves">
-            <div class="shelf" v-for="shelf in devices.shelves">
+        <div class="devices-group">
+            <div class="device shelf" v-for="shelf in devices.shelves">
                 <label class="device-label">Shelf {{shelf.idx}}</label>
                 <input :value="shelf.quantity" readonly/>
                 <div class="buttons">
@@ -38,7 +38,17 @@
     </div>
 
     <div id="staff-view" class="tab-content">
-        <h1>Not implemented yet!</h1>
+        <div class="devices-group">
+            <div class="device staff-palmar" v-for="palmar in devices.staffPalmars">
+                <label>Palmar {{palmar.idx}}</label>
+                <div class="display">
+                    <div v-for="notify in palmar.notifies">
+                        <h3>notify not implemented yet!</h3>
+                    </div>
+                </div>
+                <div class="home-button"></div>
+            </div>
+        </div>
     </div>
 
     <div class="waiting-spinner"></div>

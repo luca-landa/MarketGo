@@ -14,6 +14,10 @@ body {
     vertical-align: super;
 }
 
+:focus {
+    outline: 0;
+}
+
 button {
     cursor: pointer;
 }
@@ -54,16 +58,20 @@ button {
     display: none;
 }
 
-.shelves {
-    margin-top: 30px;
+.devices-group {
+    margin-top: 20px;
     text-align: center;
+
+}
+
+.device {
+    display: inline-block;
 }
 
 .shelf {
     border: 5px solid #F2635F;
     border-radius: 5% 25% 5% 5%;
     padding: 20px 20px 20px 20px;
-    display: inline-block;
     margin-right: 20px;
     margin-left: 20px;
 }
@@ -85,6 +93,37 @@ button {
 
 .shelf .buttons button:hover {
     background-color: #F2635F;
+}
+
+.staff-palmar {
+    padding-top: 8px;
+    text-align: center;
+    border: 6px solid silver;
+    border-radius: 20px;
+    width: 150px;
+    height: 300px;
+    background-color: black;
+}
+
+.staff-palmar label {
+    color: white;
+}
+
+.staff-palmar .display {
+    background-color: white;
+    border: 4px solid black;
+    top: 50%;
+    height: 80%;
+}
+
+.staff-palmar .home-button {
+    border: 2px solid black;
+    border-radius: 50%;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 22px;
+    height: 22px;
 }
 
 .device-label {
