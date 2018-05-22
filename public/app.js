@@ -3,7 +3,7 @@
 let devices, webSocketConfig;
 let app;
 
-const defaultTab = 'staff-view';
+const defaultTab = 'client-view';
 
 function setupPage() {
     setTimeout(()=> document.querySelector('.waiting-spinner').style.display = 'none', 1000);
@@ -11,7 +11,7 @@ function setupPage() {
     webSocketConfig = JSON.parse('<!-- @echo webSocketConfig -->');
     devices = JSON.parse('<!-- @echo devices -->');
 
-    let webSocket = new WebSocket('ws://localhost:' + webSocketConfig.port, webSocketConfig.protocol);
+    let webSocket = createWebSocket(webSocketConfig.port, webSocketConfig.protocol);
 
     app = new Vue({
         el: '#app',
@@ -34,6 +34,18 @@ function setupPage() {
     });
 
     document.querySelector(`#${defaultTab}-button`).click();
+}
+
+function createWebSocket(port, protocol) {
+    let webSocket = new WebSocket('ws://localhost:' + port, protocol);
+    webSocket.onmessage = (event) => {
+        let message = JSON.parse(event.data);
+        if (message.event === 'deviceStatusUpdate') {
+            let device = devices[message.deviceType].find((device) => device.idx === message.idx);
+            device.quantity = message.quantity;
+        }
+    };
+    return webSocket;
 }
 
 function switchTab(tabId) {
