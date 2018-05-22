@@ -41,8 +41,16 @@ function createWebSocket(port, protocol) {
     webSocket.onmessage = (event) => {
         let message = JSON.parse(event.data);
         if (message.event === 'deviceStatusUpdate') {
-            let device = devices[message.deviceType].find((device) => device.idx === message.idx);
-            device.quantity = message.quantity;
+            if(message.deviceType === 'shelves') {
+                let device = devices[message.deviceType].find((device) => device.idx === message.idx);
+                device.quantity = message.quantity;
+            } else if (message.deviceType === 'staffPalmars') {
+                if(message.dataType === 'newAction') {
+                    console.log('updating actions');
+                    devices[message.deviceType].forEach((device) =>
+                        device.pendingActions.push(message.newAction));
+                }
+            }
         }
     };
     return webSocket;
