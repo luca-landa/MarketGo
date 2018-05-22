@@ -382,7 +382,7 @@
      "types": [
       "rbe"
      ],
-     "enabled": true,
+     "enabled": false,
      "local": false,
      "module": "node-red-node-rbe",
      "file": "/usr/local/lib/node_modules/node-red/node_modules/node-red-node-rbe/rbe.js"
@@ -436,7 +436,7 @@
       "twitter in",
       "twitter out"
      ],
-     "enabled": true,
+     "enabled": false,
      "local": false,
      "module": "node-red-node-twitter",
      "file": "/usr/local/lib/node_modules/node-red/node_modules/node-red-node-twitter/27-twitter.js"
@@ -477,6 +477,43 @@
      "local": true,
      "module": "node-red-mongodb",
      "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-mongodb/66-mongodb.js"
+    }
+   }
+  },
+  "node-red-node-mongodb": {
+   "name": "node-red-node-mongodb",
+   "version": "0.0.14",
+   "local": true,
+   "nodes": {
+    "mongo": {
+     "name": "mongo",
+     "types": [
+      "mongodb",
+      "mongodb out",
+      "mongodb in"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-mongodb",
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-node-mongodb/66-mongodb.js"
+    }
+   }
+  },
+  "node-red-contrib-mongodb2": {
+   "name": "node-red-contrib-mongodb2",
+   "version": "0.5.6",
+   "local": true,
+   "nodes": {
+    "mongodb2": {
+     "name": "mongodb2",
+     "types": [
+      "mongodb2",
+      "mongodb2 in"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-mongodb2",
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-contrib-mongodb2/mongodb2/mongodb2.js"
     }
    }
   }
