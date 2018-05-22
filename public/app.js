@@ -48,7 +48,7 @@ function createWebSocket(port, protocol) {
                 if(message.dataType === 'newAction') {
                     console.log('updating actions');
                     devices[message.deviceType].forEach((device) =>
-                        device.pendingActions.push(message.newAction));
+                        device.notifications.push(message.newAction));
                 }
             }
         }

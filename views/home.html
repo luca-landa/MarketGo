@@ -42,8 +42,8 @@
             <div class="device staff-palmar" v-for="palmar in devices.staffPalmars">
                 <label>Palmar {{palmar.idx}}</label>
                 <div class="display">
-                    <!-- TODO cambiare pendingActions in notifies -->
-                    <div v-for="notify in palmar.pendingActions">
+                    <!-- TODO cambiare notifications in notifies -->
+                    <div v-for="notification in palmar.notifications">
                         <h3>notify not implemented yet!</h3>
                     </div>
                 </div>
