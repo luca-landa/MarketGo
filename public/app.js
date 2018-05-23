@@ -3,7 +3,7 @@
 let devices, webSocketConfig;
 let app;
 
-const defaultTab = 'staff-view';
+const defaultTab = 'client-view';
 
 function setupPage() {
     webSocketConfig = JSON.parse('<!-- @echo webSocketConfig -->');
@@ -39,17 +39,8 @@ function createWebSocket(port, protocol) {
     let webSocket = new WebSocket('ws://localhost:' + port, protocol);
     webSocket.onmessage = (event) => {
         let message = JSON.parse(event.data);
-        if (message.event === 'deviceStatusUpdate') {
-            if(message.deviceType === 'shelves') {
-                let device = devices[message.deviceType].find((device) => device.idx === message.idx);
-                device.quantity = message.quantity;
-            } else if (message.deviceType === 'staffPalmars') {
-                if(message.dataType === 'newAction') {
-                    console.log(typeof message.action);
-                    devices[message.deviceType].forEach((device) =>
-                        device.notifications.push(message.newAction));
-                }
-            }
+        if (message.event === 'devicesUpdate') {
+            devices[message.deviceType] = message.devices;
         }
     };
     return webSocket;
