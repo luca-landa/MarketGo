@@ -20,10 +20,13 @@
     <img src="/market-go-logo.png" class="main-logo"/>
 
     <div class="tab-selectors">
-        <button id="client-view-button" :class="{'tab-link': true, 'active': (visibleTab === 'client-view')}"
-                @click="visibleTab = 'client-view'">Client view</button>
-        <button id="staff-view-button" :class="{'tab-link': true, 'active': (visibleTab === 'staff-view')}"
-                @click="visibleTab = 'staff-view'">Staff view</button>
+        <button :class="{'tab-link': true, 'active': (visibleTab === 'client-view')}"
+                @click="visibleTab = 'client-view'">Client view
+        </button>
+        <button :class="{'tab-link': true, 'active': (visibleTab === 'staff-view')}"
+                @click="visibleTab = 'staff-view'">Staff view
+        </button>
+
     </div>
 
     <div id="client-view" :hidden="visibleTab !== 'client-view'">
@@ -36,22 +39,13 @@
                     <button @click="updateShelf(shelf, shelf.quantity + 1)">+</button>
                 </div>
             </div>
+            <!--<palmar class="device palmar" v-for="palmar in devices.clientPalmars" :palmar="palmar"></palmar>-->
         </div>
     </div>
 
     <div id="staff-view" :hidden="visibleTab !== 'staff-view'">
         <div class="devices-group">
-            <div class="device staff-palmar" v-for="palmar in devices.staffPalmars">
-                <label class="staff-palmar-label">Palmar {{palmar.idx}}</label>
-                <div class="display">
-                    <h4 v-if="palmar.notifications.length === 0">No notifications to display</h4>
-                    <div class="notification" v-for="notification in palmar.notifications">
-                        <p>{{notification.action}} shelf "{{notification.idx}}"</p>
-                        <button>done</button>
-                    </div>
-                </div>
-                <div class="home-button"></div>
-            </div>
+            <palmar class="device palmar" v-for="palmar in devices.staffPalmars" :palmar="palmar"></palmar>
         </div>
     </div>
 

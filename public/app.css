@@ -25,6 +25,8 @@ button {
     width: 850px;
     height: 320px;
     display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .tab-selectors {
@@ -89,7 +91,7 @@ button {
     background-color: #F2635F;
 }
 
-.staff-palmar {
+.palmar {
     padding-top: 8px;
     text-align: center;
     border: 6px solid silver;
@@ -99,11 +101,11 @@ button {
     background-color: black;
 }
 
-.staff-palmar label {
+.palmar label {
     color: white;
 }
 
-.staff-palmar .display {
+.palmar .display {
     background-color: white;
     border: 4px solid black;
     top: 50%;
@@ -111,7 +113,7 @@ button {
     overflow-y: scroll;
 }
 
-.staff-palmar .home-button {
+.palmar .home-button {
     border: 2px solid black;
     border-radius: 50%;
     background-color: white;
@@ -146,7 +148,7 @@ button {
     font-size: 1.2em;
 }
 
-.staff-palmar-label {
+.palmar-label {
     font-size: 1.2em;
 }
 

@@ -15,11 +15,12 @@ function setupPage() {
         el: '#app',
         data: {
             devices: devices,
-            visibleTab: defaultTab
+            visibleTab: defaultTab,
         },
+        components: getVueComponents(),
         methods: {
             updateShelf(shelf, newQuantity) {
-                if(newQuantity < 0) newQuantity = 0;
+                if (newQuantity < 0) newQuantity = 0;
 
                 let msg = JSON.stringify({
                     event: 'deviceStatusUpdate',
@@ -46,6 +47,27 @@ function createWebSocket(port, protocol) {
     };
 
     return webSocket;
+}
+
+function getVueComponents() {
+    return {
+        'palmar': {
+            props: ['palmar'],
+            template: `
+            <div class="device palmar">
+                <label class="palmar-label">Palmar {{palmar.idx}}</label>
+                <div class="display">
+                    <h4 v-if="palmar.notifications.length === 0">No notifications to display</h4>
+                    <div class="notification" v-for="notification in palmar.notifications">
+                        <p>{{notification.action}} shelf "{{notification.idx}}"</p>
+                        <button>done</button>
+                    </div>
+                </div>
+                <div class="home-button"></div>
+            </div>
+        `
+        }
+    };
 }
 
 window.onload = setupPage;
