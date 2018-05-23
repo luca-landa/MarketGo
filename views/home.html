@@ -20,9 +20,9 @@
     <img src="/market-go-logo.png" class="main-logo"/>
 
     <div class="tab-selectors">
-        <button id="client-view-button" :class="{'tab-link': true, 'active': visibleTab === 'client-view'}"
+        <button id="client-view-button" :class="{'tab-link': true, 'active': (visibleTab === 'client-view')}"
                 @click="visibleTab = 'client-view'">Client view</button>
-        <button id="staff-view-button" :class="{'tab-link': true, 'active': visibleTab === 'client-view'}"
+        <button id="staff-view-button" :class="{'tab-link': true, 'active': (visibleTab === 'staff-view')}"
                 @click="visibleTab = 'staff-view'">Staff view</button>
     </div>
 
