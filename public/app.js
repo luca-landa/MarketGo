@@ -3,7 +3,7 @@
 let devices, webSocketConfig;
 let app;
 
-const defaultTab = 'client-view';
+const defaultTab = 'staff-view';
 
 function setupPage() {
     webSocketConfig = JSON.parse('<!-- @echo webSocketConfig -->');
@@ -37,18 +37,15 @@ function setupPage() {
 
 function createWebSocket(port, protocol) {
     let webSocket = new WebSocket('ws://localhost:' + port, protocol);
+
     webSocket.onmessage = (event) => {
         let message = JSON.parse(event.data);
         if (message.event === 'devicesUpdate') {
             devices[message.deviceType] = message.devices;
         }
     };
-    return webSocket;
-}
 
-function switchTab(tabId) {
-    // document.querySelectorAll('.tab-link').forEach((el) => el.classList.remove('active'));
-    // document.querySelector(`#${tabId}-button`).classList.add('active');
+    return webSocket;
 }
 
 window.onload = setupPage;

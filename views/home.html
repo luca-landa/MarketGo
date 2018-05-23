@@ -44,8 +44,8 @@
             <div class="device staff-palmar" v-for="palmar in devices.staffPalmars">
                 <label>Palmar {{palmar.idx}}</label>
                 <div class="display">
-                    <div v-for="notification in palmar.notifications">
-                        <h4>{{notification.action}}:{{notification.idx}}</h4>
+                    <div class="notification" v-for="notification in palmar.notifications">
+                        <p>{{notification.action}} required for "{{notification.idx}}"</p>
                     </div>
                 </div>
                 <div class="home-button"></div>
