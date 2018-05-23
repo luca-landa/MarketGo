@@ -14,7 +14,8 @@ function setupPage() {
     app = new Vue({
         el: '#app',
         data: {
-            devices: devices
+            devices: devices,
+            visibleTab: defaultTab
         },
         methods: {
             updateShelf(shelf, newQuantity) {
@@ -31,7 +32,6 @@ function setupPage() {
         }
     });
 
-    document.querySelector(`#${defaultTab}-button`).click();
     document.querySelector('.waiting-spinner').remove();
 }
 
@@ -47,11 +47,8 @@ function createWebSocket(port, protocol) {
 }
 
 function switchTab(tabId) {
-    document.querySelectorAll('.tab-content').forEach((el) => el.style.display = 'none');
-    document.querySelector(`#${tabId}`).style.display = 'block';
-
-    document.querySelectorAll('.tab-link').forEach((el) => el.classList.remove('active'));
-    document.querySelector(`#${tabId}-button`).classList.add('active');
+    // document.querySelectorAll('.tab-link').forEach((el) => el.classList.remove('active'));
+    // document.querySelector(`#${tabId}-button`).classList.add('active');
 }
 
 window.onload = setupPage;

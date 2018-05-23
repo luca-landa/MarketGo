@@ -20,11 +20,13 @@
     <img src="/market-go-logo.png" class="main-logo"/>
 
     <div class="tab-selectors">
-        <button id="client-view-button" class="tab-link" onclick="switchTab('client-view')">Client view</button>
-        <button id="staff-view-button" class="tab-link" onclick="switchTab('staff-view')">Staff view</button>
+        <button id="client-view-button" :class="'tab-link' + (visibleTab === 'client-view' ? ' active' : '')"
+                @click="visibleTab = 'client-view'">Client view</button>
+        <button id="staff-view-button" :class="'tab-link' + (visibleTab === 'staff-view' ? ' active' : '')"
+                @click="visibleTab = 'staff-view'">Staff view</button>
     </div>
 
-    <div id="client-view" class="tab-content">
+    <div id="client-view" :hidden="visibleTab !== 'client-view'">
         <div class="devices-group">
             <div class="device shelf" v-for="shelf in devices.shelves">
                 <label class="device-label">Shelf {{shelf.idx}}</label>
@@ -37,7 +39,7 @@
         </div>
     </div>
 
-    <div id="staff-view" class="tab-content">
+    <div id="staff-view" :hidden="visibleTab !== 'staff-view'">
         <div class="devices-group">
             <div class="device staff-palmar" v-for="palmar in devices.staffPalmars">
                 <label>Palmar {{palmar.idx}}</label>
