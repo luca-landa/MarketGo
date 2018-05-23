@@ -42,10 +42,12 @@
     <div id="staff-view" :hidden="visibleTab !== 'staff-view'">
         <div class="devices-group">
             <div class="device staff-palmar" v-for="palmar in devices.staffPalmars">
-                <label>Palmar {{palmar.idx}}</label>
+                <label class="staff-palmar-label">Palmar {{palmar.idx}}</label>
                 <div class="display">
+                    <h4 v-if="palmar.notifications.length === 0">No notifications to display</h4>
                     <div class="notification" v-for="notification in palmar.notifications">
-                        <p>{{notification.action}} required for "{{notification.idx}}"</p>
+                        <p>{{notification.action}} shelf "{{notification.idx}}"</p>
+                        <button>done</button>
                     </div>
                 </div>
                 <div class="home-button"></div>

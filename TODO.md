@@ -1,8 +1,7 @@
 # Next TODOs
-* GUI: display staff events in the staff palmar as framed strings
-* GUI: display buttons for job acceptance in staff devices
-* GUI: send acceptance events to nodejs
+* GUI: send acceptance events to nodejsx
 * Nodejs: emit mqtt events for acceptance
+* Avoid event duplication: from node-red or nodejs?
 
 ### Next next
 * To discuss: Nodejs: read shelf quantities and idxs before sending them to client

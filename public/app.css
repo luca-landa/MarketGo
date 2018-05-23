@@ -1,7 +1,6 @@
 html, body {
     height: 100%;
     font-family: Arial, sans-serif;
-    font-size: 18px;
 }
 
 html {
@@ -124,12 +123,31 @@ button {
 
 .notification {
     box-sizing: border-box;
-    border: 2px solid darkgray;
+    border: 1px solid darkgray;
+    padding: 0.3em;
+    text-align: left;
+}
+
+.notification p {
+    padding: 0;
+    margin: 2px;
+}
+
+.notification button {
+    border-radius: 10px;
+    border: 1px solid black;
+    color: white;
+    background-color: #4CAF50;
 }
 
 .device-label {
     display: block;
     text-align: left;
+    font-size: 1.2em;
+}
+
+.staff-palmar-label {
+    font-size: 1.2em;
 }
 
 .waiting-spinner {
