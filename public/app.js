@@ -3,7 +3,7 @@
 let devices, webSocketConfig;
 let app;
 
-const defaultTab = 'staff-view';
+const defaultTab = 'client-view';
 
 function setupPage() {
     webSocketConfig = JSON.parse('<!-- @echo webSocketConfig -->');
@@ -28,6 +28,16 @@ function setupPage() {
                     idx: shelf.idx,
                     quantity: newQuantity
                 });
+
+                webSocket.send(msg);
+            },
+            sendCompletedAction(staffPalmar, action) {
+                let msg = JSON.stringify({
+                    event: 'setDoneAction',
+                    idx: staffPalmar.idx,
+                    action: action
+                });
+
                 webSocket.send(msg);
             }
         }
@@ -60,10 +70,10 @@ function getVueComponents() {
                     <h4 v-if="palmar.notifications.length === 0">No notifications to display</h4>
                     <div class="notification" v-for="notification in palmar.notifications">
                         <p>{{notification.action}} shelf "{{notification.idx}}"</p>
-                        <button>done</button>
+                        <button @click="app.sendCompletedAction(palmar, notification)">done</button>
                     </div>
                 </div>
-                <div class="home-button"></div>
+                <div class="home-button" @click="alert('not implemented yet')"></div>
             </div>
         `
         }

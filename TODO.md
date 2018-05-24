@@ -1,7 +1,5 @@
 # Next TODOs
-* GUI: send 'done' events to nodejs
-* Nodejs: emit mqtt events for acceptance
-* Avoid event duplication: from node-red or nodejs?
+* delete jquery asset
 
 ### Next next
 * To discuss: Nodejs: read shelf quantities and idxs before sending them to client

@@ -7,9 +7,15 @@ db.createUser({
 })
 
 db.createCollection("shelves")
+db.createCollection("employees")
 
 db.shelves.insert([
       {idx: 0, minimumQuantity: 2},
       {idx: 1, minimumQuantity: 2},
       {idx: 2, minimumQuantity: 2}
+])
+
+db.employees.insert([
+    {idx: 0, completedActions: []},
+    {idx: 1, completedActions: []}
 ])
