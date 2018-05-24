@@ -8,6 +8,7 @@
 
     <title>MarketGo</title>
 
+    <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
     <link type="text/css" rel="stylesheet" href="/app.css"/>
 
     <script type="text/javascript" src="/app.js"></script>
@@ -16,8 +17,8 @@
 </head>
 <body>
 
-<div id="app">
-    <img src="/market-go-logo.png" class="main-logo"/>
+<img src="/market-go-logo.png" class="main-logo"/>
+<div id="app" v-cloak>
 
     <div class="tab-selectors">
         <button :class="{'tab-link': true, 'active': (visibleTab === 'client-view')}"
@@ -26,7 +27,6 @@
         <button :class="{'tab-link': true, 'active': (visibleTab === 'staff-view')}"
                 @click="visibleTab = 'staff-view'">Staff view
         </button>
-
     </div>
 
     <div id="client-view" :hidden="visibleTab !== 'client-view'">
@@ -49,8 +49,9 @@
         </div>
     </div>
 
-    <div class="waiting-spinner"></div>
 </div>
+
+<div class="waiting-spinner"></div>
 
 </body>
 </html>

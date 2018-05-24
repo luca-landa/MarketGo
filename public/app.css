@@ -1,3 +1,7 @@
+[v-cloak] {
+    display: none;
+}
+
 html, body {
     height: 100%;
     font-family: Arial, sans-serif;

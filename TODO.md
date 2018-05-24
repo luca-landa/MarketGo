@@ -1,5 +1,5 @@
 # Next TODOs
-* GUI: send acceptance events to nodejsx
+* GUI: send acceptance events to nodejs
 * Nodejs: emit mqtt events for acceptance
 * Avoid event duplication: from node-red or nodejs?
 
