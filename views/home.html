@@ -12,6 +12,7 @@
     <link type="text/css" rel="stylesheet" href="/stylesheets/app.css"/>
     <link type="text/css" rel="stylesheet" href="/stylesheets/palmar.css"/>
     <link type="text/css" rel="stylesheet" href="/stylesheets/shelf.css"/>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/product.css"/>
 
     <script type="text/javascript" src="/app.js"></script>
     <script type="text/javascript" src="/vue.min.js"></script>
@@ -35,11 +36,14 @@
         <div class="devices-group">
             <div class="device shelf" v-for="shelf in devices.shelves">
                 <label class="device-label">Shelf {{shelf.idx}}</label>
-                <input :value="shelf.quantity" readonly/>
-                <div class="buttons">
-                    <button @click="updateShelf(shelf, shelf.quantity - 1)">-</button>
-                    <button @click="updateShelf(shelf, shelf.quantity + 1)">+</button>
+                <!--<input :value="'Quantity: ' + shelf.quantity" readonly/>-->
+                <div v-for="index in shelf.quantity" class="product">
+                    Product of shelf {{shelf.idx}}
                 </div>
+                <!--<div class="buttons">-->
+                    <!--<button @click="updateShelf(shelf, shelf.quantity - 1)">-</button>-->
+                    <!--<button @click="updateShelf(shelf, shelf.quantity + 1)">+</button>-->
+                <!--</div>-->
             </div>
             <div class="device palmar">
                 <label class="palmar-label">{{devices.clientPalmar.name}}'s palmar</label>

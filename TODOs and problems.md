@@ -1,7 +1,8 @@
 # Next TODOs
 * Shelf displays actual products
-  * products are displayed as frames
   * frames display real information from db
+    * information is the same for every copy of the product on the shelf, since they 
+      are copies of the same product
   * products have a button to show their info
   * clicking the button, the product information are taken from db and shown in an alert
   * product info is shown in a phone notification, and no more in the alert
