@@ -8,7 +8,9 @@
     "/vue.min.js",
     "/stylesheets/app.css",
     "/stylesheets/palmar.css",
-    "/market-go-logo.png"
+    "/market-go-logo-new.png",
+    "/market-go-logo-new-ext.png",
+    "/market-go-logo-new-ext2.png"
   ],
   "files_to_preprocess": [
     "/app.js"
