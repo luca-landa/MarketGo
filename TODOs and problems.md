@@ -1,8 +1,18 @@
 # Next TODOs
 * Shelf displays actual products
-* products have id and maybe a code to scan
-* clientPalmar has a scan mode
-
+  * products are displayed as frames
+  * frames display real information from db
+  * products have a button to show their info
+  * clicking the button, the product information are taken from db and shown in an alert
+  * product info is shown in a phone notification, and no more in the alert
+    * the notification has a button to close it
+  * the phone becomes draggable
+    * it is just needed to handle the dragon event for the products
+  * the phone has a scan mode
+  * the phone becomes draggable only in scan mode
+  * when the phone is dragged on a product, it shows its information
+    * on 'dragOn' event, the product lights up to show the reaction
+    * the phone asks for its information in the network and displays it
 
 ### Next steps
 * Shelf shows actual products draggable (in more copies, just one product type for shelf)
@@ -16,6 +26,7 @@
   * Cart has RFID scanner that detects automatically inserted products
   * Cart does the same check as the phone, to see client allergies and compare them with 
     product ingredients, and alarms the client on the phone eventually
+* Cart refill method is changed, and only allowed from staff
 * Clients purchases get saved in mongo
 
 

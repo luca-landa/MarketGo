@@ -1,0 +1,24 @@
+.shelf {
+    border: 5px solid #F2635F;
+    border-radius: 5% 25% 5% 5%;
+    padding: 20px 20px 20px 20px;
+}
+
+.shelf input {
+    font-size: 20px;
+    width: 150px;
+    margin: 6% 0 6% 0;
+}
+
+.shelf .buttons button {
+    border: 2px solid lightgray;
+    color: white;
+    font-size: 20px;
+    border-radius: 25%;
+    width: 30%;
+    background-color:  #0093D1;
+}
+
+.shelf .buttons button:hover {
+    background-color: #F2635F;
+}
