@@ -41,12 +41,12 @@
                 </div>
             </div>
             <div class="device palmar">
-                <label class="palmar-label">{{devices.clientPalmar.username}}'s palmar</label>
+                <label class="palmar-label">{{devices.clientPalmar.name}}'s palmar</label>
                 <div class="display">
                     <div class="notification">
-                        <h4 class="palmar-message">Logged in as {{devices.clientPalmar.username}}</h4>
+                        <h4 class="palmar-message">Logged in as {{devices.clientPalmar.name}}</h4>
                     </div>
-                    <button class="palmar-gui-button error">ask for help</button>
+                    <button class="palmar-gui-button error" @click="sendHelpRequest(devices.clientPalmar)">ask for help</button>
                 </div>
                 <div class="home-button" @click="alert('not implemented yet')"></div>
             </div>

@@ -33,9 +33,18 @@ function setupPage() {
             },
             sendCompletedAction(staffPalmar, action) {
                 let msg = JSON.stringify({
-                    event: 'setDoneAction',
+                    event: 'completedAction',
                     idx: staffPalmar.idx,
                     action: action
+                });
+
+                webSocket.send(msg);
+            },
+            sendHelpRequest(clientPalmar) {
+                let msg = JSON.stringify({
+                    event: 'clientHelpRequest',
+                    idx: clientPalmar.idx,
+                    name: clientPalmar.name
                 });
 
                 webSocket.send(msg);
@@ -69,7 +78,7 @@ function getVueComponents() {
                 <div class="display">
                     <h4 v-if="palmar.notifications.length === 0">No notifications to display</h4>
                     <div class="notification" v-for="notification in palmar.notifications">
-                        <p class="palmar-message">{{notification.action}} shelf "{{notification.idx}}"</p>
+                        <p class="palmar-message">{{notification.action}} (idx "{{notification.idx}}")</p>
                         <button class="palmar-gui-button success" @click="app.sendCompletedAction(palmar, notification)">done</button>
                     </div>
                 </div>
