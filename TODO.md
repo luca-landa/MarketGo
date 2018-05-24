@@ -1,5 +1,4 @@
 # Next TODOs
-* delete jquery asset
 
 ### Next next
 * To discuss: Nodejs: read shelf quantities and idxs before sending them to client
