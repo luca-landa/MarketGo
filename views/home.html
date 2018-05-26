@@ -38,7 +38,7 @@
                 <label class="device-label">Shelf {{shelf.idx}}</label>
                 <!--<input :value="'Quantity: ' + shelf.quantity" readonly/>-->
                 <div v-for="index in shelf.quantity" class="product">
-                    Product of shelf {{shelf.idx}}
+                    {{shelf.product.name}}
                 </div>
                 <!--<div class="buttons">-->
                     <!--<button @click="updateShelf(shelf, shelf.quantity - 1)">-</button>-->
