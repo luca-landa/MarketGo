@@ -1,6 +1,12 @@
 # Next TODOs
+* PROBLEM tcp messages are not distinguished when they are many in short time
+  * WHY THE HELL the randomIdx generate does never change?
+  * possible solutions:
+    * never make many requests at a single time but just a big request
+    
 * Shelf displays actual products
   * frames display real information from db
+    * nodejs object has full product information, but it displays only the name in the GUI
     * information is the same for every copy of the product on the shelf, since they 
       are copies of the same product
   * products have a button to show their info
