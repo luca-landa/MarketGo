@@ -17,10 +17,7 @@
       * in staff-view they show the button '+' to re-stock
 
 ### Next steps
-* Shelf shows actual products draggable (in more copies, just one product type for shelf)
-* Client can drag his palmar on a product to display information
-  * Phone will scan product id, use it to ask the network for the product information and 
-    get it in response (Maybe TCP here? it's synchronous)
+* ClientPalmar displays more useful information
   * Phone will ask the network the client allergy information, to compare it with the 
     product ingredients and eventually alarm the client
 * Client has a cart, he drags products in it and its virtual cart (displayed in the phone) 

@@ -5,4 +5,4 @@ const Server = require('./lib/server').Server;
 
 require('./lib/javascript_compatibility').setup();
 
-new Server(config).start();
+new Server(config);
