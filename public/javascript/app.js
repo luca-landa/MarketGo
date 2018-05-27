@@ -128,10 +128,21 @@ function getVueComponents() {
                     <div v-for="notification in palmar.notifications">
                         <transition appear appear-active-class="new-notification-animation">
                             <div class="notification">
-                                <p class="palmar-message">
-                                    <span class="x-close" @click="removeNotification(notification)">&#10006;</span>   
-                                    {{notification.message}}
-                                </p>
+                                <div v-if="notification.type === 'message'" >
+                                    <p class="palmar-message">
+                                        <span class="x-close" @click="removeNotification(notification)">&#10006;</span>   
+                                        {{notification.data}}
+                                    </p>
+                                </div>
+                                <div v-else>
+                                    <p class="palmar-message">
+                                        <span class="x-close" @click="removeNotification(notification)">&#10006;</span>
+                                        Name: {{notification.data.name}}
+                                    </p>
+                                    <p class="palmar-message">
+                                       Price: {{notification.data.price}}                                    
+                                    </p>
+                                </div>
                             </div>
                         </transition>
                     </div>

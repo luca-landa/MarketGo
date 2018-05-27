@@ -31,7 +31,7 @@
 }
 
 .notification {
-    /*width: 90%;*/
+    font-size: 14px;
     margin: 0.25em;
     box-sizing: border-box;
     border: 1px solid darkgray;
@@ -49,6 +49,7 @@
     padding: 0.2em 0.2em 0.2em 0.2em;
     border-radius: 10px;
     border: 1px solid black;
+    margin: 5px;
 }
 
 .palmar-label {
