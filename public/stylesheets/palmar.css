@@ -89,3 +89,20 @@
 #client-palmar.dragging {
     background-color: dodgerblue;
 }
+
+.new-notification-animation {
+    animation: fadein 1s linear 1;
+    -webkit-animation: fadein 1s linear 1;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0.4;
+        background-color: #4CAF50;
+    }
+
+    to {
+        opacity: 1;
+        background-color: inherit;
+    }
+}

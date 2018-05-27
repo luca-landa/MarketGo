@@ -44,7 +44,7 @@ function setupPage() {
                 let msg = JSON.stringify({
                     event: 'clientHelpRequest',
                     idx: clientPalmar.idx,
-                    name: clientPalmar.name
+                    username: clientPalmar.username
                 });
 
                 webSocket.send(msg);

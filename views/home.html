@@ -42,23 +42,31 @@
                     {{shelf.product.name}}
                 </div>
                 <!--<div class="buttons">-->
-                    <!--<button @click="updateShelf(shelf, shelf.quantity - 1)">-</button>-->
-                    <!--<button @click="updateShelf(shelf, shelf.quantity + 1)">+</button>-->
+                <!--<button @click="updateShelf(shelf, shelf.quantity - 1)">-</button>-->
+                <!--<button @click="updateShelf(shelf, shelf.quantity + 1)">+</button>-->
                 <!--</div>-->
             </div>
 
-            <div id="client-palmar" class="device palmar" draggable="true" @dragstart="dragStart($event)" @dragend="dragEnd($event)">
+            <div id="client-palmar" class="device palmar" draggable="true" @dragstart="dragStart($event)"
+                 @dragend="dragEnd($event)">
                 <label class="palmar-label">{{devices.clientPalmar.username}}'s palmar</label>
                 <div class="display">
                     <div class="notification">
                         <h4 class="palmar-message">Logged in as {{devices.clientPalmar.username}}</h4>
                     </div>
-                    <div class="notification" v-for="notification in devices.clientPalmar.notifications">
-                        <p class="palmar-message">Name: {{notification.name}}</p>
-                        <p class="palmar-message">Price: {{notification.price}}</p>
+
+                    <div v-for="notification in devices.clientPalmar.notifications">
+                        <transition appear appear-active-class="new-notification-animation">
+                            <div class="notification">
+                                <p class="palmar-message">Name: {{notification.name}}</p>
+                                <p class="palmar-message">Price: {{notification.price}}</p>
+                            </div>
+                        </transition>
                     </div>
 
-                    <button class="palmar-gui-button error" @click="sendHelpRequest(devices.clientPalmar)">ask for help</button>
+                    <button class="palmar-gui-button error" @click="sendHelpRequest(devices.clientPalmar)">
+                        ask for help
+                    </button>
                 </div>
                 <div class="home-button"></div>
             </div>

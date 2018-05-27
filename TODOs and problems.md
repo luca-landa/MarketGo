@@ -1,6 +1,5 @@
 # Next TODOs
 * Shelf displays actual products
-  
   * when the phone is dragged on a product, the product lights up
   * the notification has a button to close it
   * the product notification has a dropdown to show full ingredients list
@@ -11,6 +10,8 @@
     a staff member
   * the 'logged in as ' message is not static in the view, but generated as a 
     palmar notification as the object is created
+  * nodejs: if the client already has the notification he is looking for, 
+    it does not send the request
 
   * re-implement shelves restocking from staff-view
       * shelves are visible both via client-view and staff-view
