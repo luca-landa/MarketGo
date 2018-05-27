@@ -48,10 +48,10 @@
             </div>
 
             <div id="client-palmar" class="device palmar" draggable="true" @dragstart="dragStart($event)" @dragend="dragEnd($event)">
-                <label class="palmar-label">{{devices.clientPalmar.name}}'s palmar</label>
+                <label class="palmar-label">{{devices.clientPalmar.username}}'s palmar</label>
                 <div class="display">
                     <div class="notification">
-                        <h4 class="palmar-message">Logged in as {{devices.clientPalmar.name}}</h4>
+                        <h4 class="palmar-message">Logged in as {{devices.clientPalmar.username}}</h4>
                     </div>
                     <div class="notification" v-for="notification in devices.clientPalmar.notifications">
                         <p class="palmar-message">Name: {{notification.name}}</p>

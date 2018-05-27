@@ -1,17 +1,20 @@
 # Next TODOs
 * Shelf displays actual products
-  * products have a button to show their info
-  * clicking the button, the product information are taken from db and shown in an alert
-  * product info is shown in a phone notification, and no more in the alert
-    * the notification has a button to close it
-  * ####skipping here
-  * when the phone is dragged on a product, it shows its information
-    * on 'dragOn' event, the product lights up to show the reaction
-    * product information appears in a notification in the phone
+  
+  * when the phone is dragged on a product, the product lights up
+  * the notification has a button to close it
+  * the product notification has a dropdown to show full ingredients list
+  * the product notification has a better object structure (something like a 
+  'message' attribute)
+
+  * client phone receives a notification when he the helpRequest has been sent to 
+    a staff member
+  * the 'logged in as ' message is not static in the view, but generated as a 
+    palmar notification as the object is created
 
   * re-implement shelves restocking from staff-view
-    * shelves are visible both via client-view and staff-view
-    * in staff-view they show the button '+' to re-stock
+      * shelves are visible both via client-view and staff-view
+      * in staff-view they show the button '+' to re-stock
 
 ### Next steps
 * Shelf shows actual products draggable (in more copies, just one product type for shelf)
