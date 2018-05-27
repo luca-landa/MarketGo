@@ -91,12 +91,17 @@ function getVueComponents() {
                     <h4 v-if="palmar.notifications.length === 0">No notifications to display</h4>
                     <div class="notification" v-for="notification in palmar.notifications">
                         <p class="palmar-message">{{notification.action}} (idx "{{notification.idx}}")</p>
-                        <button class="palmar-gui-button success" @click="app.sendCompletedAction(palmar, notification)">done</button>
+                        <button class="palmar-gui-button success" @click="sendCompletedAction(notification)">done</button>
                     </div>
                 </div>
                 <div class="home-button" @click="alert('not implemented yet')"></div>
-            </div>
-        `},
+            </div>`,
+            methods: {
+                sendCompletedAction(notification) {
+                    app.sendCompletedAction(this.palmar, notification);
+                }
+            }
+        },
         'client-palmar': {
             props: ['palmar'],
             template: `
