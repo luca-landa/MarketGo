@@ -39,7 +39,7 @@
             <div class="device shelf" v-for="shelf in devices.shelves">
                 <label class="device-label">Shelf {{shelf.idx}}</label>
                 <!--<input :value="'Quantity: ' + shelf.quantity" readonly/>-->
-                <div v-for="index in shelf.quantity" class="product" @dragenter="dragEnter($event, shelf.product.idx)">
+                <div v-for="index in shelf.quantity" class="product" @dragenter="dragEnter($event, shelf.product.idx)" @dragleave="dragLeave($event)">
                     {{shelf.product.name}}
                 </div>
                 <!--<div class="buttons">-->

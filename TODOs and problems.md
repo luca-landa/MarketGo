@@ -1,6 +1,10 @@
 # Next TODOs
-* Shelf displays actual products
-  * when the phone is dragged on a product, the product lights up
+* BUG again JSON parse error: when requesting a product information and refreshing the page
+  * JSON.parse does not like the character '\n'
+
+* other fixes required
+  * the GUI object decides how to display the notification (and so it can receive different kinds of 
+    notifications)
   * the product notification has a dropdown to show full ingredients list
 
   * client phone receives a notification when the helpRequest has been sent to 

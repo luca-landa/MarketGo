@@ -68,8 +68,13 @@ function setupPage() {
                 webSocket.send(msg);
             },
             dragEnter(event, productIdx) {
+                event.target.classList.add('dragover');
                 event.preventDefault();
                 this.sendProductInformationRequest(productIdx);
+            },
+            dragLeave(event) {
+                event.target.classList.remove('dragover');
+                event.preventDefault();
             }
         }
     });
