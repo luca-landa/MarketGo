@@ -1,15 +1,10 @@
 # Next TODOs
 * Shelf displays actual products
-  * change the prices on db to have all of them different
   * when the phone is dragged on a product, the product lights up
   * the product notification has a dropdown to show full ingredients list
-  * the product notification has a better object structure (something like a 
-  'message' attribute)
 
-  * client phone receives a notification when he the helpRequest has been sent to 
+  * client phone receives a notification when the helpRequest has been sent to 
     a staff member
-  * the 'logged in as ' message is not static in the view, but generated as a 
-    palmar notification as the object is created
   * nodejs: if the client already has the notification he is looking for, 
     it does not send the request
 

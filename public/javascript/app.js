@@ -119,18 +119,14 @@ function getVueComponents() {
                  @dragend="dragEnd($event)">
                 <label class="palmar-label">{{palmar.username}}'s phone</label>
                 <div class="display">
-                    <div class="notification">
-                        <h4 class="palmar-message">Logged in as {{palmar.username}}</h4>
-                    </div>
-
+                    
                     <div v-for="notification in palmar.notifications">
                         <transition appear appear-active-class="new-notification-animation">
                             <div class="notification">
                                 <p class="palmar-message">
                                     <span class="x-close" @click="removeNotification(notification)">&#10006;</span>   
-                                    Name: {{notification.name}}
+                                    {{notification.message}}
                                 </p>
-                                <p class="palmar-message">Price: {{notification.price}}</p>
                             </div>
                         </transition>
                     </div>
