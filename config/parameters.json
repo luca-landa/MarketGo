@@ -6,8 +6,9 @@
   "web_socket_protocol": "echo-protocol",
   "permitted_file_requests": [
     "/favicon.ico",
-    "/app.js",
-    "/vue.min.js",
+    "/javascript/vue.min.js",
+    "/javascript/draggable.js",
+    "/javascript/app.js",
     "/stylesheets/app.css",
     "/stylesheets/palmar.css",
     "/stylesheets/shelf.css",
@@ -17,6 +18,6 @@
     "/market-go-logo-new-ext2.png"
   ],
   "files_to_preprocess": [
-    "/app.js"
+    "/javascript/app.js"
   ]
 }

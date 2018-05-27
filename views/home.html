@@ -14,8 +14,9 @@
     <link type="text/css" rel="stylesheet" href="/stylesheets/shelf.css"/>
     <link type="text/css" rel="stylesheet" href="/stylesheets/product.css"/>
 
-    <script type="text/javascript" src="/app.js"></script>
-    <script type="text/javascript" src="/vue.min.js"></script>
+    <script type="text/javascript" src="/javascript/vue.min.js"></script>
+    <script type="text/javascript" src="/javascript/draggable.js"></script>
+    <script type="text/javascript" src="/javascript/app.js"></script>
 </head>
 <body>
 
@@ -45,7 +46,7 @@
                     <!--<button @click="updateShelf(shelf, shelf.quantity + 1)">+</button>-->
                 <!--</div>-->
             </div>
-            <div class="device palmar">
+            <div id="client-palmar" class="device palmar">
                 <label class="palmar-label">{{devices.clientPalmar.name}}'s palmar</label>
                 <div class="display">
                     <div class="notification">
@@ -53,7 +54,7 @@
                     </div>
                     <button class="palmar-gui-button error" @click="sendHelpRequest(devices.clientPalmar)">ask for help</button>
                 </div>
-                <div class="home-button" @click="alert('not implemented yet')"></div>
+                <div class="home-button"></div>
             </div>
 
         </div>
@@ -64,7 +65,6 @@
             <palmar class="device palmar" v-for="palmar in devices.staffPalmars" :palmar="palmar"></palmar>
         </div>
     </div>
-
 </div>
 
 <div class="waiting-spinner"></div>

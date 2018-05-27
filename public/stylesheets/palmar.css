@@ -6,6 +6,7 @@
     width: 150px;
     height: 300px;
     background-color: black;
+    position: relative;
 }
 
 .palmar label {
@@ -30,17 +31,9 @@
     height: 22px;
 }
 
-.palmar .home-button:hover {
-    transition: 0.7s;
-    background-color: orange;
-}
-
 .notification {
     /*width: 90%;*/
-    margin-right: 0.25em;
-    margin-left: 0.25em;
-    margin-top: 0.25em;
-    margin-bottom: 0.25em;
+    margin: 0.25em;
     box-sizing: border-box;
     border: 1px solid darkgray;
     border-radius: 10px;
