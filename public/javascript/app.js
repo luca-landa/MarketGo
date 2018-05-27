@@ -57,13 +57,6 @@ function setupPage() {
 
                 webSocket.send(msg);
             },
-            dragStart(event) {
-                event.dataTransfer.setData("text", event.target.id);
-                event.target.classList.add('dragging');
-            },
-            dragEnd(event) {
-                event.target.classList.remove('dragging');
-            },
             dragEnter(event, productIdx) {
                 event.preventDefault();
                 this.sendProductInformationRequest(productIdx);
@@ -103,7 +96,45 @@ function getVueComponents() {
                 </div>
                 <div class="home-button" @click="alert('not implemented yet')"></div>
             </div>
-        `
+        `},
+        'client-palmar': {
+            props: ['palmar'],
+            template: `
+                <div id="client-palmar" class="device palmar" draggable="true" @dragstart="dragStart($event)"
+                 @dragend="dragEnd($event)">
+                <label class="palmar-label">{{palmar.username}}'s phone</label>
+                <div class="display">
+                    <div class="notification">
+                        <h4 class="palmar-message">Logged in as {{palmar.username}}</h4>
+                    </div>
+
+                    <div v-for="notification in palmar.notifications">
+                        <transition appear appear-active-class="new-notification-animation">
+                            <div class="notification">
+                                <p class="palmar-message">Name: {{notification.name}}</p>
+                                <p class="palmar-message">Price: {{notification.price}}</p>
+                            </div>
+                        </transition>
+                    </div>
+
+                    <button class="palmar-gui-button error" @click="sendHelpRequest()">
+                        ask for help
+                    </button>
+                </div>
+                <div class="home-button"></div>
+            </div>`,
+            methods: {
+                sendHelpRequest() {
+                    app.sendHelpRequest(this.palmar);
+                },
+                dragStart(event) {
+                    event.dataTransfer.setData("text", event.target.id);
+                    event.target.classList.add('dragging');
+                },
+                dragEnd(event) {
+                    event.target.classList.remove('dragging');
+                }
+            }
         }
     };
 }

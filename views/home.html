@@ -14,7 +14,8 @@
     <link type="text/css" rel="stylesheet" href="/stylesheets/shelf.css"/>
     <link type="text/css" rel="stylesheet" href="/stylesheets/product.css"/>
 
-    <script type="text/javascript" src="/javascript/vue.min.js"></script>
+    <!--<script type="text/javascript" src="/javascript/vue.min.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <script type="text/javascript" src="/javascript/app.js"></script>
 </head>
 <body>
@@ -47,36 +48,14 @@
                 <!--</div>-->
             </div>
 
-            <div id="client-palmar" class="device palmar" draggable="true" @dragstart="dragStart($event)"
-                 @dragend="dragEnd($event)">
-                <label class="palmar-label">{{devices.clientPalmar.username}}'s palmar</label>
-                <div class="display">
-                    <div class="notification">
-                        <h4 class="palmar-message">Logged in as {{devices.clientPalmar.username}}</h4>
-                    </div>
-
-                    <div v-for="notification in devices.clientPalmar.notifications">
-                        <transition appear appear-active-class="new-notification-animation">
-                            <div class="notification">
-                                <p class="palmar-message">Name: {{notification.name}}</p>
-                                <p class="palmar-message">Price: {{notification.price}}</p>
-                            </div>
-                        </transition>
-                    </div>
-
-                    <button class="palmar-gui-button error" @click="sendHelpRequest(devices.clientPalmar)">
-                        ask for help
-                    </button>
-                </div>
-                <div class="home-button"></div>
-            </div>
+            <client-palmar :palmar="devices.clientPalmar"></client-palmar>
 
         </div>
     </div>
 
     <div id="staff-view" :hidden="visibleTab !== 'staff-view'">
         <div class="devices-group">
-            <palmar class="device palmar" v-for="palmar in devices.staffPalmars" :palmar="palmar"></palmar>
+            <palmar class="device palmar" v-for="palmar in devices.staffPalmars" :palmar="palmar" :key="palmar.idx"></palmar>
         </div>
     </div>
 </div>
