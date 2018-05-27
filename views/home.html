@@ -55,7 +55,8 @@
 
     <div id="staff-view" :hidden="visibleTab !== 'staff-view'">
         <div class="devices-group">
-            <palmar class="device palmar" v-for="palmar in devices.staffPalmars" :palmar="palmar" :key="palmar.idx"></palmar>
+            <palmar class="device palmar" v-for="palmar in devices.staffPalmars" :palmar="palmar"
+                    :key="palmar.idx"></palmar>
         </div>
     </div>
 </div>

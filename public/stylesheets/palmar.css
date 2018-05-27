@@ -90,6 +90,11 @@
     background-color: dodgerblue;
 }
 
+.x-close {
+    color: red;
+    cursor: pointer;
+}
+
 .new-notification-animation {
     animation: fadein 1s linear 1;
     -webkit-animation: fadein 1s linear 1;

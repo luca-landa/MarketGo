@@ -57,6 +57,16 @@ function setupPage() {
 
                 webSocket.send(msg);
             },
+            removeClientPalmarNotification(notification) {
+                let msg = JSON.stringify({
+                    event: 'deviceStatusUpdate',
+                    deviceType: 'clientPalmar',
+                    action: 'removeNotification',
+                    notification: notification
+                });
+
+                webSocket.send(msg);
+            },
             dragEnter(event, productIdx) {
                 event.preventDefault();
                 this.sendProductInformationRequest(productIdx);
@@ -116,7 +126,10 @@ function getVueComponents() {
                     <div v-for="notification in palmar.notifications">
                         <transition appear appear-active-class="new-notification-animation">
                             <div class="notification">
-                                <p class="palmar-message">Name: {{notification.name}}</p>
+                                <p class="palmar-message">
+                                    <span class="x-close" @click="removeNotification(notification)">&#10006;</span>   
+                                    Name: {{notification.name}}
+                                </p>
                                 <p class="palmar-message">Price: {{notification.price}}</p>
                             </div>
                         </transition>
@@ -131,6 +144,9 @@ function getVueComponents() {
             methods: {
                 sendHelpRequest() {
                     app.sendHelpRequest(this.palmar);
+                },
+                removeNotification(notification) {
+                    app.removeClientPalmarNotification(notification);
                 },
                 dragStart(event) {
                     event.dataTransfer.setData("text", event.target.id);

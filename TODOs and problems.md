@@ -1,7 +1,7 @@
 # Next TODOs
 * Shelf displays actual products
+  * change the prices on db to have all of them different
   * when the phone is dragged on a product, the product lights up
-  * the notification has a button to close it
   * the product notification has a dropdown to show full ingredients list
   * the product notification has a better object structure (something like a 
   'message' attribute)
