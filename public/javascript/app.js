@@ -48,6 +48,19 @@ function setupPage() {
                 });
 
                 webSocket.send(msg);
+            },
+            dragStart(event) {
+                event.dataTransfer.setData("text", event.target.id);
+                event.target.classList.add('dragging');
+            },
+            dragEnd(event) {
+                event.target.classList.remove('dragging');
+            },
+            dragEnter(event, productIdx) {
+                console.log('entered2!');
+                event.preventDefault();
+                // app.sendProductInformationRequest();
+                console.log(`drag enter on product with idx ${productIdx}`);
             }
         }
     });

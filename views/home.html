@@ -15,7 +15,6 @@
     <link type="text/css" rel="stylesheet" href="/stylesheets/product.css"/>
 
     <script type="text/javascript" src="/javascript/vue.min.js"></script>
-    <script type="text/javascript" src="/javascript/draggable.js"></script>
     <script type="text/javascript" src="/javascript/app.js"></script>
 </head>
 <body>
@@ -34,11 +33,12 @@
     </div>
 
     <div id="client-view" :hidden="visibleTab !== 'client-view'">
+
         <div class="devices-group">
             <div class="device shelf" v-for="shelf in devices.shelves">
                 <label class="device-label">Shelf {{shelf.idx}}</label>
                 <!--<input :value="'Quantity: ' + shelf.quantity" readonly/>-->
-                <div v-for="index in shelf.quantity" class="product" ondragenter="dragEnter(event)">
+                <div v-for="index in shelf.quantity" class="product" @dragenter="dragEnter($event, shelf.product.idx)">
                     {{shelf.product.name}}
                 </div>
                 <!--<div class="buttons">-->
@@ -46,7 +46,8 @@
                     <!--<button @click="updateShelf(shelf, shelf.quantity + 1)">+</button>-->
                 <!--</div>-->
             </div>
-            <div id="client-palmar" class="device palmar" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)">
+
+            <div id="client-palmar" class="device palmar" draggable="true" @dragstart="dragStart($event)" @dragend="dragEnd($event)">
                 <label class="palmar-label">{{devices.clientPalmar.name}}'s palmar</label>
                 <div class="display">
                     <div class="notification">

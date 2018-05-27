@@ -7,7 +7,6 @@
   "permitted_file_requests": [
     "/favicon.ico",
     "/javascript/vue.min.js",
-    "/javascript/draggable.js",
     "/javascript/app.js",
     "/stylesheets/app.css",
     "/stylesheets/palmar.css",

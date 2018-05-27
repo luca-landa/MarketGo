@@ -9,6 +9,10 @@
     * on 'dragOn' event, the product lights up to show the reaction
     * product information appears in a notification in the phone
 
+  * re-implement shelves restocking from staff-view
+    * shelves are visible both via client-view and staff-view
+    * in staff-view they show the button '+' to re-stock
+
 ### Next steps
 * Shelf shows actual products draggable (in more copies, just one product type for shelf)
 * Client can drag his palmar on a product to display information
