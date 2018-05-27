@@ -53,6 +53,11 @@
                     <div class="notification">
                         <h4 class="palmar-message">Logged in as {{devices.clientPalmar.name}}</h4>
                     </div>
+                    <div class="notification" v-for="notification in devices.clientPalmar.notifications">
+                        <p class="palmar-message">Name: {{notification.name}}</p>
+                        <p class="palmar-message">Price: {{notification.price}}</p>
+                    </div>
+
                     <button class="palmar-gui-button error" @click="sendHelpRequest(devices.clientPalmar)">ask for help</button>
                 </div>
                 <div class="home-button"></div>
