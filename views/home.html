@@ -20,11 +20,11 @@
 </head>
 <body>
 
-<img src="/market-go-logo-new-ext.png" class="main-logo"/>
-
 <div id="app" v-cloak>
 
+    <img src="/market-go-logo-new-ext2.png" class="main-logo"/>
     <div class="tab-selectors">
+
         <button :class="{'tab-link': true, 'active': (visibleTab === 'client-view')}"
                 @click="visibleTab = 'client-view'">Client view
         </button>
@@ -38,7 +38,7 @@
             <div class="device shelf" v-for="shelf in devices.shelves">
                 <label class="device-label">Shelf {{shelf.idx}}</label>
                 <!--<input :value="'Quantity: ' + shelf.quantity" readonly/>-->
-                <div v-for="index in shelf.quantity" class="product">
+                <div v-for="index in shelf.quantity" class="product" ondragenter="dragEnter(event)">
                     {{shelf.product.name}}
                 </div>
                 <!--<div class="buttons">-->
@@ -46,7 +46,7 @@
                     <!--<button @click="updateShelf(shelf, shelf.quantity + 1)">+</button>-->
                 <!--</div>-->
             </div>
-            <div id="client-palmar" class="device palmar">
+            <div id="client-palmar" class="device palmar" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)">
                 <label class="palmar-label">{{devices.clientPalmar.name}}'s palmar</label>
                 <div class="display">
                     <div class="notification">

@@ -4,13 +4,10 @@
   * clicking the button, the product information are taken from db and shown in an alert
   * product info is shown in a phone notification, and no more in the alert
     * the notification has a button to close it
-  * the phone becomes draggable
-    * it is just needed to handle the dragon event for the products
-  * the phone has a scan mode
-  * the phone becomes draggable only in scan mode
+  * ####skipping here
   * when the phone is dragged on a product, it shows its information
     * on 'dragOn' event, the product lights up to show the reaction
-    * the phone asks for its information in the network and displays it
+    * product information appears in a notification in the phone
 
 ### Next steps
 * Shelf shows actual products draggable (in more copies, just one product type for shelf)

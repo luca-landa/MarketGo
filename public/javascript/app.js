@@ -52,8 +52,6 @@ function setupPage() {
         }
     });
 
-    draggable(document.querySelector('#client-palmar'));
-
     document.querySelector('.waiting-spinner').remove();
 }
 

@@ -1,7 +1,8 @@
 .shelf {
-    border: 5px solid #F2635F;
-    border-radius: 5%;
+    border: 5px solid #474849;
+    border-radius: 10px;
     padding: 20px 20px 20px 20px;
+    width: 250px;
 }
 
 .shelf input {

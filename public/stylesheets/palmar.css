@@ -6,7 +6,6 @@
     width: 150px;
     height: 300px;
     background-color: black;
-    position: relative;
 }
 
 .palmar label {
@@ -29,6 +28,10 @@
     margin-right: auto;
     width: 22px;
     height: 22px;
+}
+
+.dragging {
+    background-color: dodgerblue;
 }
 
 .notification {
@@ -62,6 +65,7 @@
 }
 
 .success:hover {
+    transition: 0.6s;
     background-color: #0093D1;
 }
 
@@ -71,5 +75,10 @@
 }
 
 .error:hover {
+    transition: 0.6s;
     background-color: #0093D1;
+}
+
+#client-palmar {
+    cursor: grab;
 }
