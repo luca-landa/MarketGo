@@ -1,4 +1,11 @@
 # Next TODOs
+* on product info displaying, client allergies are checked and the notification has a warning if the 
+  product is not compatible with client preferences
+  * client palmar shows client allergies in his login notification
+  * node-red subflow get client allergies
+  * the allergies are compared with product allergenes, if some match occurres the notification 
+    contains a warning
+  
 * other fixes required
   * the product notification has a dropdown to show full ingredients list
 
