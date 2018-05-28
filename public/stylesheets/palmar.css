@@ -32,7 +32,7 @@
 }
 
 .notification {
-    font-size: 14px;
+    font-size: 15px;
     margin: 0.25em;
     box-sizing: border-box;
     border: 1px solid darkgray;
@@ -112,4 +112,18 @@
         opacity: 1;
         background-color: inherit;
     }
+}
+
+.expand-ingredients-link {
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+}
+
+.expand-ingredients-link:hover {
+    color: red;
+}
+
+.ingredients-list {
+
 }

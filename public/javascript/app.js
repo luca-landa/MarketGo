@@ -146,6 +146,14 @@ function getVueComponents() {
                                     <p class="palmar-message">
                                        Price: {{notification.data.price}}                                    
                                     </p>
+                                    <div class="expand-ingredients-link">
+                                        Expand ingredients
+                                    </div>
+                                    <ul class="ingredients-list" hidden>
+                                        <li>Ingredient 1</li>
+                                        <li>Ingredient 2</li>
+                                        <li>Ingredient 3</li>
+                                    </ul>
                                 </div>
                             </div>
                         </transition>
