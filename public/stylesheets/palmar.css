@@ -43,7 +43,7 @@
 
 .palmar-message {
     padding: 0;
-    margin: 2px;
+    margin: 4px;
 }
 
 .palmar-gui-button {
@@ -124,6 +124,6 @@
     color: red;
 }
 
-.ingredients-list {
-
+.palmar-info-list {
+    margin: 2px;
 }

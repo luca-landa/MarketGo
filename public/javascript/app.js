@@ -128,7 +128,6 @@ function getVueComponents() {
                  @dragend="dragEnd($event)">
                 <label class="palmar-label">{{palmar.username}}'s phone</label>
                 <div class="display">
-                    
                     <div v-for="notification in palmar.notifications">
                         <transition appear appear-active-class="new-notification-animation">
                             <div class="notification">
@@ -139,20 +138,14 @@ function getVueComponents() {
                                     </p>
                                 </div>
                                 <div v-else>
-                                    <p class="palmar-message">
-                                        <span class="x-close" @click="removeNotification(notification)">&#10006;</span>
-                                        Name: {{notification.data.name}}
-                                    </p>
-                                    <p class="palmar-message">
-                                       Price: {{notification.data.price}}                                    
-                                    </p>
-                                    <div class="expand-ingredients-link">
-                                        Expand ingredients
-                                    </div>
-                                    <ul class="ingredients-list" hidden>
-                                        <li>Ingredient 1</li>
-                                        <li>Ingredient 2</li>
-                                        <li>Ingredient 3</li>
+                                    <h4 class="palmar-message"><span class="x-close" @click="removeNotification(notification)">&#10006;</span> Product info</h4>
+                                    <ul class="palmar-info-list">
+                                        <li>Name: {{notification.data.name}}</li>
+                                        <li>Price: {{notification.data.price}}</li>
+                                    </ul>
+                                    <p class="palmar-message">Ingredients:</p>
+                                    <ul class="palmar-info-list">
+                                        <li v-for="ingredient in notification.data.data.ingredients">{{ingredient}}</li>
                                     </ul>
                                 </div>
                             </div>

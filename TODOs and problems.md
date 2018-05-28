@@ -7,8 +7,6 @@
     contains a warning
   
 * other fixes required
-  * the product notification has a dropdown to show full ingredients list
-
   * client phone receives a notification when the helpRequest has been sent to 
     a staff member
 
