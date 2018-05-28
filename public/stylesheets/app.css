@@ -42,6 +42,7 @@ button {
 }
 
 .tab-selectors .tab-link {
+    width: 50%;
     color: inherit;
     background-color: inherit;
     float: left;
