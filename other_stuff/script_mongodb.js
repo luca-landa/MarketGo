@@ -1,4 +1,4 @@
-use; MarketGo;
+// use MarketGo;
 
 db.createUser({
     user: 'node-red',
@@ -9,6 +9,7 @@ db.createUser({
 db.createCollection("shelves");
 db.createCollection("employees");
 db.createCollection("products");
+db.createCollection("clients");
 
 db.shelves.insert([
       {idx: 0, minimumQuantity: 2},
@@ -21,7 +22,6 @@ db.employees.insert([
     {idx: 1, completedActions: []}
 ]);
 
-// allergies to introduce later: lactose intolerance
 db.products.insert([
     {
         idx: 0, name: 'Peanut butter', data: {

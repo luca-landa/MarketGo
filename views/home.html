@@ -40,18 +40,18 @@
                  @dragleave="dragLeave($event)">
                 {{shelf.product.name}}
             </div>
-            <div class="buttons" :hidden="visibleTab !== 'staff-view'">
+            <div class="buttons" v-show="visibleTab === 'staff-view'">
                 <button @click="updateShelf(shelf, shelf.quantity + 1)">+</button>
             </div>
         </div>
     </div>
 
     <div class="devices-group">
-        <div id="client-view" :hidden="visibleTab !== 'client-view'">
+        <div id="client-view" class="v-fade" v-show="visibleTab === 'client-view'">
             <client-palmar :palmar="devices.clientPalmar"></client-palmar>
         </div>
 
-        <div id="staff-view" :hidden="visibleTab !== 'staff-view'">
+        <div id="staff-view" v-show="visibleTab === 'staff-view'">
             <palmar class="device palmar" v-for="palmar in devices.staffPalmars" :palmar="palmar"
                     :key="palmar.idx"></palmar>
         </div>

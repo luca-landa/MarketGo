@@ -56,7 +56,8 @@ function setupPage() {
             sendProductInformationRequest(productIdx) {
                 let msg = JSON.stringify({
                     event: 'productInformationRequest',
-                    idx: productIdx
+                    idx: productIdx,
+                    clientIdx: this.devices.clientPalmar.idx
                 });
 
                 webSocket.send(msg);
