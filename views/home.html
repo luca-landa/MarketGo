@@ -14,15 +14,15 @@
     <link type="text/css" rel="stylesheet" href="/stylesheets/shelf.css"/>
     <link type="text/css" rel="stylesheet" href="/stylesheets/product.css"/>
 
-    <!--<script type="text/javascript" src="/javascript/vue.min.js"></script>-->
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script type="text/javascript" src="/javascript/vue.min.js"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>-->
     <script type="text/javascript" src="/javascript/app.js"></script>
 </head>
 <body>
 
 <div id="app" v-cloak>
 
-    <img src="/market-go-logo-new-ext2.png" class="main-logo"/>
+    <!--<img src="/market-go-logo-new-ext2.png" class="main-logo"/>-->
     <div class="tab-selectors">
 
         <button :class="{'tab-link': true, 'active': (visibleTab === 'client-view')}"
@@ -44,16 +44,20 @@
                 <button @click="updateShelf(shelf, shelf.quantity + 1)">+</button>
             </div>
         </div>
+    </div>
+
+    <div class="devices-group">
         <div id="client-view" :hidden="visibleTab !== 'client-view'">
             <client-palmar :palmar="devices.clientPalmar"></client-palmar>
         </div>
+
         <div id="staff-view" :hidden="visibleTab !== 'staff-view'">
-            <div class="devices-group">
-                <palmar class="device palmar" v-for="palmar in devices.staffPalmars" :palmar="palmar"
-                        :key="palmar.idx"></palmar>
-            </div>
+            <palmar class="device palmar" v-for="palmar in devices.staffPalmars" :palmar="palmar"
+                    :key="palmar.idx"></palmar>
         </div>
     </div>
+
+</div>
 
 </div>
 

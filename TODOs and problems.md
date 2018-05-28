@@ -5,10 +5,6 @@
   * client phone receives a notification when the helpRequest has been sent to 
     a staff member
 
-  * re-implement shelves restocking from staff-view
-      * shelves are visible both via client-view and staff-view
-      * in staff-view they show the button '+' to re-stock
-
 ### Next steps
 * ClientPalmar displays more useful information
   * Phone will ask the network the client allergy information, to compare it with the 

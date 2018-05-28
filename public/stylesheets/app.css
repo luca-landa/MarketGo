@@ -8,13 +8,11 @@ html, body {
 }
 
 html {
-    display: table;
-    margin: auto;
+    margin: 0 auto;
 }
 
 body {
-    display: table-cell;
-    vertical-align: super;
+    margin: 0 auto;
 }
 
 :focus {
@@ -37,7 +35,7 @@ button {
     color: white;
     overflow: hidden;
     border: 1px solid #ccc;
-    width: 1000px;
+    width: 1280px;
     margin-left: auto;
     margin-right: auto;
     background-color: #0093D1;
@@ -63,7 +61,7 @@ button {
 }
 
 .devices-group {
-    margin-top: 20px;
+    margin: 20px;
     text-align: center;
 }
 

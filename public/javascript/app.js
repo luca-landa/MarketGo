@@ -20,7 +20,11 @@ function setupPage() {
         components: getVueComponents(),
         methods: {
             updateShelf(shelf, newQuantity) {
-                if (newQuantity < 0) newQuantity = 0;
+                if (newQuantity < shelf.minQuantity) {
+                    newQuantity = shelf.minQuantity;
+                } else if (newQuantity > shelf.maxQuantity) {
+                    newQuantity = shelf.maxQuantity;
+                }
 
                 let msg = JSON.stringify({
                     event: 'deviceStatusUpdate',
