@@ -1,5 +1,5 @@
 {
-  "debug_mode": false,
+  "debug_mode": true,
   "server_port": 8000,
   "tcp_port": 1337,
   "mqtt_broker_url": "mqtt://localhost:1883",
