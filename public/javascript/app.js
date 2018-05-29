@@ -141,7 +141,7 @@ function getVueComponents() {
                                 <div v-else>
                                     <h4 class="palmar-message"><span class="x-close" @click="removeNotification(notification)">&#10006;</span> Product info</h4>
                                     <ul class="palmar-info-list">
-                                        <li>Name: {{notification.data.name}}</li>
+                                        <li>{{notification.data.name}}</li>
                                         <li>Price: {{notification.data.price}}</li>
                                     </ul>
                                     <p class="palmar-message">Ingredients:</p>
