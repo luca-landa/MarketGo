@@ -144,6 +144,9 @@ function getVueComponents() {
                                         <li>{{notification.data.name}}</li>
                                         <li>Price: {{notification.data.price}}</li>
                                     </ul>
+                                    <div v-for="warning in notification.warnings">
+                                        <p class="palmar-message palmar-warning">{{warning}}</p>
+                                    </div>
                                     <p class="palmar-message">Ingredients:</p>
                                     <ul class="palmar-info-list">
                                         <li v-for="ingredient in notification.data.data.ingredients">{{ingredient}}</li>

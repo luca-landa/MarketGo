@@ -1,37 +1,23 @@
 # Next TODOs
-* moved mqtt client into shelf
-
 * Solution
-  * each device has its own mqttClient and tcpClient, when needed
-  * each device registers to its interested topics and sends mqtt messages itself
-  * when the device needs to be updated on GUI, it emits a node event
-  * nodejs intercepts the event and sends data to the client
   * fix: insert 'product' as an object, with its getDataClone object
   
-* Different TCP servers to handle ProductInformation and ClientAllergies requests?
 * TODO class ClientPalmar has method pushNotification with notification type, and decides itself 
   how to build it
 * on product info displaying, client allergies are checked and the notification has a warning if the 
   product is not compatible with client preferences
   * client palmar shows client allergies in his login notification
-  * node-red subflow get client allergies
-  * the allergies are compared with product allergenes, if some match occurres the notification 
-    contains a warning
   
 * other fixes required
   * client phone receives a notification when the helpRequest has been sent to 
     a staff member
 
 ### Next steps
-* ClientPalmar displays more useful information
-  * Phone will ask the network the client allergy information, to compare it with the 
-    product ingredients and eventually alarm the client
 * Client has a cart, he drags products in it and its virtual cart (displayed in the phone) 
   is updated
   * Cart has RFID scanner that detects automatically inserted products
   * Cart does the same check as the phone, to see client allergies and compare them with 
     product ingredients, and alarms the client on the phone eventually
-* Cart refill method is changed, and only allowed from staff
 * Clients purchases get saved in mongo
 
 

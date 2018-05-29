@@ -127,3 +127,11 @@
 .palmar-info-list {
     margin: 2px;
 }
+
+.palmar-warning {
+    padding: 3px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    background-color: red;
+}

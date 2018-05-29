@@ -27,21 +27,21 @@ db.products.insert([
         idx: 0, name: 'Peanut butter', data: {
             type: 'food',
             ingredients: ['Peanuts', 'Sugar', 'Palm oil', 'Salt'],
-            allergens: ['Peanuts']
+            allergens: ['peanuts']
         }, price: 5
     },
     {
         idx: 1, name: 'Asiago DOP cheese', data: {
             type: 'food',
             ingredients: ['Milk', 'Salt', 'Rennet', 'Milk enzymes'],
-            allergens: ['Lactose']
+            allergens: ['lactose']
         }, price: 10
     },
     {
         idx: 2, name: 'Pizza', data: {
             type: 'food',
             ingredients: ['Flour', 'Yeast', 'Water', 'Salt', 'Oil', 'Mozzarella cheese', 'Tomatoes'],
-            allergens: ['Lactose']
+            allergens: ['lactose']
         }, price: 10
     }
 ]);
@@ -52,7 +52,7 @@ db.clients.insert([
         name: 'Pippo',
         email: 'pippo.marketgo@gmail.com',
         allergies: [
-            'Peanuts'
+            'peanuts'
         ]
     },
     {
@@ -60,7 +60,7 @@ db.clients.insert([
         name: 'Pluto',
         email: 'pluto.marketgo@gmail.com',
         allergies: [
-            'Lactose'
+            'lactose'
         ]
     }
 ]);
