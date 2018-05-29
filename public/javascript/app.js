@@ -138,15 +138,15 @@ function getVueComponents() {
                                         {{notification.data}}
                                     </p>
                                 </div>
-                                <div v-else>
+                                <div v-else-if="notification.type === 'productInformation'">
                                     <h4 class="palmar-message"><span class="x-close" @click="removeNotification(notification)">&#10006;</span> Product info</h4>
+                                    <div v-for="warning in notification.warnings">
+                                        <p class="palmar-message palmar-warning">{{warning}}</p>
+                                    </div>
                                     <ul class="palmar-info-list">
                                         <li>{{notification.data.name}}</li>
                                         <li>Price: {{notification.data.price}}</li>
                                     </ul>
-                                    <div v-for="warning in notification.warnings">
-                                        <p class="palmar-message palmar-warning">{{warning}}</p>
-                                    </div>
                                     <p class="palmar-message">Ingredients:</p>
                                     <ul class="palmar-info-list">
                                         <li v-for="ingredient in notification.data.data.ingredients">{{ingredient}}</li>

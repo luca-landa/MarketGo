@@ -4,9 +4,6 @@
   
 * TODO class ClientPalmar has method pushNotification with notification type, and decides itself 
   how to build it
-* on product info displaying, client allergies are checked and the notification has a warning if the 
-  product is not compatible with client preferences
-  * client palmar shows client allergies in his login notification
   
 * other fixes required
   * client phone receives a notification when the helpRequest has been sent to 
