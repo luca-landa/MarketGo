@@ -43,6 +43,9 @@
             <div class="buttons" v-show="visibleTab === 'staff-view'">
                 <button @click="updateShelf(shelf, shelf.quantity + 1)">+</button>
             </div>
+            <div class="buttons" v-show="visibleTab === 'client-view'">
+                <button @click="updateShelf(shelf, shelf.quantity - 1)">-</button>
+            </div>
         </div>
     </div>
 

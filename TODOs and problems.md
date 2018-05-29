@@ -1,4 +1,16 @@
 # Next TODOs
+* moved mqtt client into shelf
+
+* Solution
+  * each device has its own mqttClient and tcpClient, when needed
+  * each device registers to its interested topics and sends mqtt messages itself
+  * when the device needs to be updated on GUI, it emits a node event
+  * nodejs intercepts the event and sends data to the client
+  * fix: insert 'product' as an object, with its getDataClone object
+  
+* Different TCP servers to handle ProductInformation and ClientAllergies requests?
+* TODO class ClientPalmar has method pushNotification with notification type, and decides itself 
+  how to build it
 * on product info displaying, client allergies are checked and the notification has a warning if the 
   product is not compatible with client preferences
   * client palmar shows client allergies in his login notification
