@@ -12,9 +12,9 @@ db.createCollection("products");
 db.createCollection("clients");
 
 db.shelves.insert([
-      {idx: 0, minimumQuantity: 2},
-      {idx: 1, minimumQuantity: 2},
-      {idx: 2, minimumQuantity: 2}
+    {idx: 0, minimumQuantity: 2},
+    {idx: 1, minimumQuantity: 2},
+    {idx: 2, minimumQuantity: 2}
 ]);
 
 db.employees.insert([
@@ -24,25 +24,37 @@ db.employees.insert([
 
 db.products.insert([
     {
-        idx: 0, name: 'Peanut butter', data: {
+        idx: 0,
+        name: 'Peanut butter',
+        data: {
             type: 'food',
             ingredients: ['Peanuts', 'Sugar', 'Palm oil', 'Salt'],
             allergens: ['peanuts']
-        }, price: 5
+        },
+        price: 5,
+        img: '/images/peanut-butter.png'
     },
     {
-        idx: 1, name: 'Asiago DOP cheese', data: {
+        idx: 1,
+        name: 'Asiago DOP cheese',
+        data: {
             type: 'food',
             ingredients: ['Milk', 'Salt', 'Rennet', 'Milk enzymes'],
             allergens: ['lactose']
-        }, price: 10
+        },
+        price: 10,
+        img: '/images/cheese.png'
     },
     {
-        idx: 2, name: 'Pizza', data: {
+        idx: 2,
+        name: 'Pizza',
+        data: {
             type: 'food',
             ingredients: ['Flour', 'Yeast', 'Water', 'Salt', 'Oil', 'Mozzarella cheese', 'Tomatoes'],
             allergens: ['lactose']
-        }, price: 10
+        },
+        price: 10,
+        img: '/images/pizza.png'
     }
 ]);
 

@@ -13,6 +13,7 @@
     <link type="text/css" rel="stylesheet" href="/stylesheets/palmar.css"/>
     <link type="text/css" rel="stylesheet" href="/stylesheets/shelf.css"/>
     <link type="text/css" rel="stylesheet" href="/stylesheets/product.css"/>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/cart.css"/>
 
     <!--<script type="text/javascript" src="/javascript/vue.min.js"></script>-->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
@@ -22,7 +23,7 @@
 
 <div id="app" v-cloak>
 
-    <!--<img src="/market-go-logo-new-ext2.png" class="main-logo"/>-->
+    <!--<img src="/images/market-go-logo-new-ext2.png" class="main-logo"/>-->
     <div class="tab-selectors">
 
         <button :class="{'tab-link': true, 'active': (visibleTab === 'client-view')}"
@@ -38,7 +39,8 @@
             <label class="device-label">Shelf {{shelf.idx}}</label>
             <div v-for="index in shelf.quantity" class="product" @dragenter="dragEnter($event, shelf.product.idx)"
                  @dragleave="dragLeave($event)">
-                {{shelf.product.name}}
+                <img :src="shelf.product.img"/>
+                <span>{{shelf.product.name}}</span>
             </div>
             <div class="buttons" v-show="visibleTab === 'staff-view'">
                 <button @click="updateShelf(shelf, shelf.quantity + 1)">+</button>
@@ -50,8 +52,10 @@
     </div>
 
     <div class="devices-group">
-        <div id="client-view" class="v-fade" v-show="visibleTab === 'client-view'">
+        <div id="client-view" v-show="visibleTab === 'client-view'">
             <client-palmar :palmar="devices.clientPalmar"></client-palmar>
+            <div class="cart device">
+            </div>
         </div>
 
         <div id="staff-view" v-show="visibleTab === 'staff-view'">

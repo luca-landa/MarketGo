@@ -1,0 +1,7 @@
+.cart {
+    border: 5px solid dimgray;
+    border-top: transparent;
+
+    height: 200px;
+    width: 300px;
+}
