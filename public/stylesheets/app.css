@@ -62,18 +62,18 @@ button {
 }
 
 .devices-group {
+    display: flex;
+    justify-content: center;
     margin: 20px;
     text-align: center;
 }
 
 .device {
-    display: inline-block;
     margin-right: 20px;
     margin-left: 20px;
 }
 
 .device-label {
-    display: block;
     text-align: left;
     font-size: 1.2em;
 }

@@ -77,21 +77,6 @@
     background-color: #0093D1;
 }
 
-#client-palmar {
-    cursor: grab;
-    background-color: darkorange;
-    border-color: black;
-    color: black;
-}
-
-#client-palmar label {
-    color: black;
-}
-
-#client-palmar.dragging {
-    background-color: dodgerblue;
-}
-
 .x-close {
     color: red;
     cursor: pointer;
@@ -135,4 +120,19 @@
     text-align: center;
     color: white;
     background-color: red;
+}
+
+#client-palmar {
+    cursor: grab;
+    background-color: darkorange;
+    border-color: black;
+    color: black;
+}
+
+#client-palmar label {
+    color: black;
+}
+
+#client-palmar.dragging {
+    background-color: dodgerblue;
 }

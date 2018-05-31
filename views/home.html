@@ -38,17 +38,22 @@
         <shelf v-for="shelf in devices.shelves" :shelf="shelf" :visible-tab="visibleTab" :key="shelf.idx"></shelf>
     </div>
 
-    <div class="devices-group">
-        <div id="client-view" v-show="visibleTab === 'client-view'">
+    <div id="client-view" v-show="visibleTab === 'client-view'">
+        <div class="devices-group">
             <client-palmar :palmar="devices.clientPalmar"></client-palmar>
-            <div class="cart device"></div>
+            <div class="cart device">
+                <p>product</p>
+            </div>
         </div>
+    </div>
 
-        <div id="staff-view" v-show="visibleTab === 'staff-view'">
+    <div id="staff-view" v-show="visibleTab === 'staff-view'">
+        <div class="devices-group">
             <palmar class="device palmar" v-for="palmar in devices.staffPalmars" :palmar="palmar"
                     :key="palmar.idx"></palmar>
         </div>
     </div>
+
 
 </div>
 
