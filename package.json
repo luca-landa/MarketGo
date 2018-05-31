@@ -1,6 +1,7 @@
 {
   "name": "iot-exam",
   "version": "0.0.1",
+  "author": "Luca Landa",
   "dependencies": {
     "mqtt": "^2.18.0",
     "preprocess": "^3.1.0",
