@@ -16,6 +16,7 @@ function setupPage() {
         data: {
             devices: devices,
             visibleTab: defaultTab,
+            phoneDragging: false
         },
         components: getVueComponents(),
         methods: {
@@ -161,10 +162,12 @@ function getVueComponents() {
                     app.removeClientPalmarNotification(notification);
                 },
                 dragStart(event) {
+                    app.phoneDragging = true;
                     event.dataTransfer.setData("text", event.target.id);
                     event.target.classList.add('dragging');
                 },
                 dragEnd(event) {
+                    app.phoneDragging = false;
                     event.target.classList.remove('dragging');
                 }
             }
@@ -174,9 +177,10 @@ function getVueComponents() {
             template: `
             <div class="device shelf">
                 <label class="device-label">Shelf {{shelf.idx}}</label>
-                <div v-for="index in shelf.quantity" class="product" @dragenter="dragEnter($event, shelf.product.idx)"
-                     @dragleave="dragLeave($event)">
-                    <img :src="shelf.product.img"/>
+                <div v-for="index in shelf.quantity" class="product" draggable="true" 
+                     @dragstart="productDragStart($event)" @dragend="productDragEnd($event)"
+                     @dragenter="productDragEnter($event, shelf.product.idx)" @dragleave="productDragLeave($event)">
+                    <img :src="shelf.product.img" draggable="false"/>
                     <span>{{shelf.product.name}}</span>
                 </div>
                 <div class="buttons" v-show="visibleTab === 'staff-view'">
@@ -190,14 +194,24 @@ function getVueComponents() {
                 updateShelf(shelf, newQuantity) {
                     app.updateShelf(shelf, newQuantity);
                 },
-                dragEnter(event, productIdx) {
-                    event.target.classList.add('dragover');
-                    event.preventDefault();
-                    app.sendProductInformationRequest(productIdx);
+                productDragEnter(event, productIdx) {
+                    if (app.phoneDragging) {
+                        event.target.classList.add('dragover');
+                        event.preventDefault();
+                        app.sendProductInformationRequest(productIdx);
+                    }
                 },
-                dragLeave(event) {
-                    event.target.classList.remove('dragover');
-                    event.preventDefault();
+                productDragLeave(event) {
+                    if (app.phoneDragging) {
+                        event.target.classList.remove('dragover');
+                        event.preventDefault();
+                    }
+                },
+                productDragStart(event) {
+                    event.dataTransfer.setData("text", event.target.id);
+                },
+                productDragEnd(event) {
+
                 }
             }
         }
