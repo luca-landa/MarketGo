@@ -16,7 +16,8 @@ function setupPage() {
         data: {
             devices: devices,
             visibleTab: defaultTab,
-            phoneDragging: false
+            phoneDragging: false,
+            productDragging: false
         },
         components: getVueComponents(),
         methods: {
@@ -121,6 +122,7 @@ function getVueComponents() {
                  @dragend="dragEnd($event)">
                 <label class="palmar-label">{{palmar.username}}'s phone</label>
                 <div class="display">
+                    <h4 v-if="palmar.notifications.length === 0">No notifications to display</h4>
                     <div v-for="notification in palmar.notifications">
                         <transition appear appear-active-class="new-notification-animation">
                             <div class="notification">
@@ -177,12 +179,14 @@ function getVueComponents() {
             template: `
             <div class="device shelf">
                 <label class="device-label">Shelf {{shelf.idx}}</label>
+                
                 <div v-for="index in shelf.quantity" class="product" draggable="true" 
-                     @dragstart="productDragStart($event)" @dragend="productDragEnd($event)"
-                     @dragenter="productDragEnter($event, shelf.product.idx)" @dragleave="productDragLeave($event)">
+                     @dragstart="dragStart($event)" @dragend="dragEnd()"
+                     @dragenter="dragEnter($event, shelf.product.idx)" @dragleave="dragLeave($event)">
                     <img :src="shelf.product.img" draggable="false"/>
                     <span>{{shelf.product.name}}</span>
                 </div>
+                
                 <div class="buttons" v-show="visibleTab === 'staff-view'">
                     <button @click="updateShelf(shelf, shelf.quantity + 1)">+</button>
                 </div>
@@ -194,28 +198,58 @@ function getVueComponents() {
                 updateShelf(shelf, newQuantity) {
                     app.updateShelf(shelf, newQuantity);
                 },
-                productDragEnter(event, productIdx) {
+                dragEnter(event, productIdx) {
                     if (app.phoneDragging) {
                         event.target.classList.add('dragover');
                         event.preventDefault();
                         app.sendProductInformationRequest(productIdx);
                     }
                 },
-                productDragLeave(event) {
+                dragLeave(event) {
                     if (app.phoneDragging) {
                         event.target.classList.remove('dragover');
                         event.preventDefault();
                     }
                 },
-                productDragStart(event) {
+                dragStart(event) {
+                    app.productDragging = true;
                     event.dataTransfer.setData("text", event.target.id);
                 },
-                productDragEnd(event) {
-
+                dragEnd() {
+                    app.productDragging = false;
+                }
+            }
+        },
+        'cart': {
+            template: `
+                <div class="cart device" @dragenter="dragEnter($event)" 
+                    @dragend="dragEnd($event)" @dragleave="dragEnd($event)" 
+                    @dragover="allowDrop($event)" @drop="productDropped($event)">
+                </div>`,
+            methods: {
+                dragEnter(event) {
+                    if (app.productDragging) {
+                        event.target.classList.add('hovered');
+                    }
+                },
+                dragEnd(event) {
+                    if (app.productDragging) {
+                        event.target.classList.remove('hovered');
+                    }
+                },
+                productDropped(event) {
+                    this.dragEnd(event);
+                },
+                allowDrop(event) {
+                    if (app.productDragging) {
+                        event.preventDefault();
+                    }
                 }
             }
         }
     };
 }
+
+var debug;
 
 window.onload = setupPage;
