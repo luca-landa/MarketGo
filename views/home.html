@@ -35,27 +35,13 @@
     </div>
 
     <div class="devices-group">
-        <div class="device shelf" v-for="shelf in devices.shelves">
-            <label class="device-label">Shelf {{shelf.idx}}</label>
-            <div v-for="index in shelf.quantity" class="product" @dragenter="dragEnter($event, shelf.product.idx)"
-                 @dragleave="dragLeave($event)">
-                <img :src="shelf.product.img"/>
-                <span>{{shelf.product.name}}</span>
-            </div>
-            <div class="buttons" v-show="visibleTab === 'staff-view'">
-                <button @click="updateShelf(shelf, shelf.quantity + 1)">+</button>
-            </div>
-            <div class="buttons" v-show="visibleTab === 'client-view'">
-                <button @click="updateShelf(shelf, shelf.quantity - 1)">-</button>
-            </div>
-        </div>
+        <shelf v-for="shelf in devices.shelves" :shelf="shelf" :visible-tab="visibleTab" :key="shelf.idx"></shelf>
     </div>
 
     <div class="devices-group">
         <div id="client-view" v-show="visibleTab === 'client-view'">
             <client-palmar :palmar="devices.clientPalmar"></client-palmar>
-            <div class="cart device">
-            </div>
+            <div class="cart device"></div>
         </div>
 
         <div id="staff-view" v-show="visibleTab === 'staff-view'">

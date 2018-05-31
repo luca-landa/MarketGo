@@ -71,15 +71,6 @@ function setupPage() {
                 });
 
                 webSocket.send(msg);
-            },
-            dragEnter(event, productIdx) {
-                event.target.classList.add('dragover');
-                event.preventDefault();
-                this.sendProductInformationRequest(productIdx);
-            },
-            dragLeave(event) {
-                event.target.classList.remove('dragover');
-                event.preventDefault();
             }
         }
     });
@@ -175,6 +166,38 @@ function getVueComponents() {
                 },
                 dragEnd(event) {
                     event.target.classList.remove('dragging');
+                }
+            }
+        },
+        'shelf': {
+            props: ['shelf', 'visibleTab'],
+            template: `
+            <div class="device shelf">
+                <label class="device-label">Shelf {{shelf.idx}}</label>
+                <div v-for="index in shelf.quantity" class="product" @dragenter="dragEnter($event, shelf.product.idx)"
+                     @dragleave="dragLeave($event)">
+                    <img :src="shelf.product.img"/>
+                    <span>{{shelf.product.name}}</span>
+                </div>
+                <div class="buttons" v-show="visibleTab === 'staff-view'">
+                    <button @click="updateShelf(shelf, shelf.quantity + 1)">+</button>
+                </div>
+                <div class="buttons" v-show="visibleTab === 'client-view'">
+                    <button @click="updateShelf(shelf, shelf.quantity - 1)">-</button>
+                </div>
+            </div>`,
+            methods: {
+                updateShelf(shelf, newQuantity) {
+                    app.updateShelf(shelf, newQuantity);
+                },
+                dragEnter(event, productIdx) {
+                    event.target.classList.add('dragover');
+                    event.preventDefault();
+                    app.sendProductInformationRequest(productIdx);
+                },
+                dragLeave(event) {
+                    event.target.classList.remove('dragover');
+                    event.preventDefault();
                 }
             }
         }
