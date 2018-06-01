@@ -83,11 +83,11 @@ const vueComponents = {
     'product': {
         props: ['product'],
         template: `
-            <div class="product" draggable="true" 
+            <div class="product" draggable="true"
                  @dragstart="dragStart($event)" @dragend="dragEnd()"
                  @dragenter="dragEnter($event, product.idx)" @dragleave="dragLeave($event)">
                 <img :src="product.img" draggable="false"/>
-                <span>{{product.name}}</span>
+                <!--<span>{{product.name}}</span>-->
             </div>
         `,
         methods: {
@@ -118,15 +118,12 @@ const vueComponents = {
         template: `
             <div class="device shelf">
                 <label class="device-label">Shelf {{shelf.idx}}</label>
+                
                 <product v-for="index in shelf.quantity" :product="shelf.product" :key="index">
                 </product>
                 
-                <div class="buttons" v-show="visibleTab === 'staff-view'">
-                    <button @click="updateShelf(shelf, shelf.quantity + 1)">+</button>
-                </div>
-                <div class="buttons" v-show="visibleTab === 'client-view'">
-                    <button @click="updateShelf(shelf, shelf.quantity - 1)">-</button>
-                </div>
+                <button class="shelf-button" @click="updateShelf(shelf, shelf.quantity + 1)" v-show="visibleTab === 'staff-view'">+</button>
+                <button class="shelf-button" @click="updateShelf(shelf, shelf.quantity - 1)" v-show="visibleTab === 'client-view'">-</button>
             </div>`,
         methods: {
             updateShelf(shelf, newQuantity) {
