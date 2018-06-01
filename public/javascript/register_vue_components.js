@@ -1,3 +1,5 @@
+"use strict";
+
 const vueComponents = {
     'palmar': {
         props: ['palmar'],
@@ -78,30 +80,17 @@ const vueComponents = {
             }
         }
     },
-    'shelf': {
-        props: ['shelf', 'visibleTab'],
+    'product': {
+        props: ['product'],
         template: `
-            <div class="device shelf">
-                <label class="device-label">Shelf {{shelf.idx}}</label>
-                
-                <div v-for="index in shelf.quantity" class="product" draggable="true" 
-                     @dragstart="dragStart($event)" @dragend="dragEnd()"
-                     @dragenter="dragEnter($event, shelf.product.idx)" @dragleave="dragLeave($event)">
-                    <img :src="shelf.product.img" draggable="false"/>
-                    <span>{{shelf.product.name}}</span>
-                </div>
-                
-                <div class="buttons" v-show="visibleTab === 'staff-view'">
-                    <button @click="updateShelf(shelf, shelf.quantity + 1)">+</button>
-                </div>
-                <div class="buttons" v-show="visibleTab === 'client-view'">
-                    <button @click="updateShelf(shelf, shelf.quantity - 1)">-</button>
-                </div>
-            </div>`,
+            <div class="product" draggable="true" 
+                 @dragstart="dragStart($event)" @dragend="dragEnd()"
+                 @dragenter="dragEnter($event, product.idx)" @dragleave="dragLeave($event)">
+                <img :src="product.img" draggable="false"/>
+                <span>{{product.name}}</span>
+            </div>
+        `,
         methods: {
-            updateShelf(shelf, newQuantity) {
-                app.updateShelf(shelf, newQuantity);
-            },
             dragEnter(event, productIdx) {
                 if (app.phoneDragging) {
                     event.target.classList.add('dragover');
@@ -121,6 +110,27 @@ const vueComponents = {
             },
             dragEnd() {
                 app.productDragging = false;
+            }
+        }
+    },
+    'shelf': {
+        props: ['shelf', 'visibleTab'],
+        template: `
+            <div class="device shelf">
+                <label class="device-label">Shelf {{shelf.idx}}</label>
+                <product v-for="index in shelf.quantity" :product="shelf.product" :key="index">
+                </product>
+                
+                <div class="buttons" v-show="visibleTab === 'staff-view'">
+                    <button @click="updateShelf(shelf, shelf.quantity + 1)">+</button>
+                </div>
+                <div class="buttons" v-show="visibleTab === 'client-view'">
+                    <button @click="updateShelf(shelf, shelf.quantity - 1)">-</button>
+                </div>
+            </div>`,
+        methods: {
+            updateShelf(shelf, newQuantity) {
+                app.updateShelf(shelf, newQuantity);
             }
         }
     },
@@ -154,7 +164,7 @@ const vueComponents = {
 };
 
 function registerVueComponents() {
-    for(let name in vueComponents) {
+    for (let name in vueComponents) {
         Vue.component(name, vueComponents[name]);
     }
 }
