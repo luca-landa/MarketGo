@@ -62,6 +62,10 @@ const vueComponents = {
                 </div>
                 <div class="home-button"></div>
             </div>`,
+        updated() {
+            let display = this.$el.querySelector('.display');
+            display.scrollTop = display.scrollHeight;
+        },
         methods: {
             sendHelpRequest() {
                 app.sendHelpRequest(this.palmar);
@@ -117,10 +121,12 @@ const vueComponents = {
         props: ['shelf', 'visibleTab'],
         template: `
             <div class="device shelf">
-                <label class="device-label">Shelf {{shelf.idx}}</label>
+                <label class="device-label">Shelf {{shelf.idx}}: {{shelf.product.name}}</label>
                 
-                <product v-for="index in shelf.quantity" :product="shelf.product" :key="index">
-                </product>
+                <div class="products">
+                    <product v-for="index in shelf.quantity" :product="shelf.product" :key="index">
+                    </product>
+                </div>
                 
                 <button class="shelf-button" @click="updateShelf(shelf, shelf.quantity + 1)" v-show="visibleTab === 'staff-view'">+</button>
                 <button class="shelf-button" @click="updateShelf(shelf, shelf.quantity - 1)" v-show="visibleTab === 'client-view'">-</button>

@@ -39,7 +39,7 @@
 
 .notification {
     font-size: 15px;
-    margin: 0.25em;
+    margin: 0.33em;
     box-sizing: border-box;
     border: 1px solid darkgray;
     border-radius: 10px;
@@ -89,8 +89,8 @@
 }
 
 .new-notification-animation {
-    animation: fadein 1s linear 1;
-    -webkit-animation: fadein 1s linear 1;
+    animation: fadein 1.2s linear 1;
+    -webkit-animation: fadein 1.2s linear 1;
 }
 
 @keyframes fadein {

@@ -1,4 +1,5 @@
 .shelf {
+    position: relative;
     border: 8px solid #474849;
     border-radius: 20px;
     padding: 20px;
@@ -7,7 +8,18 @@
     vertical-align: top;
 }
 
+.products {
+    margin: auto;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
 .shelf-button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%);
     border: 2px solid gray;
     color: black;
     font-size: 20px;
