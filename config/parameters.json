@@ -9,6 +9,7 @@
     "/favicon.ico",
     "/javascript/vue.min.js",
     "/javascript/app.js",
+    "/javascript/register_vue_components.js",
     "/stylesheets/app.css",
     "/stylesheets/palmar.css",
     "/stylesheets/shelf.css",
