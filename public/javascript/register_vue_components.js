@@ -122,12 +122,12 @@ const vueComponents = {
         template: `
             <div class="device shelf">
                 <label class="device-label">Shelf {{shelf.idx}}: {{shelf.product.name}}</label>
-                
+                <hr>
                 <div class="products">
                     <product v-for="index in shelf.quantity" :product="shelf.product" :key="index">
                     </product>
                 </div>
-                
+                <hr class="bottom-hr">
                 <button class="shelf-button" @click="updateShelf(shelf, shelf.quantity + 1)" v-show="visibleTab === 'staff-view'">+</button>
                 <button class="shelf-button" @click="updateShelf(shelf, shelf.quantity - 1)" v-show="visibleTab === 'client-view'">-</button>
             </div>`,

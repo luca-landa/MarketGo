@@ -15,9 +15,13 @@
     flex-wrap: wrap;
 }
 
+.bottom-hr {
+    margin:10px;
+}
+
 .shelf-button {
     position: absolute;
-    bottom: 20px;
+    bottom: 10px;
     left: 50%;
     transform: translate(-50%);
     border: 2px solid gray;

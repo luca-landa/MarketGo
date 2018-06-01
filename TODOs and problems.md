@@ -17,11 +17,6 @@
     product ingredients, and alarms the client on the phone eventually
 * Clients purchases get saved in mongo
 
-
-### GUI improvements
-* the products are squares with just the image logo (and maybe the writing but still squares)S
-  * the shelves that contain them are set with display: flex and flex-wrap
-
 ### Alternatives to next steps
 * Client cart is not a network device
 * Client needs to scan products before putting them in the cart, in order to disable their 
