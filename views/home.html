@@ -42,7 +42,7 @@
     <div id="client-view" v-show="visibleTab === 'client-view'">
         <div class="devices-group">
             <client-palmar :palmar="devices.clientPalmar"></client-palmar>
-            <cart></cart>
+            <cart :cart="devices.cart"></cart>
         </div>
     </div>
 

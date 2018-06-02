@@ -74,6 +74,16 @@ function setupPage() {
                 });
 
                 webSocket.send(msg);
+            },
+            addToCart(product) {
+                let msg = JSON.stringify({
+                    event: 'deviceStatusUpdate',
+                    deviceType: 'cart',
+                    action: 'addProduct',
+                    product: product
+                });
+
+                webSocket.send(msg);
             }
         }
     });

@@ -1,8 +1,9 @@
 # Next TODOs
 * product can be dragged and dropped to box
   * on drop in the cart
-    * cart has now a copy of the product as a child (in the data)
     * cart renders the products in the html
+    * products can be put back in shelf
+    * products cannot be dragged from cart to cart (duplication!)
     * cart sends notification to client that the product has been added
     * cart checks the product compatibility with the client, and if there is an allergy
       the notification contains a warning
