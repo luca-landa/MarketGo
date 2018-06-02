@@ -1,7 +1,6 @@
 # Next TODOs
 * product can be dragged and dropped to box
   * on drop in the cart
-    * products can be put back in shelf
     * cart sends notification to client that the product has been added
     * cart checks the product compatibility with the client, and if there is an allergy
       the notification contains a warning

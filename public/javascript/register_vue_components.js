@@ -137,9 +137,10 @@ const vueComponents = {
                 app.updateShelf(shelf, newQuantity);
             },
             productDropped(event) {
-                let productData = app.productDragged;
-                if (app.productDragging && productData.dragsource === 'cart' && productData.product.idx === this.shelf.product.idx) {
+                let productComponent = app.productDragged;
+                if (app.productDragging && productComponent.dragsource === 'cart' && productComponent.product.idx === this.shelf.product.idx) {
                     this.updateShelf(this.shelf, this.shelf.quantity + 1);
+                    productComponent.$emit('remove-product', productComponent.product);
                 }
             },
             allowDrop(event) {
@@ -157,7 +158,7 @@ const vueComponents = {
         template: `
             <div class="cart device" @dragenter="dragEnter($event)"  @dragend="dragEnd($event)" @dragleave="dragEnd($event)" 
                 @dragover="allowDrop($event)" @drop="productDropped($event)">
-                    <product v-for="product in cart.products" :product="product" :dragsource="'cart'"></product>
+                    <product v-for="product in cart.products" :product="product" :dragsource="'cart'" @remove-product="removeProduct($event)"></product>
             </div>`,
         methods: {
             dragEnter(event) {
@@ -177,6 +178,9 @@ const vueComponents = {
                     productComponent.$emit('decrease-quantity');
                     app.addToCart(productComponent.product);
                 }
+            },
+            removeProduct(product) {
+                app.removeFromCart(product);
             },
             allowDrop(event) {
                 if (app.productDragging) {

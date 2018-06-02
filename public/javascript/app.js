@@ -85,6 +85,16 @@ function setupPage() {
                 });
 
                 webSocket.send(msg);
+            },
+            removeFromCart(product) {
+                let msg = JSON.stringify({
+                    event: 'deviceStatusUpdate',
+                    deviceType: 'cart',
+                    action: 'removeProduct',
+                    product: product
+                });
+
+                webSocket.send(msg);
             }
         }
     });
