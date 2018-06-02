@@ -121,7 +121,7 @@ const vueComponents = {
     'shelf': {
         props: ['shelf', 'visibleTab'],
         template: `
-            <div class="device shelf" @dragleave="dragLeave($event)">
+            <div class="device shelf" @dragover="allowDrop($event)" @drop="productDropped($event)">
                 <label class="device-label">Shelf {{shelf.idx}}: {{shelf.product.name}}</label>
                 <hr>
                 <div class="products">
@@ -131,15 +131,20 @@ const vueComponents = {
                 </div>
                 <hr class="bottom-hr">
                 <button class="shelf-button" @click="updateShelf(shelf, shelf.quantity + 1)" v-show="visibleTab === 'staff-view'">+</button>
-                <button class="shelf-button" @click="updateShelf(shelf, shelf.quantity - 1)" v-show="visibleTab === 'client-view'">-</button>
             </div>`,
         methods: {
             updateShelf(shelf, newQuantity) {
                 app.updateShelf(shelf, newQuantity);
             },
-            dragLeave(event){
-                if(app.productDragging) {
-                    app.productDragFromShelf = true;
+            productDropped(event) {
+                let productData = app.productDragged;
+                if (app.productDragging && productData.dragsource === 'cart' && productData.product.idx === this.shelf.product.idx) {
+                    this.updateShelf(this.shelf, this.shelf.quantity + 1);
+                }
+            },
+            allowDrop(event) {
+                if (app.productDragging) {
+                    event.preventDefault();
                 }
             },
             decreaseQuantity() {
