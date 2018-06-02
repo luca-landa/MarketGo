@@ -8,8 +8,6 @@
     * cart checks the product compatibility with the client, and if there is an allergy
       the notification contains a warning
   
-  
-  
 * other fixes required
   * client phone receives a notification when the helpRequest has been sent to 
     a staff member
