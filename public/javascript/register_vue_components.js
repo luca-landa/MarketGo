@@ -85,7 +85,7 @@ const vueComponents = {
         }
     },
     'product': {
-        props: ['product'],
+        props: ['product', 'dragsource'],
         template: `
             <div class="product" draggable="true"
                  @dragstart="dragStart($event)" @dragend="dragEnd($event)"
@@ -114,17 +114,19 @@ const vueComponents = {
             dragEnd(event) {
                 app.productDragging = false;
                 app.productDragged = null;
+                app.productDragFromShelf = false;
             }
         }
     },
     'shelf': {
         props: ['shelf', 'visibleTab'],
         template: `
-            <div class="device shelf">
+            <div class="device shelf" @dragleave="dragLeave($event)">
                 <label class="device-label">Shelf {{shelf.idx}}: {{shelf.product.name}}</label>
                 <hr>
                 <div class="products">
-                    <product v-for="index in shelf.quantity" :product="shelf.product" @decrease-quantity="decreaseQuantity()" :key="index">
+                    <product v-for="index in shelf.quantity" :product="shelf.product" @decrease-quantity="decreaseQuantity()" 
+                        :dragsource="'shelf'" :key="index">
                     </product>
                 </div>
                 <hr class="bottom-hr">
@@ -134,6 +136,11 @@ const vueComponents = {
         methods: {
             updateShelf(shelf, newQuantity) {
                 app.updateShelf(shelf, newQuantity);
+            },
+            dragLeave(event){
+                if(app.productDragging) {
+                    app.productDragFromShelf = true;
+                }
             },
             decreaseQuantity() {
                 app.updateShelf(this.shelf, this.shelf.quantity - 1);
@@ -145,7 +152,7 @@ const vueComponents = {
         template: `
             <div class="cart device" @dragenter="dragEnter($event)"  @dragend="dragEnd($event)" @dragleave="dragEnd($event)" 
                 @dragover="allowDrop($event)" @drop="productDropped($event)">
-                    <product v-for="product in cart.products" :product="product"></product>
+                    <product v-for="product in cart.products" :product="product" :dragsource="'cart'"></product>
             </div>`,
         methods: {
             dragEnter(event) {
@@ -159,8 +166,8 @@ const vueComponents = {
                 }
             },
             productDropped(event) {
-                if (app.productDragging) {
-                    this.dragEnd(event);
+                this.dragEnd(event);
+                if (app.productDragging && app.productDragged.dragsource === 'shelf') {
                     let productComponent = app.productDragged;
                     productComponent.$emit('decrease-quantity');
                     app.addToCart(productComponent.product);

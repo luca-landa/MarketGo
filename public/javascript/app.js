@@ -19,7 +19,8 @@ function setupPage() {
             devices: devices,
             visibleTab: defaultTab,
             phoneDragging: false,
-            productDragging: false
+            productDragging: false,
+            productDragged: null
         },
         methods: {
             updateShelf(shelf, newQuantity) {
