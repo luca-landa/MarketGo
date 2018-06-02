@@ -88,12 +88,10 @@ const vueComponents = {
         props: ['product'],
         template: `
             <div class="product" draggable="true"
-                 @dragstart="dragStart($event)" @dragend="dragEnd()"
+                 @dragstart="dragStart($event)" @dragend="dragEnd($event)"
                  @dragenter="dragEnter($event, product.idx)" @dragleave="dragLeave($event)">
                 <img :src="product.img" draggable="false"/>
-                <!--<span>{{product.name}}</span>-->
-            </div>
-        `,
+            </div>`,
         methods: {
             dragEnter(event, productIdx) {
                 if (app.phoneDragging) {
@@ -110,10 +108,12 @@ const vueComponents = {
             },
             dragStart(event) {
                 app.productDragging = true;
+                app.productDragged = this;
                 event.dataTransfer.setData("text", event.target.id);
             },
-            dragEnd() {
+            dragEnd(event) {
                 app.productDragging = false;
+                app.productDragged = null;
             }
         }
     },
@@ -124,7 +124,7 @@ const vueComponents = {
                 <label class="device-label">Shelf {{shelf.idx}}: {{shelf.product.name}}</label>
                 <hr>
                 <div class="products">
-                    <product v-for="index in shelf.quantity" :product="shelf.product" :key="index">
+                    <product v-for="index in shelf.quantity" :product="shelf.product" @decrease-quantity="decreaseQuantity()" :key="index">
                     </product>
                 </div>
                 <hr class="bottom-hr">
@@ -134,15 +134,18 @@ const vueComponents = {
         methods: {
             updateShelf(shelf, newQuantity) {
                 app.updateShelf(shelf, newQuantity);
+            },
+            decreaseQuantity() {
+                app.updateShelf(this.shelf, this.shelf.quantity - 1);
             }
         }
     },
     'cart': {
         template: `
-                <div class="cart device" @dragenter="dragEnter($event)" 
-                    @dragend="dragEnd($event)" @dragleave="dragEnd($event)" 
-                    @dragover="allowDrop($event)" @drop="productDropped($event)">
-                </div>`,
+            <div class="cart device" @dragenter="dragEnter($event)" 
+                @dragend="dragEnd($event)" @dragleave="dragEnd($event)" 
+                @dragover="allowDrop($event)" @drop="productDropped($event)">
+            </div>`,
         methods: {
             dragEnter(event) {
                 if (app.productDragging) {
@@ -155,7 +158,10 @@ const vueComponents = {
                 }
             },
             productDropped(event) {
-                this.dragEnd(event);
+                if (app.productDragging) {
+                    this.dragEnd(event);
+                    app.productDragged.$emit('decrease-quantity');
+                }
             },
             allowDrop(event) {
                 if (app.productDragging) {
@@ -165,6 +171,8 @@ const vueComponents = {
         }
     }
 };
+
+var debug;
 
 function registerVueComponents() {
     for (let name in vueComponents) {

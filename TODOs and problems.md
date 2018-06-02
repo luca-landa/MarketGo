@@ -1,9 +1,13 @@
 # Next TODOs
-* Solution
-  * fix: insert 'product' as an object, with its getDataClone object
+* product can be dragged and dropped to box
+  * on drop in the cart
+    * cart has now a copy of the product as a child (in the data)
+    * cart renders the products in the html
+    * cart sends notification to client that the product has been added
+    * cart checks the product compatibility with the client, and if there is an allergy
+      the notification contains a warning
   
-* TODO class ClientPalmar has method pushNotification with notification type, and decides itself 
-  how to build it
+  
   
 * other fixes required
   * client phone receives a notification when the helpRequest has been sent to 
