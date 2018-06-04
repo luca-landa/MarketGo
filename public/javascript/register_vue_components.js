@@ -180,7 +180,8 @@ const vueComponents = {
             },
             productDropped(event) {
                 this.dragEnd(event);
-                if (app.productDragging && app.productDragged.dragsource === 'shelf') {
+                if (app.productDragging && app.productDragged.dragsource === 'shelf' &&
+                    this.cart.products.length < this.cart.maxQuantity) {
                     let productComponent = app.productDragged;
                     productComponent.$emit('decrease-quantity');
                     app.addToCart(productComponent.product);
