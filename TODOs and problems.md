@@ -1,11 +1,4 @@
 # Next TODOs
-* product can be dragged and dropped to box
-  * on drop in the cart
-    * cart sends notification to client that the product has been added
-      * client listens on mqtt to receive notifications (MarketGo/clients/0)
-    * cart checks the product compatibility with the client, and if there is an allergy
-      the notification contains a warning
-
 * client palmar has a button to display the cart total
 * client palmar has a button to pay
   * cart can be queried to get the total
