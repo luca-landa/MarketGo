@@ -155,10 +155,16 @@ const vueComponents = {
     'cart': {
         props: ['cart'],
         template: `
-            <div class="cart device" @dragenter="dragEnter($event)"  @dragend="dragEnd($event)" @dragleave="dragEnd($event)" 
-                @dragover="allowDrop($event)" @drop="productDropped($event)">
+            <div class="cart device">
+                <div class="cart-grip"></div>
+                <div class="cart-before"></div>
+                <div class="cart-dropzone" @dragenter="dragEnter($event)"  @dragend="dragEnd($event)" @dragleave="dragEnd($event)" 
+                    @dragover="allowDrop($event)" @drop="productDropped($event)">
                     <product v-for="product in cart.products" :product="product" :dragsource="'cart'" @remove-product="removeProduct($event)"></product>
-            </div>`,
+                </div>
+                <div class="cart-after"></div>
+            </div>
+            `,
         methods: {
             dragEnter(event) {
                 if (app.productDragging) {

@@ -1,16 +1,50 @@
 .cart {
+    margin-left: 50px;
     position: relative;
     top: 150px;
-    border: 8px solid dimgray;
-    border-radius: 0 0 20px 20px;
+    display: flex;
+}
+
+.cart-grip {
+    position: relative;
+    left: -22px;
+    width: 60px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: black;
+}
+
+.cart-before {
+    position: relative;
+    left: 5px;
+    width: 8px;
+    height: 205px;
+    transform: rotate(-10deg);
+    transform-origin: bottom;
+    background-color: dimgray;
+}
+
+.cart-dropzone {
+    border-bottom: 8px solid dimgray;
     border-top: none;
 
+    left: 80px;
     height: 200px;
     width: 300px;
-
+    justify-content: center;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+
+}
+
+.cart-after {
+    position: relative;
+    right: 5px;
+    width: 8px;
+    height: 205px;
+    transform: rotate(10deg);
+    transform-origin: bottom;
+    background-color: dimgray;
 }
 
 .hovered {
