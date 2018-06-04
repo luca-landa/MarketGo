@@ -51,21 +51,21 @@
 
 .cart-first-wheel {
     position: absolute;
-    top: 220px;
-    left: 90px;
-    height: 40px;
-    width: 40px;
-    border: 9px solid black;
+    top: 215px;
+    left: 92px;
+    height: 36px;
+    width: 36px;
+    border: 12px solid black;
     border-radius: 50%;
 }
 
 .cart-second-wheel {
     position: absolute;
-    top: 220px;
-    right: 30px;
-    height: 40px;
-    width: 40px;
-    border: 9px solid black;
+    top: 215px;
+    right: 25px;
+    height: 36px;
+    width: 36px;
+    border: 12px solid black;
     border-radius: 50%;
 }
 
