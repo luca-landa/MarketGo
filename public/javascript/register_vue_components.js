@@ -163,6 +163,8 @@ const vueComponents = {
                     <product v-for="product in cart.products" :product="product" :dragsource="'cart'" @remove-product="removeProduct($event)"></product>
                 </div>
                 <div class="cart-after"></div>
+                <div class="cart-first-wheel"></div>
+                <div class="cart-second-wheel"></div>
             </div>
             `,
         methods: {

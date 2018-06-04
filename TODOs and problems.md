@@ -1,4 +1,6 @@
 # Next TODOs
+* with a full cart, dragging a product from shelf to cart it disappears anyway
+
 * client palmar has a button to display the cart total
 * client palmar has a button to pay
   * cart can be queried to get the total

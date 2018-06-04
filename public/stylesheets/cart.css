@@ -1,24 +1,25 @@
 .cart {
     margin-left: 50px;
     position: relative;
-    top: 150px;
+    top: 120px;
     display: flex;
 }
 
 .cart-grip {
     position: relative;
     left: -22px;
-    width: 60px;
+    width: 70px;
     height: 20px;
-    border-radius: 10px;
-    background-color: black;
+    border-radius: 10px 3px 3px 10px;
+    background-color: dimgray;
 }
 
 .cart-before {
     position: relative;
     left: 5px;
-    width: 8px;
-    height: 205px;
+    width: 10px;
+    height: 209px;
+    border-radius: 0 0 0 10px;
     transform: rotate(-10deg);
     transform-origin: bottom;
     background-color: dimgray;
@@ -30,7 +31,7 @@
 
     left: 80px;
     height: 200px;
-    width: 300px;
+    width: 265px;
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
@@ -40,11 +41,32 @@
 .cart-after {
     position: relative;
     right: 5px;
-    width: 8px;
-    height: 205px;
+    width: 10px;
+    height: 208px;
+    border-radius: 10px 10px 10px 0;
     transform: rotate(10deg);
     transform-origin: bottom;
     background-color: dimgray;
+}
+
+.cart-first-wheel {
+    position: absolute;
+    top: 220px;
+    left: 90px;
+    height: 40px;
+    width: 40px;
+    border: 9px solid black;
+    border-radius: 50%;
+}
+
+.cart-second-wheel {
+    position: absolute;
+    top: 220px;
+    right: 30px;
+    height: 40px;
+    width: 40px;
+    border: 9px solid black;
+    border-radius: 50%;
 }
 
 .hovered {
