@@ -160,7 +160,7 @@ const vueComponents = {
                 <div class="cart-before"></div>
                 <div class="cart-dropzone" @dragenter="dragEnter($event)"  @dragend="dragEnd($event)" @dragleave="dragEnd($event)" 
                     @dragover="allowDrop($event)" @drop="productDropped($event)">
-                    <product v-for="product in cart.products" :product="product" :dragsource="'cart'" @remove-product="removeProduct($event)"></product>
+                    <product v-for="(product, index) in cart.products" :key="index" :product="product" :dragsource="'cart'" @remove-product="removeProduct($event)"></product>
                 </div>
                 <div class="cart-after"></div>
                 <div class="cart-first-wheel"></div>
