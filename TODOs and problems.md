@@ -1,16 +1,12 @@
 # Next TODOs
 * client palmar has a button to display the cart total
+  * client palmar displays a notification with the cart total and the price
+  * the price must be obtained from node-red via a db query!
 * client palmar has a button to pay
   * cart can be queried to get the total
   * an email is sent to the client with the total
 
-* implement 'split' and 'join' nodes in every flow that sets 'flow' variables
 ### Next steps
-* Client has a cart, he drags products in it and its virtual cart (displayed in the phone) 
-  is updated
-  * Cart has RFID scanner that detects automatically inserted products
-  * Cart does the same check as the phone, to see client allergies and compare them with 
-    product ingredients, and alarms the client on the phone eventually
 * Clients purchases get saved in mongo
 
 ### Alternatives to next steps
