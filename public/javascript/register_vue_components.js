@@ -36,6 +36,7 @@ const vueComponents = {
                                     <p class="palmar-message">
                                         <span class="x-close" @click="removeNotification(notification)">&#10006;</span>   
                                         {{notification.data}}
+                                        <p v-for="warning in notification.warnings" class="palmar-message palmar-warning">{{warning}}</p>
                                     </p>
                                 </div>
                                 <div v-else-if="notification.type === 'productInformation'">

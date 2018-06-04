@@ -2,13 +2,16 @@
 * product can be dragged and dropped to box
   * on drop in the cart
     * cart sends notification to client that the product has been added
+      * client listens on mqtt to receive notifications (MarketGo/clients/0)
     * cart checks the product compatibility with the client, and if there is an allergy
       the notification contains a warning
-  
-* other fixes required
-  * client phone receives a notification when the helpRequest has been sent to 
-    a staff member
 
+* client palmar has a button to display the cart total
+* client palmar has a button to pay
+  * cart can be queried to get the total
+  * an email is sent to the client with the total
+
+* implement 'split' and 'join' nodes in every flow that sets 'flow' variables
 ### Next steps
 * Client has a cart, he drags products in it and its virtual cart (displayed in the phone) 
   is updated
