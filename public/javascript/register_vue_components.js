@@ -41,9 +41,7 @@ const vueComponents = {
                                 </div>
                                 <div v-else-if="notification.type === 'productInformation'">
                                     <h4 class="palmar-message"><span class="x-close" @click="removeNotification(notification)">&#10006;</span> Product info</h4>
-                                    <div v-for="warning in notification.warnings">
-                                        <p class="palmar-message palmar-warning">{{warning}}</p>
-                                    </div>
+                                    <p v-for="warning in notification.warnings" class="palmar-message palmar-warning">{{warning}}</p>
                                     <ul class="palmar-info-list">
                                         <li>{{notification.data.name}}</li>
                                         <li>Price: {{notification.data.price}}</li>
