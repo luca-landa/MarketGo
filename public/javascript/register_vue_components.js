@@ -56,8 +56,12 @@ const vueComponents = {
                     </div>
 
                     <button class="palmar-gui-button error" @click="sendHelpRequest()">
-                        ask for help
+                        Ask for help
                     </button>
+                    <button class="palmar-gui-button success" @click="sendCartTotalRequest()">
+                        Cart summary
+                    </button>
+                    
                 </div>
                 <div class="home-button"></div>
             </div>`,
@@ -68,6 +72,9 @@ const vueComponents = {
         methods: {
             sendHelpRequest() {
                 app.sendHelpRequest(this.palmar);
+            },
+            sendCartTotalRequest() {
+                app.sendCartTotalRequest(this.palmar);
             },
             removeNotification(notification) {
                 app.removeClientPalmarNotification(notification);

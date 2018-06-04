@@ -57,6 +57,14 @@ function setupPage() {
 
                 webSocket.send(msg);
             },
+            sendCartTotalRequest(clientPalmar) {
+                // let msg = JSON.stringify({
+                //     event: 'cartTotalRequest',
+                // });
+                //
+                // webSocket.send(msg);
+                console.log('cart summary button clicked!');
+            },
             sendProductInformationRequest(productIdx) {
                 let msg = JSON.stringify({
                     event: 'productInformationRequest',
