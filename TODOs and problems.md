@@ -1,12 +1,4 @@
 # Next TODOs
-* client palmar has a button to display the cart total
-  * clientPalmar sends a TCP request with 'cartTotalRequest' as event
-  * node-red flow (already done) sends a 'productList' request via TCP to cart 
-  * cart has a TCP server listening for 'productList' requests and responding to them
-  * client palmar displays a notification with the cart total and the price
-  ---- FROM HERE
-  * clientPalmar sends a tcp request when clicking on "show cart" button, and receives back a notification 
-    with the total
 * client palmar has a button to pay
   * cart can be queried to get the total
   * an email is sent to the client with the total

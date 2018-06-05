@@ -32,13 +32,14 @@ const vueComponents = {
                     <div v-for="notification in palmar.notifications">
                         <transition appear appear-active-class="new-notification-animation">
                             <div class="notification">
-                                <div v-if="notification.type === 'message'" >
+                                <div v-if="notification.type === 'message'">
                                     <p class="palmar-message">
                                         <span class="x-close" @click="removeNotification(notification)">&#10006;</span>   
                                         {{notification.data}}
                                         <p v-for="warning in notification.warnings" class="palmar-message palmar-warning">{{warning}}</p>
                                     </p>
                                 </div>
+                                
                                 <div v-else-if="notification.type === 'productInformation'">
                                     <h4 class="palmar-message"><span class="x-close" @click="removeNotification(notification)">&#10006;</span> Product info</h4>
                                     <p v-for="warning in notification.warnings" class="palmar-message palmar-warning">{{warning}}</p>
@@ -49,6 +50,19 @@ const vueComponents = {
                                     <p class="palmar-message">Ingredients:</p>
                                     <ul class="palmar-info-list">
                                         <li v-for="ingredient in notification.data.data.ingredients">{{ingredient}}</li>
+                                    </ul>
+                                </div>
+                                
+                                <div v-else-if="notification.type === 'cartTotal'">
+                                    <h4 class="palmar-message"><span class="x-close" @click="removeNotification(notification)">&#10006;</span> Cart total</h4>
+                                    <ul class="palmar-info-list">
+                                        <li>Total price: {{notification.total}}</li>
+                                    </ul>
+                                    <p class="palmar-message">List:</p>
+                                    <ul class="palmar-info-list">
+                                        <li v-for="product in notification.list">
+                                            {{product.quantity}}x {{product.name}} ({{product.subTotal}})
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
