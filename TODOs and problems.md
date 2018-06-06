@@ -12,10 +12,10 @@
   * ~~products on server have full information but price~~
   * ~~cart sends full product information to clientPalmar~~
   * ~~clientPalmar stores product information in memory when receives the mqtt message from cart~~
+  * ~~cart alerts client via MQTT when a product is removed (without going through node-red)~~
+      * ~~clientPalmar removes product from cart~~
   * clientPalmar makes the TCP query to node-red with already the product idxs
     * node-red skips the cart querying part because it already has idxs!
-  * cart alerts client via MQTT when a product is removed
-      * clientPalmar removes product from cart
 
 * client allergens comparison is done by node-red when asks for information, not by clientPalmar itself!
 
