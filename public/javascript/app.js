@@ -59,7 +59,7 @@ function setupPage() {
             },
             sendCartTotalRequest(clientPalmar) {
                 let msg = JSON.stringify({
-                    event: 'cartTotalRequest',
+                    event: 'cartTotalRequest'
                 });
 
                 webSocket.send(msg);
