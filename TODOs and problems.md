@@ -1,9 +1,5 @@
 # Next TODOs
-* "display cart" optimization
-  * TODO remove the tcp server from the cart
-
 * client allergens comparison is done by node-red when asks for information, not by clientPalmar itself!
-
 
 * client palmar has a button to pay
   * cart can be queried to get the total
