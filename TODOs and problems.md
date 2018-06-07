@@ -1,17 +1,4 @@
 # Next TODOs
-* client palmar has a button to pay
-  * ~~clientPalmar sends a TCP request to node-red with clientIdx and productIdxs~~
-  * node-red receives it and addresses it to a specific subflow
-  * the subflow:
-    * ~~gets client creditCardNumber from db and the price of all products~~
-    * ~~encrypts the data and sends it via TCP to a flow for payment process~~
-    * ~~the flow makes a fake payment request and returns true~~
-    * ~~the subflow fetches client email and sends him the total count~~
-    * ~~the email contains the products list (refactoring time!)~~
-    * ~~the subflow returns a message notification with "success"~~
-    * clientPalmar emits an event (audited by server) that empties the cart
-  * an email is sent to client
-
 * insert "npm install" in provision.sh
 * template html for email with correct node-red objects
 * handle payment not accepted
