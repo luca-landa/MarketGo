@@ -7,6 +7,7 @@
     * ~~encrypts the data and sends it via TCP to a flow for payment process~~
     * ~~the flow makes a fake payment request and returns true~~
     * the subflow fetches client email and sends him the total count
+    * the email contains the products list (refactoring time!)
     * the subflow returns a message notification with "success"
     * clientPalmar emits an event (audited by server) that empties the cart
   * an email is sent to client
