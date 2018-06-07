@@ -1,9 +1,4 @@
 # Next TODOs
-* client allergens comparison is done by node-red when asks for information, not by clientPalmar itself!
-  * the node-red flow is set up to receive the clientIdx
-  * the GetProductInformation subflow returns productData and a notification object with a random warning
-  * the server ignores the notification, the client pushes it as it is
-
 * client palmar has a button to pay
   * clientPalmar sends a TCP request to node-red with its productIdxs
   * an email is sent to client
