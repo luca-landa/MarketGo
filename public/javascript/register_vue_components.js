@@ -33,11 +33,18 @@ const vueComponents = {
                         <transition appear appear-active-class="new-notification-animation">
                             <div class="notification">
                                 <div v-if="notification.type === 'message'">
-                                    <p class="palmar-message">
-                                        <span class="x-close" @click="removeNotification(notification)">&#10006;</span>   
-                                        {{notification.data}}
+                                    <div v-if="notification.title">
+                                        <h4 class="palmar-message"><span class="x-close" @click="removeNotification(notification)">&#10006;</span> {{notification.title}}</h4>                                    
+                                        <p class="palmar-message">{{notification.data}}</p>
                                         <p v-for="warning in notification.warnings" class="palmar-message palmar-warning">{{warning}}</p>
-                                    </p>
+                                    </div>
+                                    <div v-else>
+                                        <p class="palmar-message">
+                                            <span class="x-close" @click="removeNotification(notification)">&#10006;</span>   
+                                            {{notification.data}}
+                                            <p v-for="warning in notification.warnings" class="palmar-message palmar-warning">{{warning}}</p>
+                                        </p>
+                                    </div>
                                 </div>
                                 
                                 <div v-else-if="notification.type === 'productInformation'">

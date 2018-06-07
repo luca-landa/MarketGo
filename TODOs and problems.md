@@ -8,11 +8,12 @@
     * ~~the flow makes a fake payment request and returns true~~
     * ~~the subflow fetches client email and sends him the total count~~
     * ~~the email contains the products list (refactoring time!)~~
-    * the subflow returns a message notification with "success"
+    * ~~the subflow returns a message notification with "success"~~
     * clientPalmar emits an event (audited by server) that empties the cart
   * an email is sent to client
 
 * insert "npm install" in provision.sh
+* template html for email with correct node-red objects
 * handle payment not accepted
 * make payment acceptance random
 * encrypt payment data from client to node-red
