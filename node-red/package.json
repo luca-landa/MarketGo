@@ -4,7 +4,6 @@
   "version": "0.0.1",
   "dependencies": {
     "node-red-contrib-crypto-js-mod": "~0.1.1",
-    "node-red-contrib-email-out": "~0.1.1",
     "node-red-contrib-mongodb2": "~0.5.6"
   }
 }
