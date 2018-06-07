@@ -1,6 +1,9 @@
 # Next TODOs
-* handle payment not accepted
 * make payment acceptance random
+  * make accepted = Math.random() >= 0.5
+  * on "ClientPaymentRequest" handle the not accepted case
+    * send a client a correct notify
+    * send an email with the error?
 * staff actions are stored correctly
 * client purchases are stored correctly
 * nodejs has a GUI to show graphs 
