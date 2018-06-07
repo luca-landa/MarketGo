@@ -13,7 +13,6 @@
   * an email is sent to client
 
 * insert "npm install" in provision.sh
-* block "pay" button on clientPalmar with empty cart
 * handle payment not accepted
 * make payment acceptance random
 * encrypt payment data from client to node-red
