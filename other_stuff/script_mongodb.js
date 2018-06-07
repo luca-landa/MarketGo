@@ -76,3 +76,7 @@ db.clients.insert([
         ]
     }
 ]);
+
+//dati email
+//pippo.marketgo@gmail.com
+//password: MarketGo1
