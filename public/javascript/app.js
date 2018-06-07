@@ -73,6 +73,14 @@ function setupPage() {
 
                 webSocket.send(msg);
             },
+            sendPaymentRequest(clientPalmar) {
+                let msg = JSON.stringify({
+                    event: 'paymentRequest',
+                    clientIdx: this.devices.clientPalmar.idx
+                });
+
+                webSocket.send(msg);
+            },
             removeClientPalmarNotification(notification) {
                 let msg = JSON.stringify({
                     event: 'deviceStatusUpdate',

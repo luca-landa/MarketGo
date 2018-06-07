@@ -461,8 +461,8 @@
     }
    }
   },
-  "node-red-contrib-crypto-js": {
-   "name": "node-red-contrib-crypto-js",
+  "node-red-contrib-crypto-js-mod": {
+   "name": "node-red-contrib-crypto-js-mod",
    "version": "0.1.1",
    "local": true,
    "nodes": {
@@ -473,8 +473,8 @@
      ],
      "enabled": true,
      "local": true,
-     "module": "node-red-contrib-crypto-js",
-     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-contrib-crypto-js/cryptojs/encrypt.js"
+     "module": "node-red-contrib-crypto-js-mod",
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-contrib-crypto-js-mod/cryptojs/encrypt.js"
     },
     "decrypt": {
      "name": "decrypt",
@@ -483,8 +483,8 @@
      ],
      "enabled": true,
      "local": true,
-     "module": "node-red-contrib-crypto-js",
-     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-contrib-crypto-js/cryptojs/decrypt.js"
+     "module": "node-red-contrib-crypto-js-mod",
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-contrib-crypto-js-mod/cryptojs/decrypt.js"
     },
     "hmac": {
      "name": "hmac",
@@ -493,8 +493,8 @@
      ],
      "enabled": true,
      "local": true,
-     "module": "node-red-contrib-crypto-js",
-     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-contrib-crypto-js/cryptojs/hmac.js"
+     "module": "node-red-contrib-crypto-js-mod",
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-contrib-crypto-js-mod/cryptojs/hmac.js"
     },
     "digest": {
      "name": "digest",
@@ -503,8 +503,8 @@
      ],
      "enabled": true,
      "local": true,
-     "module": "node-red-contrib-crypto-js",
-     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-contrib-crypto-js/cryptojs/digest.js"
+     "module": "node-red-contrib-crypto-js-mod",
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-contrib-crypto-js-mod/cryptojs/digest.js"
     },
     "encode": {
      "name": "encode",
@@ -513,8 +513,8 @@
      ],
      "enabled": true,
      "local": true,
-     "module": "node-red-contrib-crypto-js",
-     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-contrib-crypto-js/cryptojs/encode.js"
+     "module": "node-red-contrib-crypto-js-mod",
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-contrib-crypto-js-mod/cryptojs/encode.js"
     },
     "decode": {
      "name": "decode",
@@ -523,8 +523,8 @@
      ],
      "enabled": true,
      "local": true,
-     "module": "node-red-contrib-crypto-js",
-     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-contrib-crypto-js/cryptojs/decode.js"
+     "module": "node-red-contrib-crypto-js-mod",
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-contrib-crypto-js-mod/cryptojs/decode.js"
     }
    }
   }

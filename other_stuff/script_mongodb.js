@@ -82,3 +82,6 @@ db.clients.insert([
 //dati email
 //pippo.marketgo@gmail.com
 //password: MarketGo1
+
+//chiave AES per carrello cliente
+//bhaHswvPJHd6mFp+QDdXXg3pgjO+YlyJabEP1+1cHeU=

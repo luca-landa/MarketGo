@@ -56,7 +56,9 @@
     padding: 0.2em 0.3em 0.2em 0.3em;
     border-radius: 10px;
     border: 1px solid black;
-    margin: 5px;
+    display: block;
+    margin: 7px auto 7px auto;
+
 }
 
 .palmar-label {
@@ -68,19 +70,20 @@
     color: white;
 }
 
-.success:hover {
-    transition: 0.6s;
-    background-color: #0093D1;
-}
-
 .error {
     background-color: #F2635F;
     color: black;
 }
 
-.error:hover {
-    transition: 0.6s;
+.pay {
     background-color: #0093D1;
+    color: white;
+}
+
+.palmar-gui-button:hover {
+    transition: 0.1s;
+    background-color: white;
+    color: black
 }
 
 .x-close {

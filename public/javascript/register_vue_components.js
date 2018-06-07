@@ -75,6 +75,9 @@ const vueComponents = {
                     <button class="palmar-gui-button success" @click="sendCartTotalRequest()">
                         Cart summary
                     </button>
+                    <button class="palmar-gui-button pay" @click="sendPaymentRequest()">
+                        Pay
+                    </button>
                     
                 </div>
                 <div class="home-button"></div>
@@ -89,6 +92,9 @@ const vueComponents = {
             },
             sendCartTotalRequest() {
                 app.sendCartTotalRequest(this.palmar);
+            },
+            sendPaymentRequest() {
+                app.sendPaymentRequest(this.palmar);
             },
             removeNotification(notification) {
                 app.removeClientPalmarNotification(notification);
