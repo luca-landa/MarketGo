@@ -1,9 +1,6 @@
 # Next TODOs
-* insert "npm install" in provision.sh
-* template html for email with correct node-red objects
 * handle payment not accepted
 * make payment acceptance random
-* encrypt payment data from client to node-red
 * staff actions are stored correctly
 * client purchases are stored correctly
 * nodejs has a GUI to show graphs 

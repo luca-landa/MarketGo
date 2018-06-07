@@ -527,6 +527,23 @@
      "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-contrib-crypto-js-mod/cryptojs/decode.js"
     }
    }
+  },
+  "node-red-contrib-email-out": {
+   "name": "node-red-contrib-email-out",
+   "version": "0.1.1",
+   "local": true,
+   "nodes": {
+    "email": {
+     "name": "email",
+     "types": [
+      "e-mail out"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-email-out",
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-contrib-email-out/email-out.js"
+    }
+   }
   }
  },
  "_credentialSecret": "c87235cafff1e7f5f101525f3370f00744152e8996400da0f81d46e5cb81dbc8",
