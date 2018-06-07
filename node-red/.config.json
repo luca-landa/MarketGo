@@ -460,6 +460,73 @@
      "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-contrib-mongodb2/mongodb2/mongodb2.js"
     }
    }
+  },
+  "node-red-contrib-crypto-js": {
+   "name": "node-red-contrib-crypto-js",
+   "version": "0.1.1",
+   "local": true,
+   "nodes": {
+    "encrypt": {
+     "name": "encrypt",
+     "types": [
+      "encrypt"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-crypto-js",
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-contrib-crypto-js/cryptojs/encrypt.js"
+    },
+    "decrypt": {
+     "name": "decrypt",
+     "types": [
+      "decrypt"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-crypto-js",
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-contrib-crypto-js/cryptojs/decrypt.js"
+    },
+    "hmac": {
+     "name": "hmac",
+     "types": [
+      "hmac"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-crypto-js",
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-contrib-crypto-js/cryptojs/hmac.js"
+    },
+    "digest": {
+     "name": "digest",
+     "types": [
+      "digest"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-crypto-js",
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-contrib-crypto-js/cryptojs/digest.js"
+    },
+    "encode": {
+     "name": "encode",
+     "types": [
+      "encode"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-crypto-js",
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-contrib-crypto-js/cryptojs/encode.js"
+    },
+    "decode": {
+     "name": "decode",
+     "types": [
+      "decode"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-crypto-js",
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-contrib-crypto-js/cryptojs/decode.js"
+    }
+   }
   }
  },
  "_credentialSecret": "c87235cafff1e7f5f101525f3370f00744152e8996400da0f81d46e5cb81dbc8",

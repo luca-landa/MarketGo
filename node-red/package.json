@@ -3,6 +3,7 @@
   "description": "A Node-RED Project",
   "version": "0.0.1",
   "dependencies": {
+    "node-red-contrib-crypto-js": "~0.1.1",
     "node-red-contrib-mongodb2": "~0.5.6"
   }
 }

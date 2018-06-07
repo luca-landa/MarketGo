@@ -65,7 +65,8 @@ db.clients.insert([
         email: 'pippo.marketgo@gmail.com',
         allergies: [
             'peanuts'
-        ]
+        ],
+        creditCardNumber: '123456'
     },
     {
         idx: 1,
@@ -73,7 +74,8 @@ db.clients.insert([
         email: 'pluto.marketgo@gmail.com',
         allergies: [
             'lactose'
-        ]
+        ],
+        creditCardNumber: '654321'
     }
 ]);
 
