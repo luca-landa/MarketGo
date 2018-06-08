@@ -1,5 +1,6 @@
 # Next TODOs
 * fix mongodb find requests including the "requested fields" as second argument
+  * fix "ShelfStatusUpdate" flow!
 
 * make payment acceptance random
   * make accepted = Math.random() >= 0.5
