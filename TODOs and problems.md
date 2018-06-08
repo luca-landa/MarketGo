@@ -1,4 +1,6 @@
 # Next TODOs
+* fix mongodb find requests including the "requested fields" as second argument
+
 * make payment acceptance random
   * make accepted = Math.random() >= 0.5
   * on "ClientPaymentRequest" handle the not accepted case
