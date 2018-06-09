@@ -1,11 +1,21 @@
 # Next TODOs
+* decide data to monitor
+  * how many times a product is purchased
+  * which staff members completes more actions
+  * how many times a shelf becomes empty
+  * how many times clients ask for help
+
 * staff actions are stored correctly
 * client purchases are stored correctly
-* nodejs has a GUI to show graphs 
+* nodejs has a GUI to show graphs
   * with staff actions completed
   * client purchases or products purchases
 
 * clientPalmar gets client information from db, 'Pippo' is still hardcoded as device name
+
+* refactoring
+  * subflow GetProductInformation does not check allergies
+  * another subflow gets product information and performs the check
 
 ### Next steps
 * Clients purchases get saved in mongo
