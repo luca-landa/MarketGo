@@ -9,7 +9,7 @@ const vueComponents = {
                 <div class="display">
                     <h4 v-if="palmar.notifications.length === 0">No notifications to display</h4>
                     <div class="notification" v-for="notification in palmar.notifications">
-                        <p class="palmar-message">{{notification.action}} (idx "{{notification.idx}}")</p>
+                        <p class="palmar-message">{{notification.message}}</p>
                         <button class="palmar-gui-button success" @click="sendCompletedAction(notification)">done</button>
                     </div>
                 </div>
