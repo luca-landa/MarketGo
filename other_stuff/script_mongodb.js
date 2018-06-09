@@ -83,15 +83,27 @@ db.clients.insert([
 db.purchases.insert([
     {
         "clientIdx": 0,
-        "date": ISODate("2018-06-09T14:33:14.430Z"),
+        "date": ISODate("2018-06-09"),
         "total": 5,
-        "list": [{"idx": "0", "quantity": 3}]
+        "list": [{"idx": "0", "quantity": 10}, {"idx": "1", "quantity": 20}, {"idx": "2", "quantity": 4}]
     },
     {
         "clientIdx": 0,
-        "date": ISODate("2018-06-09T14:33:49.996Z"),
+        "date": ISODate("2018-06-08"),
         "total": 30,
-        "list": [{"idx": "1", "quantity": 8}, {"idx": "2", "quantity": 5}]
+        "list": [{"idx": "0", "quantity": 15}, {"idx": "1", "quantity": 5}, {"idx": "2", "quantity": 20}]
+    },
+    {
+        "clientIdx": 0,
+        "date": ISODate("2018-06-07"),
+        "total": 30,
+        "list": [{"idx": "0", "quantity": 8}, {"idx": "1", "quantity": 14}, {"idx": "2", "quantity": 12}]
+    },
+    {
+        "clientIdx": 0,
+        "date": ISODate("2018-06-06"),
+        "total": 30,
+        "list": [{"idx": "0", "quantity": 3}, {"idx": "1", "quantity": 6}, {"idx": "2", "quantity": 8}]
     }
 ]);
 
