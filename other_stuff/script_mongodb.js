@@ -85,15 +85,14 @@ db.purchases.insert([
         "clientIdx": 0,
         "date": ISODate("2018-06-09T14:33:14.430Z"),
         "total": 5,
-        "list": [{"idx": "0", "quantity": 1}]
+        "list": [{"idx": "0", "quantity": 3}]
     },
     {
         "clientIdx": 0,
         "date": ISODate("2018-06-09T14:33:49.996Z"),
         "total": 30,
-        "list": [{"idx": "1", "quantity": 2}, {"idx": "2", "quantity": 1}]
+        "list": [{"idx": "1", "quantity": 8}, {"idx": "2", "quantity": 5}]
     }
-
 ]);
 
 //dati email

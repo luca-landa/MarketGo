@@ -7,7 +7,11 @@
     * ~~the dashboard bars display 'help_client' and 'restock'~~
   * product purchases over days
     * ~~client purchases are stored correctly in db~~
-    * chart shows for each product the number of purchases for each day over the last week  
+    * ~~chart shows for each product the number of purchases for each day over the last week~~
+    * today is the 6th and last day of the week (for js Date at least), verify that over the other days it goes well anyway
+    * insert many purchases to draw a decent graph (with number of purchases > 10 for each product)
+    * insert a legend to map the lines colors to the product idxs
+    * display a graph for the sales made today?
 
 * clientPalmar gets client information from db, 'Pippo' is still hardcoded as device name
 
