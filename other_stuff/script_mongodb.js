@@ -80,6 +80,22 @@ db.clients.insert([
     }
 ]);
 
+db.purchases.insert([
+    {
+        "clientIdx": 0,
+        "date": ISODate("2018-06-09T14:33:14.430Z"),
+        "total": 5,
+        "list": [{"idx": "0", "quantity": 1}]
+    },
+    {
+        "clientIdx": 0,
+        "date": ISODate("2018-06-09T14:33:49.996Z"),
+        "total": 30,
+        "list": [{"idx": "1", "quantity": 2}, {"idx": "2", "quantity": 1}]
+    }
+
+]);
+
 //dati email
 //pippo.marketgo@gmail.com
 //password: MarketGo1
