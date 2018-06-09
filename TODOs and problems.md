@@ -1,16 +1,14 @@
 # Next TODOs
-* decide data to monitor
-  * total count of staff actions completed
-    * divided by "clients helped" and "shelf restocked" ?
-  * how many times a product is purchased over days
 
-* staff actions are stored correctly
-  * they have a type in ["client help", "shelf restock"]
-  * they have a date param with { day: "gg/mm/yyyy", timestamp: full_timestamp }
-* client purchases are stored correctly
-* nodejs has a GUI to show graphs
-  * with staff actions completed
-  * client purchases or products purchases
+* node-red dashboard graphs
+  * ~~shelves status~~
+  * ~~staff actions completed (total count)~~
+    * divide by type "help_client" and "restock"
+  * product purchases over days
+    * store client purchases
+  * client experience ratings
+    * when client payment goes well, node-red sends him a notification for rating the experience
+    * on notification confirm, the rating is saved in mongo
 
 * clientPalmar gets client information from db, 'Pippo' is still hardcoded as device name
 
@@ -19,19 +17,11 @@
   * another subflow gets product information and performs the check
   * mqtt routes: why "MarketGo/staff/action/new" and "MarketGo/clients/0/productAdded" ?
 
-### Next steps
-* Clients purchases get saved in mongo
-
 ### Alternatives to next steps
 * Client cart is not a network device
 * Client needs to scan products before putting them in the cart, in order to disable their 
   chip
 * Client scans RFID to exit, and alarm is launched if he still has products in its cart
-
-### New ideas to evaluate
-  * when the customer receives help, he can rate the employee help with 1 to 5 stars
-  * when the customer leaves the store, he can rate his experience in it with 1 to 5 
-    stars and a text field for suggestions 
 
 ### Problems to solve
 * when restocking a shelf, from quantity "0" to "1", the "restock" event is generated
