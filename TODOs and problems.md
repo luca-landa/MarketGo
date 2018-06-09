@@ -7,7 +7,7 @@
     * ~~the dashboard bars display 'help_client' and 'restock'~~
   * product purchases over days
     * ~~client purchases are stored correctly in db~~
-    * ...
+    * chart shows for each product the number of purchases for each day over the last week  
 
 * clientPalmar gets client information from db, 'Pippo' is still hardcoded as device name
 
