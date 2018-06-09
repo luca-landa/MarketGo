@@ -3,12 +3,9 @@
 * node-red dashboard graphs
   * ~~shelves status~~
   * ~~staff actions completed (total count)~~
-    * divide by type "help_client" and "restock"
+    * ~~divide by type "help_client" and "restock"~~
   * product purchases over days
     * store client purchases
-  * client experience ratings
-    * when client payment goes well, node-red sends him a notification for rating the experience
-    * on notification confirm, the rating is saved in mongo
 
 * clientPalmar gets client information from db, 'Pippo' is still hardcoded as device name
 
@@ -16,6 +13,12 @@
   * subflow GetProductInformation does not check allergies
   * another subflow gets product information and performs the check
   * mqtt routes: why "MarketGo/staff/action/new" and "MarketGo/clients/0/productAdded" ?
+
+# Next steps
+* client experience ratings
+    * when client payment goes well, node-red sends him a notification for rating the experience
+    * on notification confirm, the rating is saved in mongo ("ratings" collection, records have date, value and clientIdx)
+    * dashboard shows average client rating as a number
 
 ### Alternatives to next steps
 * Client cart is not a network device
