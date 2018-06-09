@@ -1,11 +1,12 @@
 # Next TODOs
 * decide data to monitor
-  * which staff members completes more actions
-  * how many times a product is purchased
-  * how many times a shelf becomes empty
-  * how many times clients ask for help
+  * total count of staff actions completed
+    * divided by "clients helped" and "shelf restocked" ?
+  * how many times a product is purchased over days
 
 * staff actions are stored correctly
+  * they have a type in ["client help", "shelf restock"]
+  * they have a date param with { day: "gg/mm/yyyy", timestamp: full_timestamp }
 * client purchases are stored correctly
 * nodejs has a GUI to show graphs
   * with staff actions completed
