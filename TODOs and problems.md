@@ -1,7 +1,7 @@
 # Next TODOs
 * decide data to monitor
-  * how many times a product is purchased
   * which staff members completes more actions
+  * how many times a product is purchased
   * how many times a shelf becomes empty
   * how many times clients ask for help
 
@@ -16,6 +16,7 @@
 * refactoring
   * subflow GetProductInformation does not check allergies
   * another subflow gets product information and performs the check
+  * mqtt routes: why "MarketGo/staff/action/new" and "MarketGo/clients/0/productAdded" ?
 
 ### Next steps
 * Clients purchases get saved in mongo
