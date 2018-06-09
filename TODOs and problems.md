@@ -4,6 +4,7 @@
   * ~~shelves status~~
   * ~~staff actions completed (total count)~~
     * ~~divide by type "help_client" and "restock"~~
+    * ~~the dashboard bars display 'help_client' and 'restock'~~
   * product purchases over days
     * store client purchases
 
