@@ -6,7 +6,9 @@
     * ~~divide by type "help_client" and "restock"~~
     * ~~the dashboard bars display 'help_client' and 'restock'~~
   * product purchases over days
-    * store client purchases
+    * client purchases are stored correctly in db
+      * "purchases" collection with [clientIdx, total, list, date]
+      * ...
 
 * clientPalmar gets client information from db, 'Pippo' is still hardcoded as device name
 
