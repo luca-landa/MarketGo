@@ -8,14 +8,16 @@
 
 # Next steps
 * client experience ratings
-    * on purchase success, node-red sends a notification to client with type "ratingRequest"
-    * when the client receives the notification "ratingRequest" puts it in the array of notifications
-    * the GUI displays the notification with a message "Rate your experience in MarketGo" with a slider with a value in [1,5]
+    * ~~on purchase success, node-red sends a notification to client with type "ratingRequest"~~
+    * ~~when the client receives the notification "ratingRequest" puts it in the array of notifications~~
+    * ~~the GUI displays the notification with a message "Rate your experience in MarketGo" with an input number in~~
     * the notification has a "send" button
     * on "send" click, clientPalmar sends a mqtt message to node-red with clientIdx and rating
     * node-red receives the rating, adds the data and saves it rating in a collection "ratings"
     * dashboard displays the average rating with a number
-    * node-red notifies the dashboard when a rating is added 
+    * node-red notifies the dashboard when a rating is added
+    * the input number in the notification becomes a slider or a star rating system
+    * re-enable email sending on "ClientPayment" subflow
 
 ### Problems to solve
 * when restocking a shelf, from quantity "0" to "1", the "restock" event is generated
