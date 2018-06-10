@@ -2,9 +2,8 @@
 * clientPalmar gets client information from db, 'Pippo' is still hardcoded as device name
 
 * refactoring
-  * subflow GetProductInformation does not check allergies
-  * another subflow gets product information and performs the check
-  * mqtt routes: why "MarketGo/staff/action/new" and "MarketGo/clients/0/productAdded" ?
+  * make subflow GetProductInformation not checking allergies
+    * another subflow gets product information and performs the check
 
 ### Problems to solve
 * when restocking a shelf, from quantity "0" to "1", the "restock" event is generated
