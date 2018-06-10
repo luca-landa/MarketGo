@@ -1,8 +1,5 @@
 # Next TODOs
-* refactoring
-  * ~~make subflow GetProductInformation not checking allergies~~
-    * ~~another subflow gets product information and performs the check~~
-  * subflow ClientProductInformationRequest creates the notification and the clientPalmar inserts it as it is
+* remove TcpClient log for unregistered response idxs
 
 * clientPalmar gets client information from db, 'Pippo' is still hardcoded as device name
 
