@@ -21,13 +21,57 @@ const vueComponents = {
             }
         }
     },
+    'star-rating': {
+        props: {
+            'name': String,
+            'value': null,
+            'id': String,
+            'disabled': Boolean,
+            'required': Boolean
+        },
+        template: `<div class="star-rating palmar-message">
+            <label class="star-rating__star" v-for="rating in ratings"
+                :class="{\'is-selected\': ((value >= rating) && value != null), \'is-disabled\': disabled}"
+                v-on:click="set(rating)" v-on:mouseover="star_over(rating)" v-on:mouseout="star_out">
+        
+            <input class="star-rating star-rating__checkbox" type="radio" :value="rating" :name="name"
+                v-model="value" :disabled="disabled">★</label>
+                
+            <button class="palmar-gui-button warning" @click="sendRating()"">Send</button>
+            </div>`,
+        data: function () {
+            return {
+                temp_value: null,
+                ratings: [1, 2, 3, 4, 5]
+            };
+        },
+        methods: {
+            sendRating() {
+                this.$emit('send-rating', this.value);
+            },
+            star_over(index) {
+                if (!this.disabled) {
+                    this.temp_value = this.value;
+                    return this.value = index;
+                }
+            },
+            star_out() {
+                if (!this.disabled) {
+                    return this.value = this.temp_value;
+                }
+            },
+            set(value) {
+                if (!this.disabled) {
+                    this.temp_value = value;
+                    return this.value = value;
+                }
+            }
+        }
+    },
     'client-palmar': {
         props: {
             palmar: {
                 type: Object
-            },
-            rating: {
-                default: 3
             }
         },
         template: `
@@ -83,8 +127,7 @@ const vueComponents = {
                                 <div v-else-if="notification.type=== 'ratingRequest'">
                                     <h4 class="palmar-message">{{notification.title}}</h4>
                                     <p class="palmar-message">{{notification.data}}</p>
-                                    <input class="rating" type="number" min="1" max="5" :value="rating" placeholder="Rate from 1 to 5" @change="rating = $event.target.value">
-                                    <button class="palmar-gui-button success" @click="sendRating()"">Send</button>
+                                    <star-rating value="3" @send-rating="sendRating($event)"></star-rating>
                                 </div>
                             </div>
                         </transition>
@@ -117,8 +160,8 @@ const vueComponents = {
             sendPaymentRequest() {
                 app.sendPaymentRequest(this.palmar);
             },
-            sendRating() {
-                app.sendRating(this.palmar, this.rating);
+            sendRating(value) {
+                app.sendRating(this.palmar, value);
             },
             removeNotification(notification) {
                 app.removeClientPalmarNotification(notification);
