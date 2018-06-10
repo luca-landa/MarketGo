@@ -146,3 +146,7 @@
 #client-palmar.dragging {
     background-color: dodgerblue;
 }
+
+.rating {
+    width: 90%;
+}

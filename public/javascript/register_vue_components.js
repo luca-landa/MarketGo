@@ -76,7 +76,7 @@ const vueComponents = {
                                 <div v-else-if="notification.type=== 'ratingRequest'">
                                     <h4 class="palmar-message">{{notification.title}}</h4>
                                     <p class="palmar-message">{{notification.data}}</p>
-                                    <input type="number" min="1" max="5" value="3" placeholder="Rate from 1 to 5">
+                                    <input class="rating" type="number" min="1" max="5" value="3" placeholder="Rate from 1 to 5">
                                 </div>
                             </div>
                         </transition>
