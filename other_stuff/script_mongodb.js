@@ -11,6 +11,7 @@ db.createCollection("employees");
 db.createCollection("products");
 db.createCollection("clients");
 db.createCollection("purchases");
+db.createCollection("ratings");
 
 db.shelves.insert([
     {idx: 0, minimumQuantity: 2},

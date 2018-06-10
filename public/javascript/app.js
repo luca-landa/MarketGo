@@ -76,7 +76,16 @@ function setupPage() {
             sendPaymentRequest(clientPalmar) {
                 let msg = JSON.stringify({
                     event: 'paymentRequest',
-                    clientIdx: this.devices.clientPalmar.idx
+                    clientIdx: clientPalmar.idx
+                });
+
+                webSocket.send(msg);
+            },
+            sendRating(clientPalmar, rating) {
+                let msg = JSON.stringify({
+                    event: 'ratingGiven',
+                    clientIdx: clientPalmar.idx,
+                    data: rating
                 });
 
                 webSocket.send(msg);

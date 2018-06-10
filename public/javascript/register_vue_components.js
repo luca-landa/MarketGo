@@ -22,7 +22,14 @@ const vueComponents = {
         }
     },
     'client-palmar': {
-        props: ['palmar'],
+        props: {
+            palmar: {
+                type: Object
+            },
+            rating: {
+                default: 3
+            }
+        },
         template: `
                 <div id="client-palmar" class="device palmar" draggable="true" @dragstart="dragStart($event)"
                  @dragend="dragEnd($event)">
@@ -76,7 +83,8 @@ const vueComponents = {
                                 <div v-else-if="notification.type=== 'ratingRequest'">
                                     <h4 class="palmar-message">{{notification.title}}</h4>
                                     <p class="palmar-message">{{notification.data}}</p>
-                                    <input class="rating" type="number" min="1" max="5" value="3" placeholder="Rate from 1 to 5">
+                                    <input class="rating" type="number" min="1" max="5" :value="rating" placeholder="Rate from 1 to 5" @change="rating = $event.target.value">
+                                    <button class="palmar-gui-button success" @click="sendRating()"">Send</button>
                                 </div>
                             </div>
                         </transition>
@@ -108,6 +116,9 @@ const vueComponents = {
             },
             sendPaymentRequest() {
                 app.sendPaymentRequest(this.palmar);
+            },
+            sendRating() {
+                app.sendRating(this.palmar, this.rating);
             },
             removeNotification(notification) {
                 app.removeClientPalmarNotification(notification);
