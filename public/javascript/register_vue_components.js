@@ -30,9 +30,8 @@ const vueComponents = {
             'required': Boolean
         },
         template: `<div class="star-rating palmar-message">
-            <label class="star-rating__star" v-for="rating in ratings"
-                :class="{\'is-selected\': ((value >= rating) && value != null), \'is-disabled\': disabled}"
-                v-on:click="set(rating)" v-on:mouseover="star_over(rating)" v-on:mouseout="star_out">
+            <label class="star-rating__star" v-for="rating in ratings" :class="{'is-selected': ((value >= rating) && value != null), 'is-disabled': disabled}"
+                @click="set(rating)" @mouseover="star_over(rating)" @mouseout="star_out">
         
             <input class="star-rating star-rating__checkbox" type="radio" :value="rating" :name="name"
                 v-model="value" :disabled="disabled">★</label>
