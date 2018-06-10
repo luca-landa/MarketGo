@@ -17,7 +17,7 @@
     * ~~dashboard displays the average rating with a number~~
     * ~~node-red notifies the dashboard when a rating is added~~
     * the input number in the notification becomes a slider or a star rating system
-    * prettify the avg rating gauge?
+    * ~~prettify the avg rating gauge? (single color) or set shelves gauges as type "level"~~
     * re-enable email sending on "ClientPayment" subflow
 
 ### Problems to solve
