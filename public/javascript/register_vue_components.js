@@ -37,7 +37,7 @@ const vueComponents = {
             <input class="star-rating star-rating__checkbox" type="radio" :value="rating" :name="name"
                 v-model="value" :disabled="disabled">★</label>
                 
-            <button class="palmar-gui-button warning" @click="sendRating()"">Send</button>
+            <button id="send-star-rating" class="palmar-gui-button warning" @click="sendRating()"">Send</button>
             </div>`,
         data: function () {
             return {

@@ -3,10 +3,9 @@
 
 * clientPalmar gets client information from db, 'Pippo' is still hardcoded as device name
 
-* 'ratingRequest' notification css: decrease margin between elements and remove word "Please"
-  * and set title "Rating request" or similar
-
 * disable "debug" in configuration.json
+
+* beautify star-rating component template code
 
 # Before submission
 * insert product purchases with dates in the 7 days before the day exam

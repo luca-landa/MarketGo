@@ -185,3 +185,7 @@
 .star-rating__star.is-disabled:hover {
     cursor: default;
 }
+
+button#send-star-rating {
+    margin: 0 auto;
+}
