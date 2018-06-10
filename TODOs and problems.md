@@ -14,9 +14,10 @@
     * ~~the notification has a "send" button~~
     * ~~on "send" click, clientPalmar sends a mqtt message to node-red with clientIdx and rating~~
     * ~~node-red receives the rating, adds the date and saves it rating in a collection "ratings"~~
-    * dashboard displays the average rating with a number
+    * ~~dashboard displays the average rating with a number~~
     * node-red notifies the dashboard when a rating is added
     * the input number in the notification becomes a slider or a star rating system
+    * prettify the avg rating gauge?
     * re-enable email sending on "ClientPayment" subflow
 
 ### Problems to solve
