@@ -2,7 +2,6 @@
 * clientPalmar gets client information from db, 'Pippo' is still hardcoded as device name
 * "delete notifications" button on clientPalmar
   * deletes all notification but the ratingRequest one
-* delay between "completed purchase" notification and "ratingRequest" notification
 * production version for Vue
 * "pay" and "cart summary" keys not visible when the "ratingRequest" notification is present
 
