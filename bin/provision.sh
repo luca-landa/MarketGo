@@ -5,3 +5,4 @@ sudo npm cache clean -f
 sudo npm install -g n
 sudo n 10.2.1
 
+sudo npm install -g abbrev
