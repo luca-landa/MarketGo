@@ -22,7 +22,7 @@
     background-color: blue;
 }
 
-@media screen and (min-height: 900px) {
+@media screen and (min-height: 830px) {
     .product {
         width: 64px;
         height: 64px;
