@@ -38,7 +38,7 @@
 }
 
 .notification {
-    font-size: 15px;
+    font-size: 14px;
     margin: 0.33em;
     box-sizing: border-box;
     border: 1px solid darkgray;
@@ -130,7 +130,7 @@
 
 .palmar-warning {
     padding: 3px;
-    font-size: 15px;
+    font-size: 14px;
     border-radius: 20px;
     text-align: center;
     color: white;
