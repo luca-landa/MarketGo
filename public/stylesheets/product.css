@@ -21,3 +21,11 @@
     transition: 0.1s;
     background-color: blue;
 }
+
+@media screen and (min-height: 900px) {
+    .product {
+        width: 64px;
+        height: 64px;
+        margin: 5px;
+    }
+}

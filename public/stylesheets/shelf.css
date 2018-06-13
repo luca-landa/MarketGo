@@ -15,7 +15,7 @@
 }
 
 .bottom-hr {
-    margin:6px;
+    margin: 6px;
 }
 
 .shelf-button {
@@ -27,10 +27,22 @@
     color: black;
     font-size: 20px;
     border-radius: 25px;
-    width: 50px;
-    background-color:  #0093D1;
+    width: 30%;
+    background-color: #0093D1;
 }
 
 .shelf-button:hover {
     background-color: #F2635F;
+}
+
+@media screen and (min-height: 900px) {
+    .shelf {
+        width: 250px;
+        height: 235px;
+    }
+
+    .shelf-button {
+        bottom: 6px;
+
+    }
 }

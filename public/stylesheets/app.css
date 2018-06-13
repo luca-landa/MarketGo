@@ -69,7 +69,6 @@ button {
     color: white;
 }
 
-
 .devices-group {
     display: flex;
     justify-content: flex-start;
@@ -91,7 +90,7 @@ button {
 }
 
 .device {
-    margin: 8px 20px 15px;
+    margin: 8px 20px 5px;
 }
 
 .device-label {
@@ -114,5 +113,20 @@ button {
 @keyframes spinner {
     to {
         transform: rotate(360deg);
+    }
+}
+
+@media screen and (min-height: 900px) {
+    .shelves-group {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .app-container {
+        display: inherit;
+    }
+
+    .device {
+        margin: 16px;
     }
 }

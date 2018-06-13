@@ -58,7 +58,6 @@
     border: 1px solid black;
     display: block;
     margin: 7px auto 7px auto;
-
 }
 
 .palmar-label {
@@ -166,6 +165,7 @@
     padding: 0;
     border: 0;
 }
+
 .star-rating__star {
     display: inline-block;
     padding: 3px;
@@ -175,9 +175,11 @@
     color: #ababab;
     transition: color 0.2s ease-out;
 }
+
 .star-rating__star:hover {
     cursor: pointer;
 }
+
 .star-rating__star.is-selected {
     color: #ffd700 !important;
 }
@@ -188,4 +190,15 @@
 
 button#send-star-rating {
     margin: 0 auto;
+}
+
+@media screen and (min-height: 900px) {
+    .palmar {
+        width: 190px;
+        height: 380px;
+    }
+
+    .notification {
+        font-size: 15px;
+    }
 }
