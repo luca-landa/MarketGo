@@ -35,7 +35,7 @@
     background-color: #F2635F;
 }
 
-@media screen and (min-height: 830px) {
+@media screen and (min-height: 800px) {
     .shelf {
         width: 250px;
         height: 235px;

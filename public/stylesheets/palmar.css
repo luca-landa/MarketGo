@@ -192,7 +192,7 @@ button#send-star-rating {
     margin: 0 auto;
 }
 
-@media screen and (min-height: 830px) {
+@media screen and (min-height: 800px) {
     .palmar {
         width: 190px;
         height: 380px;
