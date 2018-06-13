@@ -1,6 +1,3 @@
-# Next TODOs
-* clientPalmar gets client information from db, 'Pippo' is still hardcoded as device name
-
 # Before submission
 * production version for Vue
 * remove TcpClient log for unregistered response idxs
