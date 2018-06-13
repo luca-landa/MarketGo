@@ -2,10 +2,9 @@
     position: relative;
     border: 8px solid #474849;
     border-radius: 20px;
-    padding: 20px;
-    width: 250px;
-    height: 240px;
-    vertical-align: top;
+    padding: 13px;
+    width: 200px;
+    height: 200px;
 }
 
 .products {
@@ -16,19 +15,19 @@
 }
 
 .bottom-hr {
-    margin:10px;
+    margin:6px;
 }
 
 .shelf-button {
     position: absolute;
-    bottom: 10px;
+    bottom: 3px;
     left: 50%;
     transform: translate(-50%);
     border: 2px solid gray;
     color: black;
     font-size: 20px;
     border-radius: 25px;
-    width: 30%;
+    width: 50px;
     background-color:  #0093D1;
 }
 

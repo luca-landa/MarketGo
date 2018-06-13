@@ -1,13 +1,12 @@
 .cart {
-    margin-left: 50px;
+    margin-top: 30px;
     position: relative;
-    top: 120px;
     display: flex;
 }
 
 .cart-grip {
     position: relative;
-    left: -22px;
+    left: -15px;
     width: 70px;
     height: 20px;
     border-radius: 10px 3px 3px 10px;
@@ -18,7 +17,7 @@
     position: relative;
     left: 5px;
     width: 10px;
-    height: 209px;
+    height: 169px;
     border-radius: 0 0 0 10px;
     transform: rotate(-10deg);
     transform-origin: bottom;
@@ -30,8 +29,8 @@
     border-top: none;
 
     left: 80px;
-    height: 200px;
-    width: 265px;
+    height: 160px;
+    width: 220px;
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
@@ -42,7 +41,7 @@
     position: relative;
     right: 5px;
     width: 10px;
-    height: 208px;
+    height: 168px;
     border-radius: 10px 10px 10px 0;
     transform: rotate(10deg);
     transform-origin: bottom;
@@ -51,7 +50,7 @@
 
 .cart-first-wheel {
     position: absolute;
-    top: 215px;
+    top: 175px;
     left: 92px;
     height: 36px;
     width: 36px;
@@ -61,7 +60,7 @@
 
 .cart-second-wheel {
     position: absolute;
-    top: 215px;
+    top: 175px;
     right: 25px;
     height: 36px;
     width: 36px;

@@ -33,24 +33,25 @@
         </button>
     </div>
 
-    <div class="devices-group">
-        <shelf v-for="shelf in devices.shelves" :shelf="shelf" :visible-tab="visibleTab" :key="shelf.idx"></shelf>
-    </div>
+    <div class="app-container">
+        <div class="devices-group shelves-group">
+            <shelf v-for="shelf in devices.shelves" :shelf="shelf" :visible-tab="visibleTab" :key="shelf.idx"></shelf>
+        </div>
 
-    <div id="client-view" v-show="visibleTab === 'client-view'">
-        <div class="devices-group">
-            <client-palmar :palmar="devices.clientPalmar"></client-palmar>
-            <cart :cart="devices.cart"></cart>
+        <div id="client-view" v-show="visibleTab === 'client-view'">
+            <div class="devices-group user-group">
+                <client-palmar :palmar="devices.clientPalmar"></client-palmar>
+                <cart :cart="devices.cart"></cart>
+            </div>
+        </div>
+
+        <div id="staff-view" v-show="visibleTab === 'staff-view'">
+            <div class="devices-group user-group">
+                <palmar class="device palmar" v-for="palmar in devices.staffPalmars" :palmar="palmar"
+                        :key="palmar.idx"></palmar>
+            </div>
         </div>
     </div>
-
-    <div id="staff-view" v-show="visibleTab === 'staff-view'">
-        <div class="devices-group">
-            <palmar class="device palmar" v-for="palmar in devices.staffPalmars" :palmar="palmar"
-                    :key="palmar.idx"></palmar>
-        </div>
-    </div>
-
 
 </div>
 

@@ -214,7 +214,7 @@ const vueComponents = {
         props: ['shelf', 'visibleTab'],
         template: `
             <div class="device shelf" @dragover="allowDrop($event)" @drop="productDropped($event)">
-                <label class="device-label">Shelf {{shelf.idx}}: {{shelf.product.name}}</label>
+                <label class="device-label">Shelf {{shelf.idx}}</label>
                 <hr>
                 <div class="products">
                     <product v-for="index in shelf.quantity" :product="shelf.product" @decrease-quantity="decreaseQuantity()" 
