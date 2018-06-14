@@ -167,7 +167,9 @@ const vueComponents = {
             },
             dragStart(event) {
                 app.phoneDragging = true;
-                event.dataTransfer.setData("text", event.target.id);
+                if(isFirefox) {
+                    event.dataTransfer.setData("text", event.target.id);
+                }
                 event.target.classList.add('dragging');
             },
             dragEnd(event) {
@@ -201,10 +203,9 @@ const vueComponents = {
             dragStart(event) {
                 app.productDragging = true;
                 app.productDragged = this;
-                event.dataTransfer.setData("text", event.target.id);
-                let img = new Image(50, 50);
-                img.src = this.product.img;
-                event.dataTransfer.setDragImage(img, 50, 50);
+                if(isFirefox) {
+                    event.dataTransfer.setData("text", event.target.id);
+                }
             },
             dragEnd(event) {
                 app.productDragging = false;

@@ -5,6 +5,8 @@ let app;
 
 const defaultTab = 'client-view';
 
+const isFirefox = navigator.userAgent.toLowerCase().includes('firefox');
+
 function setupPage() {
     webSocketConfig = JSON.parse('<!-- @echo webSocketConfig -->');
     devices = JSON.parse('<!-- @echo devices -->');

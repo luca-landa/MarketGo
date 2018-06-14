@@ -58,6 +58,7 @@ button {
     padding: 8px;
     font-size: 23px;
     transition: 0.4s;
+    -webkit-transform: translateZ(0);
 }
 
 .tab-selectors .tab-link:hover {
