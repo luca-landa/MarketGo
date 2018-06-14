@@ -202,6 +202,9 @@ const vueComponents = {
                 app.productDragging = true;
                 app.productDragged = this;
                 event.dataTransfer.setData("text", event.target.id);
+                let img = new Image(50, 50);
+                img.src = this.product.img;
+                event.dataTransfer.setDragImage(img, 50, 50);
             },
             dragEnd(event) {
                 app.productDragging = false;
