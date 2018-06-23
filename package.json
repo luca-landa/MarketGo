@@ -5,6 +5,7 @@
   "dependencies": {
     "mqtt": "^2.18.0",
     "preprocess": "^3.1.0",
-    "websocket": "latest"
+    "websocket": "latest",
+    "node-rsa": "latest"
   }
 }

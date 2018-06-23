@@ -14,6 +14,8 @@
  * limitations under the License.
  **/
 
+const NodeRSA = new require('node-rsa');
+
 // The `https` setting requires the `fs` module. Uncomment the following
 // to make it available:
 //var fs = require("fs");
@@ -203,6 +205,16 @@ module.exports = {
     //    context.global.os
 
     functionGlobalContext: {
+        verifySign(key, signature, signatureFormat = 'base64') {
+            const SIGN_VERIFICATION_STRING = 'signatureVerified';
+
+            try {
+                let publicKey = new NodeRSA(key, 'public');
+                return publicKey.verify(SIGN_VERIFICATION_STRING, signature, 'utf8', signatureFormat);
+            } catch (error) {
+                return false;
+            }
+        }
         // os:require('os'),
         // octalbonescript:require('octalbonescript'),
         // jfive:require("johnny-five"),

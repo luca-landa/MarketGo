@@ -68,7 +68,11 @@ db.clients.insert([
         allergies: [
             'peanuts'
         ],
-        creditCardNumber: '123456'
+        creditCardNumber: '123456',
+        publicKey: 'MIGeMA0GCSqGSIb3DQEBAQUAA4GMADCBiAKBgHw69Qdomr+rgUSKIOvlmAXEAsPK\n' +
+            'oUUV8ek/JFPAk+h4dUSEZIfnRu0MvFtDupM9s/eAveaR2DLJ+LAaqZRGL7PbMjQe\n' +
+            '1sJNUd3hgcjF46MijDdfD/MhE/4xmeVMj4B69lNrkNfx6mjxXz92GG02K8yx8hWt\n' +
+            'pxqkgkTi8xhAb5gzAgMBAAE='
     },
     {
         idx: 1,
@@ -77,7 +81,11 @@ db.clients.insert([
         allergies: [
             'lactose'
         ],
-        creditCardNumber: '654321'
+        creditCardNumber: '654321',
+        publicKey: 'MIGeMA0GCSqGSIb3DQEBAQUAA4GMADCBiAKBgHplYLW3Fll19I9PKHqgB8ikIlnK\n' +
+        'jUjZ7DwC4v9ngPr/FCIKVcNsdcGcETUnfQ5ZMniaCFzQ5UzdSUaZ7HcDO0R5VD/C\n' +
+        'cosn1PV0Go1WfPhKAuH+aF+v/MRnYrcKe8LdfzoUtTkGIvt57ChPVihXSQ0Vaph0\n' +
+        '/eMR1T5pZ5ezVqoxAgMBAAE='
     }
 ]);
 
