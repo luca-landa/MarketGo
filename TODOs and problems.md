@@ -1,4 +1,15 @@
 # Next TODOs
+* "script_mongodb.js"
+** handle case of "day - prevDays < 0"
+** ~~drop database or all collections before insertions~~
+** insert ratings
+** insert completed actions in staff employees records
+** ~~insert more purchases records to cover the full week~~
+** log errors
+** ~~rename script~~
+** ~~insert script on server startup~~
+** ~~insert param in "parameters.json" to decide if the script should be executed or not~~
+** ~~get mongo baseUrl from "parameters.json"~~
 
 # Before submission
 * ~~glitch: on firefox in ubuntu 17.04 VM drag has graphic glitches~~
