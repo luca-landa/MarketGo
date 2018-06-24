@@ -1,14 +1,15 @@
 "use strict";
 
-function seed(mongoUrl) {
-    let MongoClient = require('mongodb').MongoClient;
+const mongoURL = 'mongodb://localhost:27017/MarketGo';
 
-    MongoClient.connect(mongoUrl, (err, db) => {
-        if (err) throw err;
-        onConnection(db);
-        db.close();
-    });
-}
+let MongoClient = require('mongodb').MongoClient;
+
+MongoClient.connect(mongoURL, (err, db) => {
+    if (err) throw err;
+    onConnection(db);
+    console.log('MarketGo db seeded');
+    db.close();
+});
 
 function onConnection(db) {
     db.admin().addUser('node-red', 'MarketGo', {
@@ -43,23 +44,23 @@ function onConnection(db) {
         {
             idx: 0,
             completedActions: [
-                { "date" : getPrevDate(0), "type" : "help_client", "clientIdx" : 0 },
-                { "date" : getPrevDate(1), "type" : "help_client", "clientIdx" : 1 },
-                { "date" : getPrevDate(0), "type" : "restock", "shelfIdx" : 0 },
-                { "date" : getPrevDate(1), "type" : "restock", "shelfIdx" : 1 },
-                { "date" : getPrevDate(1), "type" : "restock", "shelfIdx" : 2 },
-                { "date" : getPrevDate(2), "type" : "restock", "shelfIdx" : 1 }
+                {"date": getPrevDate(0), "type": "help_client", "clientIdx": 0},
+                {"date": getPrevDate(1), "type": "help_client", "clientIdx": 1},
+                {"date": getPrevDate(0), "type": "restock", "shelfIdx": 0},
+                {"date": getPrevDate(1), "type": "restock", "shelfIdx": 1},
+                {"date": getPrevDate(1), "type": "restock", "shelfIdx": 2},
+                {"date": getPrevDate(2), "type": "restock", "shelfIdx": 1}
             ]
         },
         {
             idx: 1,
             completedActions: [
-                { "date" : getPrevDate(0), "type" : "help_client", "clientIdx" : 0 },
-                { "date" : getPrevDate(1), "type" : "help_client", "clientIdx" : 1 },
-                { "date" : getPrevDate(2), "type" : "help_client", "clientIdx" : 1 },
-                { "date" : getPrevDate(1), "type" : "help_client", "clientIdx" : 0 },
-                { "date" : getPrevDate(1), "type" : "restock", "shelfIdx" : 2 },
-                { "date" : getPrevDate(2), "type" : "restock", "shelfIdx" : 1 }
+                {"date": getPrevDate(0), "type": "help_client", "clientIdx": 0},
+                {"date": getPrevDate(1), "type": "help_client", "clientIdx": 1},
+                {"date": getPrevDate(2), "type": "help_client", "clientIdx": 1},
+                {"date": getPrevDate(1), "type": "help_client", "clientIdx": 0},
+                {"date": getPrevDate(1), "type": "restock", "shelfIdx": 2},
+                {"date": getPrevDate(2), "type": "restock", "shelfIdx": 1}
             ]
         }
     ], defaultCallback);
@@ -207,9 +208,8 @@ function getPrevDate(prevDays) {
     return new Date(year, month, day - prevDays);
 }
 
-function defaultCallback() { }
-
-exports.seed = seed;
+function defaultCallback() {
+}
 
 //dati email
 //pippo.marketgo@gmail.com
