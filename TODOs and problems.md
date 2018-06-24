@@ -2,12 +2,13 @@
 * using node-rsa package
 ** ~~mongodb has clients public keys~~
 ** ~~client paymentRequest message has new format: {event: '', idx: ownClientIdx, signature: someStringEncryptedWithOwnPrivateKey}~~
-** server subflow ClientPaymentRequest uses DecryptPaymentRequest to decrypt request
-*** which requests the db for client public key and attempts to decrypt the message
-*** if the decryption fails with an error, or the JSON parse fails with an error, the flows returns null
+** ~~server subflow ClientPaymentRequest uses DecryptPaymentRequest to verify signature~~
+*** ~~which requests the db for client public key and attempts to decrypt the message~~
+** error message on client palmar when signature verification fails
 
 * refactoring: private key and signature params are passed to clientPalmar as argument on instantiation
-
+* refactoring: use GetClientInformation subflow
+* use signature for client ratings?
 
 # Before submission
 * ~~glitch: on firefox in ubuntu 17.04 VM drag has graphic glitches~~

@@ -205,7 +205,7 @@ module.exports = {
     //    context.global.os
 
     functionGlobalContext: {
-        verifySign(key, signature, signatureFormat = 'base64') {
+        verifySignature(key, signature, signatureFormat = 'base64') {
             const SIGN_VERIFICATION_STRING = 'signatureVerified';
 
             try {
