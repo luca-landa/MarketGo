@@ -40,8 +40,28 @@ function onConnection(db) {
     ], defaultCallback);
 
     db.collection('employees').insert([
-        {idx: 0, completedActions: []},
-        {idx: 1, completedActions: []}
+        {
+            idx: 0,
+            completedActions: [
+                { "date" : getPrevDate(0), "type" : "help_client", "clientIdx" : 0 },
+                { "date" : getPrevDate(1), "type" : "help_client", "clientIdx" : 1 },
+                { "date" : getPrevDate(0), "type" : "restock", "shelfIdx" : 0 },
+                { "date" : getPrevDate(1), "type" : "restock", "shelfIdx" : 1 },
+                { "date" : getPrevDate(1), "type" : "restock", "shelfIdx" : 2 },
+                { "date" : getPrevDate(2), "type" : "restock", "shelfIdx" : 1 }
+            ]
+        },
+        {
+            idx: 1,
+            completedActions: [
+                { "date" : getPrevDate(0), "type" : "help_client", "clientIdx" : 0 },
+                { "date" : getPrevDate(1), "type" : "help_client", "clientIdx" : 1 },
+                { "date" : getPrevDate(2), "type" : "help_client", "clientIdx" : 1 },
+                { "date" : getPrevDate(1), "type" : "help_client", "clientIdx" : 0 },
+                { "date" : getPrevDate(1), "type" : "restock", "shelfIdx" : 2 },
+                { "date" : getPrevDate(2), "type" : "restock", "shelfIdx" : 1 }
+            ]
+        }
     ], defaultCallback);
 
     db.collection('products').insert([
@@ -112,50 +132,73 @@ function onConnection(db) {
     db.collection('purchases').insert([
         {
             "clientIdx": 0,
-            "date": getISODate(0),
+            "date": getPrevDate(0),
             "total": 5,
             "list": [{"idx": "0", "quantity": 10}, {"idx": "1", "quantity": 20}, {"idx": "2", "quantity": 4}]
         },
         {
             "clientIdx": 1,
-            "date": getISODate(1),
+            "date": getPrevDate(1),
             "total": 30,
             "list": [{"idx": "0", "quantity": 15}, {"idx": "1", "quantity": 5}, {"idx": "2", "quantity": 20}]
         },
         {
             "clientIdx": 0,
-            "date": getISODate(2),
+            "date": getPrevDate(2),
             "total": 30,
             "list": [{"idx": "0", "quantity": 8}, {"idx": "1", "quantity": 14}, {"idx": "2", "quantity": 12}]
         },
         {
             "clientIdx": 1,
-            "date": getISODate(3),
+            "date": getPrevDate(3),
             "total": 30,
             "list": [{"idx": "0", "quantity": 3}, {"idx": "1", "quantity": 6}, {"idx": "2", "quantity": 8}]
         },
         {
             "clientIdx": 0,
-            "date": getISODate(4),
+            "date": getPrevDate(4),
             "total": 30,
             "list": [{"idx": "0", "quantity": 5}, {"idx": "1", "quantity": 1}, {"idx": "2", "quantity": 6}]
         },
         {
             "clientIdx": 0,
-            "date": getISODate(5),
+            "date": getPrevDate(5),
             "total": 30,
             "list": [{"idx": "0", "quantity": 2}, {"idx": "1", "quantity": 9}, {"idx": "2", "quantity": 8}]
         },
         {
             "clientIdx": 0,
-            "date": getISODate(6),
+            "date": getPrevDate(6),
             "total": 30,
             "list": [{"idx": "0", "quantity": 4}, {"idx": "1", "quantity": 2}, {"idx": "2", "quantity": 7}]
         }
     ], defaultCallback);
+
+    db.collection('ratings').insert([
+        {
+            date: getPrevDate(0),
+            clientIdx: 0,
+            value: 5
+        },
+        {
+            date: getPrevDate(2),
+            clientIdx: 1,
+            value: 2
+        },
+        {
+            date: getPrevDate(4),
+            clientIdx: 1,
+            value: 3
+        },
+        {
+            date: getPrevDate(1),
+            clientIdx: 0,
+            value: 5
+        }
+    ], defaultCallback);
 }
 
-function getISODate(prevDays) {
+function getPrevDate(prevDays) {
     let today = new Date();
     let day = today.getDate(),
         month = today.getMonth(),
@@ -168,9 +211,7 @@ function getISODate(prevDays) {
     }
 }
 
-function defaultCallback() {
-
-}
+function defaultCallback() { }
 
 exports.seed = seed;
 
