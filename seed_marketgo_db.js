@@ -204,11 +204,7 @@ function getPrevDate(prevDays) {
         month = today.getMonth(),
         year = today.getFullYear();
 
-    if (day - prevDays < 0) {
-
-    } else {
-        return new Date(year, month, day - prevDays);
-    }
+    return new Date(year, month, day - prevDays);
 }
 
 function defaultCallback() { }
