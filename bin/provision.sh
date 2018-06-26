@@ -6,3 +6,5 @@ sudo npm install -g n
 sudo n 10.2.1
 
 sudo npm install -g abbrev
+
+sudo npm --prefix ../ install
