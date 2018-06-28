@@ -123,10 +123,20 @@ const vueComponents = {
                                     </ul>
                                 </div>
                                 
-                                <div v-else-if="notification.type=== 'ratingRequest'">
+                                <div v-else-if="notification.type === 'ratingRequest'">
                                     <h4 class="palmar-message">{{notification.title}}</h4>
                                     <p class="palmar-message">{{notification.data}}</p>
                                     <star-rating value="3" @send-rating="sendRating($event)"></star-rating>
+                                </div>
+                                
+                                <div v-else-if="notification.type === 'list'">
+                                    <h4 class="palmar-message"><span class="x-close" @click="removeNotification(notification)">&#10006;</span> {{notification.title}}</h4>
+                                    
+                                    <ul class="palmar-info-list">
+                                        <li v-for="allergy in notification.list">
+                                            {{allergy}}
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </transition>
@@ -167,7 +177,7 @@ const vueComponents = {
             },
             dragStart(event) {
                 app.phoneDragging = true;
-                if(isFirefox) {
+                if (isFirefox) {
                     event.dataTransfer.setData("text", event.target.id);
                 }
                 event.target.classList.add('dragging');
@@ -203,7 +213,7 @@ const vueComponents = {
             dragStart(event) {
                 app.productDragging = true;
                 app.productDragged = this;
-                if(isFirefox) {
+                if (isFirefox) {
                     event.dataTransfer.setData("text", event.target.id);
                 }
             },
