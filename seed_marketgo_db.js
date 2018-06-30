@@ -1,6 +1,14 @@
 "use strict";
 
-const mongoURL = 'mongodb://localhost:27017/MarketGo';
+//default user email data
+//pippo.marketgo@gmail.com
+//password: MarketGo1
+
+const config = require('./lib/config').config;
+
+const clientEmail = config['default_client_email'];
+const clientIdx = config['default_client_idx'];
+const mongoURL = config['mongodb_url'];
 
 let MongoClient = require('mongodb').MongoClient;
 
@@ -105,7 +113,7 @@ function onConnection(db) {
         {
             idx: 0,
             name: 'Pippo',
-            email: 'pippo.marketgo@gmail.com',
+            email: clientIdx === 0 ? clientEmail : 'pippo.marketgo@gmail.com',
             allergies: [
                 'peanuts'
             ],
@@ -118,15 +126,15 @@ function onConnection(db) {
         {
             idx: 1,
             name: 'Pluto',
-            email: 'pluto.marketgo@gmail.com',
+            email: clientIdx === 1 ? clientEmail : 'pluto.marketgo@gmail.com',
             allergies: [
                 'lactose'
             ],
             creditCardNumber: '654321',
-            publicKey: 'MIGeMA0GCSqGSIb3DQEBAQUAA4GMADCBiAKBgHplYLW3Fll19I9PKHqgB8ikIlnK\n' +
-            'jUjZ7DwC4v9ngPr/FCIKVcNsdcGcETUnfQ5ZMniaCFzQ5UzdSUaZ7HcDO0R5VD/C\n' +
-            'cosn1PV0Go1WfPhKAuH+aF+v/MRnYrcKe8LdfzoUtTkGIvt57ChPVihXSQ0Vaph0\n' +
-            '/eMR1T5pZ5ezVqoxAgMBAAE='
+            publicKey: 'MIGeMA0GCSqGSIb3DQEBAQUAA4GMADCBiAKBgHw69Qdomr+rgUSKIOvlmAXEAsPK\n' +
+            'oUUV8ek/JFPAk+h4dUSEZIfnRu0MvFtDupM9s/eAveaR2DLJ+LAaqZRGL7PbMjQe\n' +
+            '1sJNUd3hgcjF46MijDdfD/MhE/4xmeVMj4B69lNrkNfx6mjxXz92GG02K8yx8hWt\n' +
+            'pxqkgkTi8xhAb5gzAgMBAAE='
         }
     ], defaultCallback);
 
@@ -210,7 +218,3 @@ function getPrevDate(prevDays) {
 
 function defaultCallback() {
 }
-
-//dati email
-//pippo.marketgo@gmail.com
-//password: MarketGo1

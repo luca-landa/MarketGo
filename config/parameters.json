@@ -1,8 +1,10 @@
 {
   "debug_mode": false,
   "default_client_idx": 0,
+  "default_client_email": "pippo.marketgo@gmail.com",
   "server_port": 8000,
   "tcp_port": 1337,
+  "mongodb_url": "mongodb://localhost:27017/MarketGo",
   "mqtt_broker_url": "mqtt://localhost:1883",
   "mqtt_topic_base": "MarketGo",
   "web_socket_protocol": "echo-protocol",
