@@ -4,6 +4,7 @@ trap "kill 0" EXIT
 
 current_folder=$(dirname ${BASH_SOURCE[0]})
 
+npm link mongodb
 node ${current_folder}/../seed_marketgo_db
 
 $current_folder/start_node-red.sh > /dev/null &

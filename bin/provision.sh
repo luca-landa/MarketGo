@@ -11,5 +11,4 @@ sudo npm install -g abbrev
 sudo npm install -g mongodb
 
 cd ${current_folder}/..
-sudo npm link mongodb
 sudo npm install
