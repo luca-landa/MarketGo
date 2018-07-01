@@ -6,5 +6,8 @@ sudo npm install -g n
 sudo n 10.2.1
 
 sudo npm install -g abbrev
+sudo npm install -g mongodb
 
-sudo npm --prefix ../ install
+cd ..
+sudo npm link mongodb
+sudo npm install

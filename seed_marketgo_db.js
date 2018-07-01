@@ -12,11 +12,11 @@ const mongoURL = config['mongodb_url'];
 
 let MongoClient = require('mongodb').MongoClient;
 
-MongoClient.connect(mongoURL, (err, db) => {
+MongoClient.connect(mongoURL, (err, client) => {
     if (err) throw err;
-    onConnection(db);
+    onConnection(client.db('MarketGo'));
     console.log('MarketGo db seeded');
-    db.close();
+    client.close();
 });
 
 function onConnection(db) {
