@@ -12,7 +12,7 @@ const mongoURL = config['mongodb_url'];
 
 let MongoClient = require('mongodb').MongoClient;
 
-MongoClient.connect(mongoURL, (err, client) => {
+MongoClient.connect(mongoURL, { useNewUrlParser: true }, (err, client) => {
     if (err) throw err;
     onConnection(client.db('MarketGo'));
     console.log('MarketGo db seeded');
@@ -27,7 +27,7 @@ function onConnection(db) {
                 db: 'MarketGo'
             }
         ]
-    });
+    }).catch(defaultCallback);
 
     const collectionNames = [
         "shelves",

@@ -1,4 +1,4 @@
 # Next TODOs
+* update node-red in provisioning scripts
 
-# To evaluate
-* give possibility from staff view to manipulate the minimum quantity required for shelves?
+* mongodb seeding on mongodb3 takes about 10 seconds
