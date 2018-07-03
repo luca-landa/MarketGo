@@ -15,7 +15,7 @@ sleep 5
 
 echo "node-red started, launching client..."
 
-$current_folder/start_client.sh > /dev/null &
+$current_folder/start_client.sh &
 
 echo "GUI client listening on 8000"
 
