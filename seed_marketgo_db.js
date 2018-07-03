@@ -13,45 +13,33 @@ const mongoURL = config['mongodb_url'];
 let MongoClient = require('mongodb').MongoClient;
 
 MongoClient.connect(mongoURL, { useNewUrlParser: true }, (err, client) => {
-    if (err) throw err;
-    console.log('Seeding MarketGo db...');
-    onConnection(client.db('MarketGo'));
-    setTimeout(() => {
-        client.close();
-        console.log('db seeded');
-    }, 2500);
+    run(client).then(() => console.log('MarketGo db seeded'));
 });
 
-function onConnection(db) {
-    db.admin().addUser('node-red', 'MarketGo', {
+async function run(client) {
+    let db = client.db('MarketGo');
+
+    await db.dropDatabase().catch((_err) => {/* db does not exist yet */});
+
+    await db.admin().removeUser('node-red').catch((_err) => {/* user does not exist yet */});
+    await db.admin().addUser('node-red', 'MarketGo', {
         roles: [
             {
                 role: 'readWrite',
                 db: 'MarketGo'
             }
         ]
-    }).catch(defaultCallback);
-
-    const collectionNames = [
-        "shelves",
-        "employees",
-        "products",
-        "clients",
-        "purchases",
-        "ratings"];
-
-    collectionNames.forEach((name) => {
-        db.createCollection(name);
-        db.collection(name).remove({}, defaultCallback);
     });
 
-    db.collection('shelves').insert([
+    await db.createCollection('shelves');
+    await db.collection('shelves').insert([
         {idx: 0, minimumQuantity: 2},
         {idx: 1, minimumQuantity: 2},
         {idx: 2, minimumQuantity: 2}
-    ], defaultCallback);
+    ]);
 
-    db.collection('employees').insert([
+    await db.createCollection('employees');
+    await db.collection('employees').insert([
         {
             idx: 0,
             completedActions: [
@@ -74,9 +62,10 @@ function onConnection(db) {
                 {"date": getPrevDate(2), "type": "restock", "shelfIdx": 1}
             ]
         }
-    ], defaultCallback);
+    ]);
 
-    db.collection('products').insert([
+    await db.createCollection('products');
+    await db.collection('products').insert([
         {
             idx: 0,
             name: 'Peanut butter',
@@ -110,9 +99,10 @@ function onConnection(db) {
             price: 10,
             img: '/images/pizza.png'
         }
-    ], defaultCallback);
+    ]);
 
-    db.collection('clients').insert([
+    await db.createCollection('clients');
+    await db.collection('clients').insert([
         {
             idx: 0,
             name: 'Pippo',
@@ -139,9 +129,10 @@ function onConnection(db) {
             '1sJNUd3hgcjF46MijDdfD/MhE/4xmeVMj4B69lNrkNfx6mjxXz92GG02K8yx8hWt\n' +
             'pxqkgkTi8xhAb5gzAgMBAAE='
         }
-    ], defaultCallback);
+    ]);
 
-    db.collection('purchases').insert([
+    await db.createCollection('purchases');
+    await db.collection('purchases').insert([
         {
             "clientIdx": 0,
             "date": getPrevDate(0),
@@ -184,9 +175,10 @@ function onConnection(db) {
             "total": 30,
             "list": [{"idx": "0", "quantity": 4}, {"idx": "1", "quantity": 2}, {"idx": "2", "quantity": 7}]
         }
-    ], defaultCallback);
+    ]);
 
-    db.collection('ratings').insert([
+    await db.createCollection('ratings');
+    await db.collection('ratings').insert([
         {
             date: getPrevDate(0),
             clientIdx: 0,
@@ -207,7 +199,9 @@ function onConnection(db) {
             clientIdx: 0,
             value: 5
         }
-    ], defaultCallback);
+    ]);
+
+    return client.close();
 }
 
 function getPrevDate(prevDays) {
@@ -217,7 +211,4 @@ function getPrevDate(prevDays) {
         year = today.getFullYear();
 
     return new Date(year, month, day - prevDays);
-}
-
-function defaultCallback() {
 }
