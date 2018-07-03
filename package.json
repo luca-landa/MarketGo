@@ -3,9 +3,10 @@
   "version": "0.0.1",
   "author": "Luca Landa",
   "dependencies": {
+    "mongodb": "^3.1.0",
     "mqtt": "^2.18.0",
+    "node-rsa": "latest",
     "preprocess": "^3.1.0",
-    "websocket": "latest",
-    "node-rsa": "latest"
+    "websocket": "latest"
   }
 }
