@@ -9,6 +9,7 @@ sudo n 10.2.1
 
 sudo npm install -g abbrev
 sudo npm install -g mongodb
+sudo npm install -g --unsafe-perm node-red
 
 cd ${current_folder}/..
 sudo npm install
