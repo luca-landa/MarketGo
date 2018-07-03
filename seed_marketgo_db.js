@@ -14,9 +14,12 @@ let MongoClient = require('mongodb').MongoClient;
 
 MongoClient.connect(mongoURL, { useNewUrlParser: true }, (err, client) => {
     if (err) throw err;
+    console.log('Seeding MarketGo db...');
     onConnection(client.db('MarketGo'));
-    console.log('MarketGo db seeded');
-    client.close();
+    setTimeout(() => {
+        client.close();
+        console.log('db seeded');
+    }, 2500);
 });
 
 function onConnection(db) {
