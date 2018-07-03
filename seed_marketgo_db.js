@@ -21,15 +21,7 @@ async function run(client) {
 
     await db.dropDatabase().catch((_err) => {/* db does not exist yet */});
 
-    await db.admin().removeUser('node-red').catch((_err) => {/* user does not exist yet */});
-    await db.admin().addUser('node-red', 'MarketGo', {
-        roles: [
-            {
-                role: 'readWrite',
-                db: 'MarketGo'
-            }
-        ]
-    });
+    db = client.db('MarketGo');
 
     await db.createCollection('shelves');
     await db.collection('shelves').insert([
@@ -200,6 +192,16 @@ async function run(client) {
             value: 5
         }
     ]);
+
+    await db.admin().removeUser('node-red').catch((_err) => {/* user does not exist yet */});
+    await db.admin().addUser('node-red', 'MarketGo', {
+        roles: [
+            {
+                role: 'readWrite',
+                db: 'MarketGo'
+            }
+        ]
+    }).catch(_err => {/* user already exists */});
 
     return client.close();
 }
