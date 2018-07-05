@@ -4,7 +4,7 @@
   "default_client_email": "pippo.marketgo@gmail.com",
   "server_port": 8000,
   "tcp_port": 1337,
-  "mongodb_url": "mongodb://127.0.0.1:27017/MarketGo",
+  "mongodb_url": "mongodb://node-red:MarketGo@cluster0-shard-00-00-mtwyl.mongodb.net:27017,cluster0-shard-00-01-mtwyl.mongodb.net:27017,cluster0-shard-00-02-mtwyl.mongodb.net:27017/MarketGo?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin",
   "mqtt_broker_url": "mqtt://localhost:1883",
   "mqtt_topic_base": "MarketGo",
   "web_socket_protocol": "echo-protocol",

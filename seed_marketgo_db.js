@@ -12,18 +12,19 @@ const mongoURL = config['mongodb_url'];
 
 let MongoClient = require('mongodb').MongoClient;
 
-MongoClient.connect(mongoURL, { useNewUrlParser: true }, (err, client) => {
+MongoClient.connect(mongoURL, (err, client) => {
     run(client).then(() => console.log('MarketGo db seeded'));
 });
 
 async function run(client) {
     let db = client.db('MarketGo');
 
-    await db.dropDatabase().catch((_err) => {/* db does not exist yet */});
+    await db.dropDatabase().catch((err) => console.log(err));
 
     db = client.db('MarketGo');
 
     await db.createCollection('shelves');
+
     await db.collection('shelves').insert([
         {idx: 0, minimumQuantity: 2},
         {idx: 1, minimumQuantity: 2},
@@ -192,16 +193,6 @@ async function run(client) {
             value: 5
         }
     ]);
-
-    await db.admin().removeUser('node-red').catch((_err) => {/* user does not exist yet */});
-    await db.admin().addUser('node-red', 'MarketGo', {
-        roles: [
-            {
-                role: 'readWrite',
-                db: 'MarketGo'
-            }
-        ]
-    }).catch(_err => {/* user already exists */});
 
     return client.close();
 }
