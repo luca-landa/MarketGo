@@ -11,7 +11,7 @@ $current_folder/start_node-red.sh > /dev/null &
 echo "waiting a few seconds for node-red to fully boot up..."
 echo "PLEASE NOTE: if asked, click 'Start in Safe Mode' on Firefox prompt"
 
-sleep 5
+sleep 10
 
 echo "node-red started, launching client..."
 

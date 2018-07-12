@@ -457,7 +457,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-contrib-mongodb2",
-     "file": "/home/landix/Desktop/1° anno magistrale/Sistemi di telecomunicazione innovativi/progetto/consegna/723974/sorgente/MarketGo/node-red/node_modules/node-red-contrib-mongodb2/mongodb2/mongodb2.js"
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-contrib-mongodb2/mongodb2/mongodb2.js"
     }
    }
   },
@@ -474,7 +474,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-contrib-crypto-js-mod",
-     "file": "/home/landix/Desktop/1° anno magistrale/Sistemi di telecomunicazione innovativi/progetto/consegna/723974/sorgente/MarketGo/node-red/node_modules/node-red-contrib-crypto-js-mod/cryptojs/encrypt.js"
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-contrib-crypto-js-mod/cryptojs/encrypt.js"
     },
     "decrypt": {
      "name": "decrypt",
@@ -484,7 +484,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-contrib-crypto-js-mod",
-     "file": "/home/landix/Desktop/1° anno magistrale/Sistemi di telecomunicazione innovativi/progetto/consegna/723974/sorgente/MarketGo/node-red/node_modules/node-red-contrib-crypto-js-mod/cryptojs/decrypt.js"
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-contrib-crypto-js-mod/cryptojs/decrypt.js"
     },
     "hmac": {
      "name": "hmac",
@@ -494,7 +494,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-contrib-crypto-js-mod",
-     "file": "/home/landix/Desktop/1° anno magistrale/Sistemi di telecomunicazione innovativi/progetto/consegna/723974/sorgente/MarketGo/node-red/node_modules/node-red-contrib-crypto-js-mod/cryptojs/hmac.js"
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-contrib-crypto-js-mod/cryptojs/hmac.js"
     },
     "digest": {
      "name": "digest",
@@ -504,7 +504,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-contrib-crypto-js-mod",
-     "file": "/home/landix/Desktop/1° anno magistrale/Sistemi di telecomunicazione innovativi/progetto/consegna/723974/sorgente/MarketGo/node-red/node_modules/node-red-contrib-crypto-js-mod/cryptojs/digest.js"
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-contrib-crypto-js-mod/cryptojs/digest.js"
     },
     "encode": {
      "name": "encode",
@@ -514,7 +514,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-contrib-crypto-js-mod",
-     "file": "/home/landix/Desktop/1° anno magistrale/Sistemi di telecomunicazione innovativi/progetto/consegna/723974/sorgente/MarketGo/node-red/node_modules/node-red-contrib-crypto-js-mod/cryptojs/encode.js"
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-contrib-crypto-js-mod/cryptojs/encode.js"
     },
     "decode": {
      "name": "decode",
@@ -524,7 +524,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-contrib-crypto-js-mod",
-     "file": "/home/landix/Desktop/1° anno magistrale/Sistemi di telecomunicazione innovativi/progetto/consegna/723974/sorgente/MarketGo/node-red/node_modules/node-red-contrib-crypto-js-mod/cryptojs/decode.js"
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-contrib-crypto-js-mod/cryptojs/decode.js"
     }
    }
   },
@@ -541,7 +541,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/home/landix/Desktop/1° anno magistrale/Sistemi di telecomunicazione innovativi/progetto/consegna/723974/sorgente/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_base.js"
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_base.js"
     },
     "ui_button": {
      "name": "ui_button",
@@ -551,7 +551,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/home/landix/Desktop/1° anno magistrale/Sistemi di telecomunicazione innovativi/progetto/consegna/723974/sorgente/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_button.js"
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_button.js"
     },
     "ui_dropdown": {
      "name": "ui_dropdown",
@@ -561,7 +561,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/home/landix/Desktop/1° anno magistrale/Sistemi di telecomunicazione innovativi/progetto/consegna/723974/sorgente/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_dropdown.js"
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_dropdown.js"
     },
     "ui_switch": {
      "name": "ui_switch",
@@ -571,7 +571,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/home/landix/Desktop/1° anno magistrale/Sistemi di telecomunicazione innovativi/progetto/consegna/723974/sorgente/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_switch.js"
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_switch.js"
     },
     "ui_slider": {
      "name": "ui_slider",
@@ -581,7 +581,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/home/landix/Desktop/1° anno magistrale/Sistemi di telecomunicazione innovativi/progetto/consegna/723974/sorgente/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_slider.js"
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_slider.js"
     },
     "ui_numeric": {
      "name": "ui_numeric",
@@ -591,7 +591,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/home/landix/Desktop/1° anno magistrale/Sistemi di telecomunicazione innovativi/progetto/consegna/723974/sorgente/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_numeric.js"
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_numeric.js"
     },
     "ui_text_input": {
      "name": "ui_text_input",
@@ -601,7 +601,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/home/landix/Desktop/1° anno magistrale/Sistemi di telecomunicazione innovativi/progetto/consegna/723974/sorgente/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_text_input.js"
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_text_input.js"
     },
     "ui_date_picker": {
      "name": "ui_date_picker",
@@ -611,7 +611,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/home/landix/Desktop/1° anno magistrale/Sistemi di telecomunicazione innovativi/progetto/consegna/723974/sorgente/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_date_picker.js"
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_date_picker.js"
     },
     "ui_colour_picker": {
      "name": "ui_colour_picker",
@@ -621,7 +621,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/home/landix/Desktop/1° anno magistrale/Sistemi di telecomunicazione innovativi/progetto/consegna/723974/sorgente/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_colour_picker.js"
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_colour_picker.js"
     },
     "ui_form": {
      "name": "ui_form",
@@ -631,7 +631,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/home/landix/Desktop/1° anno magistrale/Sistemi di telecomunicazione innovativi/progetto/consegna/723974/sorgente/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_form.js"
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_form.js"
     },
     "ui_text": {
      "name": "ui_text",
@@ -641,7 +641,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/home/landix/Desktop/1° anno magistrale/Sistemi di telecomunicazione innovativi/progetto/consegna/723974/sorgente/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_text.js"
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_text.js"
     },
     "ui_gauge": {
      "name": "ui_gauge",
@@ -651,7 +651,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/home/landix/Desktop/1° anno magistrale/Sistemi di telecomunicazione innovativi/progetto/consegna/723974/sorgente/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_gauge.js"
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_gauge.js"
     },
     "ui_chart": {
      "name": "ui_chart",
@@ -661,7 +661,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/home/landix/Desktop/1° anno magistrale/Sistemi di telecomunicazione innovativi/progetto/consegna/723974/sorgente/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_chart.js"
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_chart.js"
     },
     "ui_audio": {
      "name": "ui_audio",
@@ -671,7 +671,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/home/landix/Desktop/1° anno magistrale/Sistemi di telecomunicazione innovativi/progetto/consegna/723974/sorgente/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_audio.js"
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_audio.js"
     },
     "ui_toast": {
      "name": "ui_toast",
@@ -681,7 +681,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/home/landix/Desktop/1° anno magistrale/Sistemi di telecomunicazione innovativi/progetto/consegna/723974/sorgente/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_toast.js"
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_toast.js"
     },
     "ui_ui_control": {
      "name": "ui_ui_control",
@@ -691,7 +691,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/home/landix/Desktop/1° anno magistrale/Sistemi di telecomunicazione innovativi/progetto/consegna/723974/sorgente/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_ui_control.js"
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_ui_control.js"
     },
     "ui_template": {
      "name": "ui_template",
@@ -701,7 +701,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/home/landix/Desktop/1° anno magistrale/Sistemi di telecomunicazione innovativi/progetto/consegna/723974/sorgente/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_template.js"
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_template.js"
     },
     "ui_link": {
      "name": "ui_link",
@@ -711,7 +711,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/home/landix/Desktop/1° anno magistrale/Sistemi di telecomunicazione innovativi/progetto/consegna/723974/sorgente/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_link.js"
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_link.js"
     },
     "ui_tab": {
      "name": "ui_tab",
@@ -721,7 +721,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/home/landix/Desktop/1° anno magistrale/Sistemi di telecomunicazione innovativi/progetto/consegna/723974/sorgente/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_tab.js"
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_tab.js"
     },
     "ui_group": {
      "name": "ui_group",
@@ -731,7 +731,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/home/landix/Desktop/1° anno magistrale/Sistemi di telecomunicazione innovativi/progetto/consegna/723974/sorgente/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_group.js"
+     "file": "/home/landix/Projects/MarketGo/node-red/node_modules/node-red-dashboard/nodes/ui_group.js"
     }
    }
   }
